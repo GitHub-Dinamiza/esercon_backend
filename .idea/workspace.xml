@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbd7d978-e510-4423-aee9-c72a66db07aa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Permissions/HasPermissionsTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +195,9 @@
       <option name="presentableId" value="Default" />
       <updated>1620059097077</updated>
       <workItem from="1620059098866" duration="12189000" />
-      <workItem from="1620331446448" duration="10686000" />
+      <workItem from="1620331446448" duration="11993000" />
+      <workItem from="1620654324111" duration="1144000" />
+      <workItem from="1620833781125" duration="11045000" />
     </task>
     <servers />
   </component>
@@ -215,5 +221,13 @@
       <screen x="1360" y="0" width="1680" height="1050" />
     </state>
     <state x="1795" y="200" width="800" height="729" key="#Intentions/1360.0.1680.1050/0.282.1360.768/3040.282.1366.768@1360.0.1680.1050" timestamp="1620398833087" />
+    <state x="1983" y="296" width="424" height="491" key="FileChooserDialogImpl" timestamp="1620655466004">
+      <screen x="1360" y="0" width="1680" height="1050" />
+    </state>
+    <state x="1983" y="296" width="424" height="491" key="FileChooserDialogImpl/1360.0.1680.1050/0.282.1360.768/3040.282.1366.768@1360.0.1680.1050" timestamp="1620655466004" />
+    <state x="2035" y="461" width="319" height="162" key="NewPhpFileDialog" timestamp="1620851091798">
+      <screen x="1360" y="0" width="1680" height="1050" />
+    </state>
+    <state x="2035" y="461" width="319" height="162" key="NewPhpFileDialog/1360.0.1680.1050/0.282.1360.768/3040.282.1366.768@1360.0.1680.1050" timestamp="1620851091798" />
   </component>
 </project>

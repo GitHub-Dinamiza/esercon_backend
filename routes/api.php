@@ -34,7 +34,7 @@ Route::group(['prefix'=>'v1'], function(){
             Route::get('logout','App\Http\Controllers\Auth\AuthController@logout');
 
             //LISTA DE TODOS LOS USUARIOS
-            Route::get('user','App\Http\Controllers\Auth\Controller@user');
+            Route::get('user','App\Http\Controllers\Auth\AuthController@user');
 
 
         });
