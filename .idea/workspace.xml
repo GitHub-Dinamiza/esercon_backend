@@ -20,11 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbd7d978-e510-4423-aee9-c72a66db07aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Permissions/HasPermissionsTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Permission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/PermissionsServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/PermissionsServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_180756_create_permissions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_180756_create_permissions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_180820_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_180820_create_roles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,6 +186,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
+      <recent name="$PROJECT_DIR$/app/Http/Api" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -197,7 +210,13 @@
       <workItem from="1620059098866" duration="12189000" />
       <workItem from="1620331446448" duration="11993000" />
       <workItem from="1620654324111" duration="1144000" />
-      <workItem from="1620833781125" duration="11045000" />
+      <workItem from="1620833781125" duration="12228000" />
+      <workItem from="1620937593743" duration="2314000" />
+      <workItem from="1620999429028" duration="4880000" />
+      <workItem from="1621009230545" duration="16620000" />
+      <workItem from="1621342104522" duration="1426000" />
+      <workItem from="1621344686839" duration="41946000" />
+      <workItem from="1621432417680" duration="20640000" />
     </task>
     <servers />
   </component>
@@ -221,13 +240,36 @@
       <screen x="1360" y="0" width="1680" height="1050" />
     </state>
     <state x="1795" y="200" width="800" height="729" key="#Intentions/1360.0.1680.1050/0.282.1360.768/3040.282.1366.768@1360.0.1680.1050" timestamp="1620398833087" />
-    <state x="1983" y="296" width="424" height="491" key="FileChooserDialogImpl" timestamp="1620655466004">
+    <state x="1935" y="48" width="510" height="995" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1621373721161">
       <screen x="1360" y="0" width="1680" height="1050" />
     </state>
-    <state x="1983" y="296" width="424" height="491" key="FileChooserDialogImpl/1360.0.1680.1050/0.282.1360.768/3040.282.1366.768@1360.0.1680.1050" timestamp="1620655466004" />
+    <state x="1935" y="48" width="510" height="995" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1360.0.1680.1050/0.282.1360.768/3040.282.1366.768@1360.0.1680.1050" timestamp="1621373721161" />
+    <state x="1933" y="296" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621458389822">
+      <screen x="1360" y="0" width="1680" height="1050" />
+    </state>
+    <state x="1933" y="296" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1360.0.1680.1050/0.282.1360.768/3040.282.1366.768@1360.0.1680.1050" timestamp="1621458389822" />
+    <state x="1983" y="296" width="424" height="491" key="FileChooserDialogImpl" timestamp="1621034816799">
+      <screen x="1360" y="0" width="1680" height="1050" />
+    </state>
+    <state x="1983" y="296" width="424" height="491" key="FileChooserDialogImpl/1360.0.1680.1050/0.282.1360.768/3040.282.1366.768@1360.0.1680.1050" timestamp="1621034816799" />
     <state x="2035" y="461" width="319" height="162" key="NewPhpFileDialog" timestamp="1620851091798">
       <screen x="1360" y="0" width="1680" height="1050" />
     </state>
     <state x="2035" y="461" width="319" height="162" key="NewPhpFileDialog/1360.0.1680.1050/0.282.1360.768/3040.282.1366.768@1360.0.1680.1050" timestamp="1620851091798" />
+    <state x="1863" y="251" width="672" height="678" key="search.everywhere.popup" timestamp="1621377892215">
+      <screen x="1360" y="0" width="1680" height="1050" />
+    </state>
+    <state x="1863" y="251" width="672" height="678" key="search.everywhere.popup/1360.0.1680.1050/0.282.1360.768/3040.282.1366.768@1360.0.1680.1050" timestamp="1621377892215" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Models/Role.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
