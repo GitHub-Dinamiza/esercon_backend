@@ -21,6 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bbd7d978-e510-4423-aee9-c72a66db07aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RolePermission/UserRolesPermissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RolePermission/UserRolesPermissions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,6 +208,7 @@
       <workItem from="1621342104522" duration="1426000" />
       <workItem from="1621344686839" duration="41946000" />
       <workItem from="1621432417680" duration="20640000" />
+      <workItem from="1621526444965" duration="597000" />
     </task>
     <servers />
   </component>

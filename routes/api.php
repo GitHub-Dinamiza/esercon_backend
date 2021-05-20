@@ -45,7 +45,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['middleware'=>'auth:api'],function (){
 
-    Route::group(['middleware'=>'role:admin'],function(){
+    Route::group(['middleware'=>'role:dev'],function(){
         //USUARIOS
         Route::group(['prefix'=>'usuarios'], function(){
             Route::post('','UserController@store');

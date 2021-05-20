@@ -89,7 +89,7 @@ class UserRolesPermissions extends Controller
 
         $permissions=PermissionsCollection::make($union);
         ResponseController::set_data(['permission'=>$permissions]);
-        ResponseController::response("OK");
+        return ResponseController::response("OK");
     }
 
     public function __permissions($user_id){
@@ -112,7 +112,7 @@ class UserRolesPermissions extends Controller
         $permissions= $GeneralP->diff($union);
 
         ResponseController::set_data(['permission'=>$permissions]);
-        ResponseController::response("OK");
+        return ResponseController::response("OK");
 
 
 
