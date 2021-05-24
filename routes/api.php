@@ -42,7 +42,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     });
 
 
-
 Route::group(['middleware'=>'auth:api'],function (){
 
     Route::group(['middleware'=>'role:dev'],function(){
@@ -84,6 +83,18 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::put('{id}','RolePermission\PermissionController@update');
             Route::delete('{id}','RolePermission\PermissionController@destroy');
         });
+
+        //LOACALISACION
+        Route::group(['prefix'=>'departamentos'], function(){
+            Route::get('', 'LocalizacionController@show');
+            Route::get('{id}', 'LocalizacionController@get');
+            Route::get('{id}/municipios', 'LocalizacionController@showMunicipios');
+
+        });
+        Route::get('municipio/{id}', 'LocalizacionController@getMunicipio');
+
+
+
     });
 });
 
