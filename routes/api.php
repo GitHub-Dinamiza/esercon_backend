@@ -44,6 +44,21 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['middleware'=>'auth:api'],function (){
 
+    //LOACALISACION
+    Route::group(['prefix'=>'departamentos'], function(){
+        Route::get('', 'LocalizacionController@show');
+        Route::get('{id}', 'LocalizacionController@get');
+        Route::get('{id}/municipios', 'LocalizacionController@showMunicipios');
+
+    });
+    Route::get('municipio/{id}', 'LocalizacionController@getMunicipio');
+
+    //TIPO DE DOCUMENTOS
+    Route::group(['prefix'=>'tipo_documento'],function(){
+        Route::get('', 'TipoDocumentoController@show');
+        Route::get('{id}','TipoDocumentoController@get');
+    });
+
     Route::group(['middleware'=>'role:dev'],function(){
         //USUARIOS
         Route::group(['prefix'=>'usuarios'], function(){
@@ -83,15 +98,6 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::put('{id}','RolePermission\PermissionController@update');
             Route::delete('{id}','RolePermission\PermissionController@destroy');
         });
-
-        //LOACALISACION
-        Route::group(['prefix'=>'departamentos'], function(){
-            Route::get('', 'LocalizacionController@show');
-            Route::get('{id}', 'LocalizacionController@get');
-            Route::get('{id}/municipios', 'LocalizacionController@showMunicipios');
-
-        });
-        Route::get('municipio/{id}', 'LocalizacionController@getMunicipio');
 
 
 

@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PermmissionSeeder::class);
         $this->call(UserRolePermissionSeeder::class);
         $this->call(LocalizacionSeeder::class);
+        $this->call(TipoDocumentosSeeder::class);
     }
 }
