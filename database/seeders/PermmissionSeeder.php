@@ -61,5 +61,35 @@ class PermmissionSeeder extends Seeder
             "slug"=>"role-permission-restore"
         ]);
 
+        Permission::create([
+            "name"=>"crear proyecto",
+            "slug"=>"add_proyecto"
+        ]);
+
+        Permission::create([
+            "name"=>"consulta proyecto",
+            "slug"=>"show_proyecto"
+        ]);
+
+        Permission::create([
+            "name"=>"actualizar proyecto",
+            "slug"=>"update_proyecto"
+        ]);
+
+        Permission::create([
+            "name"=>"eliminar proyecto",
+            "slug"=>"delete_proyecto"
+        ]);
+
+        Permission::create([
+            "name"=>"crear proveedor",
+            "slug"=>"add_proveedor"
+        ]);
+
+        Permission::create([
+            "name"=>"actulizar proveedor",
+            "slug"=>"update_proveedor"
+        ]);
+
     }
 }

@@ -99,10 +99,26 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::delete('{id}','RolePermission\PermissionController@destroy');
         });
 
+        //Proveedor
 
+        Route::group(['prefix'=>'proveedor'],function (){
+
+            Route::post('','Proveedor\ProveedorController@store');
+
+        });
+
+        //Proyecto
+        Route::group(['prefix'=>'proyecto'],function (){
+            Route::post('','Proyecto\ProyectoController@store');
+            Route::get('','Proyecto\ProyectoController@show');
+        });
 
     });
+
+
 });
+
+Route::post('cargar', 'cargarArchivoController@uploadFile');
 
 
 

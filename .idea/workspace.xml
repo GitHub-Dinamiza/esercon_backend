@@ -21,8 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bbd7d978-e510-4423-aee9-c72a66db07aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_24_215831_create_tipos_documentos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_24_215831_create_tipos_documentos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Permission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/PermmissionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PermmissionSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +213,10 @@
       <workItem from="1621532357510" duration="3896000" />
       <workItem from="1621615727502" duration="4626000" />
       <workItem from="1621861286618" duration="9568000" />
-      <workItem from="1621879016693" duration="14928000" />
+      <workItem from="1621879016693" duration="25110000" />
+      <workItem from="1621980355161" duration="18195000" />
+      <workItem from="1622057539781" duration="35271000" />
+      <workItem from="1622177457141" duration="4290000" />
     </task>
     <servers />
   </component>
