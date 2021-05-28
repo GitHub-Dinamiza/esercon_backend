@@ -111,6 +111,12 @@ Route::group(['middleware'=>'auth:api'],function (){
         Route::group(['prefix'=>'proyecto'],function (){
             Route::post('','Proyecto\ProyectoController@store');
             Route::get('','Proyecto\ProyectoController@show');
+            Route::get('{id}','Proyecto\ProyectoController@get');
+            Route::delete('{id}','Proyecto\ProyectoController@destroy');
+
+
+            Route::post('{id}/documento','Proyecto\ProyectoController@cargarArchivo');
+            Route::delete('{id}/documento','Proyecto\ProyectoController@borrarAchivo');
         });
 
     });

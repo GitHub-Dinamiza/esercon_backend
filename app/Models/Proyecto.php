@@ -24,5 +24,9 @@ class Proyecto extends Model
 
     }
 
+    public function archivos(){
+       return $this->hasMany(ArchivoProyecto::class);
+    }
+
 
 }
