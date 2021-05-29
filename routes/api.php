@@ -117,6 +117,10 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             Route::post('{id}/documento','Proyecto\ProyectoController@cargarArchivo');
             Route::delete('{id}/documento','Proyecto\ProyectoController@borrarAchivo');
+
+            Route::post('{id}/tipovias','Proyecto\ProyectoController@tipoVia');
+            Route::delete('{id}/tipovias','Proyecto\ProyectoController@eliminarTipoVia');
+
         });
 
     });
@@ -124,7 +128,8 @@ Route::group(['middleware'=>'auth:api'],function (){
 
 });
 
-Route::post('cargar', 'cargarArchivoController@uploadFile');
+Route::get('rutas', 'Rutas\RutasController@show');
+
 
 
 

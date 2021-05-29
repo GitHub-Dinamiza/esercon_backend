@@ -5,10 +5,14 @@ namespace App\Http\Controllers\Proyecto;
 use App\Http\Controllers\cargarArchivoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
+use App\Http\Resources\proyectoAllResource;
 use App\Models\ArchivoProyecto;
 use App\Models\Proyecto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
+use App\Http\Resources\Proyecto as ResourceProyecto;
+
 
 class ProyectoController extends Controller
 {
@@ -69,7 +73,7 @@ class ProyectoController extends Controller
     public function show(Request $request){
         if($request->user()->can('show_proyecto')){
 
-            ResponseController::set_data(['data'=>Proyecto::all()]);
+            ResponseController::set_data(['data'=>proyectoAllResource::collection(Proyecto::all()) ]);
             return ResponseController::response('OK');
         }
         ResponseController::set_errors(true);
@@ -85,6 +89,8 @@ class ProyectoController extends Controller
         if($request->user()->can('show_proyecto')){
             $proyecto =Proyecto::find($id);
             $proyecto->archivos;
+            $proyecto->municipio;
+            $proyecto =ResourceProyecto::make($proyecto);
             ResponseController::set_data(['data'=>$proyecto]);
             return ResponseController::response('OK');
         }
@@ -104,7 +110,7 @@ class ProyectoController extends Controller
 
     public function destroy(Request $request,$id){
         if($request->user()->can('delete_proyecto')){
-            Proyecto::finf($id)->delete();
+            Proyecto::find($id)->delete();
         }
         ResponseController::set_errors(true);
         ResponseController::set_messages('Usuario sin permiso');
@@ -155,5 +161,39 @@ class ProyectoController extends Controller
 
     }
 
+    //Tipo de vias
+
+    public function tipoVia(Request $request, $id){
+        $proyecto = Proyecto::find($id);
+
+        try {
+            $proyecto->tipoVia()->attach($request->tipovia_id);
+        }catch (\Exception $e){
+            ResponseController::set_errors(true);
+            ResponseController::set_messages('Error al agregar el tipo de vias al proyecto   '.$e);
+            return ResponseController::response('BAD REQUEST');
+        }
+
+        ResponseController::set_messages('tipo de via agregado el proyecto');
+
+        return ResponseController::response('OK');
+
+    }
+
+    public function eliminarTipoVia(Request $request, $id){
+        $proyecto = Proyecto::find($id);
+
+        try {
+            $proyecto->tipoVia()->detach($request->tipovia_id);
+        }catch (\Exception $e){
+            ResponseController::set_errors(true);
+            ResponseController::set_messages('Error al elimiar el tipo de vias asociado al proyecto   '.$e);
+            return ResponseController::response('BAD REQUEST');
+        }
+
+        ResponseController::set_messages('tipo de via elimino del proyecto');
+
+        return ResponseController::response('OK');
+    }
 
 }

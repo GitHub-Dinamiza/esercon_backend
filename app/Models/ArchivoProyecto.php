@@ -19,6 +19,10 @@ class ArchivoProyecto extends Model
     protected $table = 'archivos_proyecto';
 
     public function proyecto(){
-        $this->belongsTo(Proyecto::class);
+        return $this->belongsTo(Proyecto::class);
+    }
+
+    public function  user(){
+        return $this->belongsTo(User::class);
     }
 }

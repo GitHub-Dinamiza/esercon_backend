@@ -24,9 +24,22 @@ class Proyecto extends Model
 
     }
 
+    public function municipioInicial(){
+        return $this->belongsTo(Municipio::class,'municipio_inicio_id');
+    }
+    public function municipioFinal(){
+        return $this->belongsTo(Municipio::class,'municipio_final_id');
+    }
     public function archivos(){
        return $this->hasMany(ArchivoProyecto::class);
     }
 
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public  function tipoVia(){
+        return $this->belongsToMany(TipoVia::class,'tipos_vias_proyecto','proyecto_id','tipo_via_id');
+    }
 
 }

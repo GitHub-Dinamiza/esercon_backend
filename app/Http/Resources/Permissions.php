@@ -22,7 +22,6 @@ class Permissions extends JsonResource
             "slug"=>$this->slug,
             "blocked"=>$this->when(  $this->pivot->role_id, true),
 
-
         ];
     }
 }
