@@ -129,7 +129,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             #Servicios
             Route::post('/servicios','Proyecto\ServiciosController@store');
 
-
+### Servios de  para creaciode costoServicios
         });
         Route::group(['prefix'=>'servicios'],function (){
             #Servicios
@@ -137,8 +137,10 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::get('','Proyecto\ServiciosController@show');
             Route::get('/{nombre}','Proyecto\ServiciosController@filtre');
         });
-
-
+### Costo Servicio
+        Route::group(['prefix'=>'costoServicio'],function (){
+             Route::post('/{idProyecto}','Proyecto\ProyectoController@addCostoSevicio');
+        });
     });
 
 

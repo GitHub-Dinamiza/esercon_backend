@@ -19,7 +19,7 @@ class Proyecto extends Model
         'municipio_final_id','ubicacion_final',    'horas_laboral_dia',
         'temperatura',       'estado',             'user_id'
     ];
-
+### Relacion
     public function proveedor(){
 
     }
@@ -52,4 +52,7 @@ class Proyecto extends Model
             'tipo_material_id',
         );
     }
+   public function  servicioCosto(){
+        return $this->hasMany(ProyectoCosto::class);
+   }
 }

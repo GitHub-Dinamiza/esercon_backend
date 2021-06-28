@@ -3,9 +3,9 @@
   "success": true,
   "status_code": "200",
   "messages": [
-    "Proveedor creado"
+    "Proyecto creado"
   ],
   "data": {
-    "proveedor": 2
+    "proyecto_id": 6
   }
 }

@@ -1,0 +1,65 @@
+POST {{url}}/proyecto
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"004",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+                                "servicio_id": "1",
+                                "proveedor_id": "1",
+                                "forma_pago": "Diaria",
+                                "medio_pago": "Efectivo",
+                                "otro_medio_pago":"",
+                                "pago_a_realizar": "Esercon"
+
+                            }
+    ]
+
+}
+###
+
+
+POST {{url}}/costoServicio/2
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+
+{
+    "servicio_id": "1",
+    "proveedor_id": "1",
+    "forma_pago": "Diaria",
+    "medio_pago": "Efectivo",
+    "otro_medio_pago":"",
+    "pago_a_realizar": "Esercon"
+
+}
+
+###
+GET {{url}}/servicios
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+###
+
+

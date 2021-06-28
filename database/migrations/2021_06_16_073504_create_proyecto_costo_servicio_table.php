@@ -23,7 +23,7 @@ class  CreateProyectoCostoServicioTable extends Migration
             $table->enum('medio_pago',[
                 'Efectivo','Tranferencia','Credito','Otros'
             ]);
-            $table->string('orto_medio_pago')->nullable();
+            $table->string('otro_medio_pago')->nullable();
             $table->enum('pago_a_realizar',[
                 'Esercon','proveedor'
             ]);

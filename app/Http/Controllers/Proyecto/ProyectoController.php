@@ -8,6 +8,7 @@ use App\Http\Controllers\ResponseController;
 use App\Http\Resources\proyectoAllResource;
 use App\Models\ArchivoProyecto;
 use App\Models\Proyecto;
+use App\Models\ProyectoCosto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -30,7 +31,6 @@ class ProyectoController extends Controller
      */
     public function store(Request $request){
         if($request->user()->can('add_proyecto')){
-
             $proyecto = DB::transaction(function ()use ($request){
                 $proyecto =Proyecto::create([
 
@@ -49,15 +49,33 @@ class ProyectoController extends Controller
                 if($request->tiposVias != []){
                     foreach ($request->tiposVias as $index => $req) {
                         $proyecto->tipoVia()->attach($req["tipovia_id"],
-                            ['otros'=>$req["otros"]]);
+                            $req["tipovia_id"]==4?['otros'=>$req["otros"]]:[]);
                     }
                 }
                 if($request->rellenos != []){
                     foreach ($request->rellenos as $index => $req){
                         $proyecto->tipoMaterial()->attach($req["tipo_material_id"]
-                            ,['otros'=>$req["otros"]]);
+                            , $req["tipo_material_id"]==4?['otros'=>$req["otros"]]:[]);
                     }
                 }
+                foreach ($request->costoServicio as $index => $req){
+                    $costoServicio = ProyectoCosto::create(
+                        [
+                            'servicio_id'=>$req["servicio_id"],
+                            'proveedor_id'=>$req["proveedor_id"],
+                            'proyecto_id'=>$proyecto->id,
+                            'forma_pago'=>$req["forma_pago"],
+                            'medio_pago'=>$req["medio_pago"],
+                            'otro_medio_pago'=>$req["medio_pago"]=='Otros'?$req["otro_medio_pago"]:"" ,
+                            'pago_a_realizar'=>$req["pago_a_realizar"]
+                        ]
+                    );
+
+                }
+
+
+
+
 
 
                 return $proyecto;
@@ -94,9 +112,6 @@ class ProyectoController extends Controller
         return ResponseController::response('UNAUTHORIZED');
 
     }
-
-
-
 
     public function get(Request $request,$id){
         if($request->user()->can('show_proyecto')){
@@ -173,9 +188,7 @@ class ProyectoController extends Controller
         return ResponseController::response('BAD REQUEST');
 
     }
-
-    //Tipo de vias
-
+### Tipo de vias
     public function tipoVia(Request $request, $id){
         $proyecto = Proyecto::find($id);
 
@@ -240,5 +253,21 @@ class ProyectoController extends Controller
         ResponseController::set_messages('tipo de via elimino del proyecto');
 
         return ResponseController::response('OK');
+    }
+### Costos Servicio
+    public  function  addCostoSevicio(Request $request, $idProyecto){
+
+            $costoServicio = ProyectoCosto::create(
+                [
+                    'servicio_id'=>$request->servicio_id,
+                    'proveedor_id'=>$request->proveedor_id,
+                    'proyecto_id'=>$idProyecto,
+                    'forma_pago'=>$request->forma_pago,
+                    'medio_pago'=>$request->medio_pago,
+                    'otro_medio_pago'=>$request->medio_pago=='Otros'?$request->otro_medio_pago:"" ,
+                    'pago_a_realizar'=>$request->pago_a_realizar
+                ]
+            );
+            return response($costoServicio->id);
     }
 }
