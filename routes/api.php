@@ -99,16 +99,19 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::delete('{id}','RolePermission\PermissionController@destroy');
         });
 
-        //Proveedor
-
+        ##Proveedor
         Route::group(['prefix'=>'proveedor'],function (){
-
+            Route::get('','Proveedor\ProveedorController@show');
             Route::post('','Proveedor\ProveedorController@store');
 
+            Route::get('/filtro','Proveedor\ProveedorController@show');
+            Route::get('/filtro/{filtro}', 'Proveedor\ProveedorController@filtro');
         });
 
         //Proyecto
         Route::group(['prefix'=>'proyecto'],function (){
+
+
             Route::post('','Proyecto\ProyectoController@store');
             Route::get('','Proyecto\ProyectoController@show');
             Route::get('{id}','Proyecto\ProyectoController@get');
@@ -120,8 +123,21 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             Route::post('{id}/tipovias','Proyecto\ProyectoController@tipoVia');
             Route::delete('{id}/tipovias','Proyecto\ProyectoController@eliminarTipoVia');
+            # Reyeno material
+            Route::post('{id}/relleno','Proyecto\ProyectoController@addMaterial');
+            Route::delete('{id}/relleno','Proyecto\ProyectoController@eliminarTipoMaterial');
+            #Servicios
+            Route::post('/servicios','Proyecto\ServiciosController@store');
+
 
         });
+        Route::group(['prefix'=>'servicios'],function (){
+            #Servicios
+            Route::post('','Proyecto\ServiciosController@store');
+            Route::get('','Proyecto\ServiciosController@show');
+            Route::get('/{nombre}','Proyecto\ServiciosController@filtre');
+        });
+
 
     });
 

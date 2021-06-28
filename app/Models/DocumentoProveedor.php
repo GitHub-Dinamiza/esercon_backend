@@ -17,6 +17,9 @@ class DocumentoProveedor extends Model
         'numero','tipodocumento_id','user_id','proveedor_id'
     ];
     public function proveedor(){
-        $this->belongsTo(Proveedor::class);
+       return $this->belongsTo(Proveedor::class);
+    }
+    public function scopeFiltro1($query, $filtro){
+        return $query->where('numero',$filtro)->get();
     }
 }

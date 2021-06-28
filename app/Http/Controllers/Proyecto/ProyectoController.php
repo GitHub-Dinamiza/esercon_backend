@@ -46,6 +46,19 @@ class ProyectoController extends Controller
                     'temperatura'=>$request->temperatura,
                     'user_id'=>$request->user()->id
                 ]);
+                if($request->tiposVias != []){
+                    foreach ($request->tiposVias as $index => $req) {
+                        $proyecto->tipoVia()->attach($req["tipovia_id"],
+                            ['otros'=>$req["otros"]]);
+                    }
+                }
+                if($request->rellenos != []){
+                    foreach ($request->rellenos as $index => $req){
+                        $proyecto->tipoMaterial()->attach($req["tipo_material_id"]
+                            ,['otros'=>$req["otros"]]);
+                    }
+                }
+
 
                 return $proyecto;
             });
@@ -167,7 +180,8 @@ class ProyectoController extends Controller
         $proyecto = Proyecto::find($id);
 
         try {
-            $proyecto->tipoVia()->attach($request->tipovia_id);
+            $proyecto->tipoVia()->attach($request->tipovia_id,
+                ['otros'=>$request->otros]);
         }catch (\Exception $e){
             ResponseController::set_errors(true);
             ResponseController::set_messages('Error al agregar el tipo de vias al proyecto   '.$e);
@@ -195,5 +209,36 @@ class ProyectoController extends Controller
 
         return ResponseController::response('OK');
     }
+# Add Relleno de material
+    public function addMaterial(Request $request, $id){
+        $proyecto = Proyecto::find($id);
+        try{
+            $proyecto->tipoMaterial()->attach($request->tipo_material_id,
+                ['otros'=>$request->otros]);
 
+        }catch (\Exception $e){
+            ResponseController::set_errors(true);
+            ResponseController::set_messages('Error al agregar el tipo de Reyeno asociado al proyecto --'.$e);
+            return ResponseController::response('BAD REQUEST');
+        }
+        ResponseController::set_messages('El reyeno del material agregado al proyecto');
+
+        return ResponseController::response('OK');
+    }
+# Eliminar relleno de Material
+    public function eliminarTipoMaterial(Request $request, $id){
+        $proyecto = Proyecto::find($id);
+
+        try {
+            $proyecto->tipoVia()->detach($request->tipo_material_id);
+        }catch (\Exception $e){
+            ResponseController::set_errors(true);
+            ResponseController::set_messages('Error al elimiar el tipo de vias asociado al proyecto   '.$e);
+            return ResponseController::response('BAD REQUEST');
+        }
+
+        ResponseController::set_messages('tipo de via elimino del proyecto');
+
+        return ResponseController::response('OK');
+    }
 }

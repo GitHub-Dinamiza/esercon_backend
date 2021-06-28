@@ -80,7 +80,7 @@ class PermmissionSeeder extends Seeder
             "name"=>"eliminar proyecto",
             "slug"=>"delete_proyecto"
         ]);
-
+#PROVERDOR
         Permission::create([
             "name"=>"crear proveedor",
             "slug"=>"add_proveedor"
@@ -90,6 +90,11 @@ class PermmissionSeeder extends Seeder
             "name"=>"actulizar proveedor",
             "slug"=>"update_proveedor"
         ]);
+        Permission::create([
+            "name"=>"consultar proveedor",
+            "slug"=>"update_proveedor"
+        ]);
+
 
     }
 }

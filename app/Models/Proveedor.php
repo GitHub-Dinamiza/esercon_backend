@@ -22,6 +22,10 @@ class Proveedor extends Model
 
     public function  numeroDocumento(){
 
-        $this->hasMany(DocumentoProveedor::class);
+       return $this->hasMany(DocumentoProveedor::class);
+    }
+
+    public function scopeFiltro($query, $filtro){
+            return $query->where('razon_social','like',"%$filtro%")->get();
     }
 }

@@ -1,0 +1,9 @@
+{
+  "errors": false,
+  "success": true,
+  "status_code": "200",
+  "messages": [],
+  "data": {
+    "provedores": []
+  }
+}

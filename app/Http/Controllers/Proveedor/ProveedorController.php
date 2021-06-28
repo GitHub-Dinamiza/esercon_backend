@@ -20,6 +20,7 @@ class ProveedorController extends Controller
 
         if($request->user()->can('add_proveedor')) {
 
+            ### Falta Validacion
 
         $provedor=    DB::transaction(function () use ($request) {
                 $provedor = Proveedor::create([
@@ -33,13 +34,13 @@ class ProveedorController extends Controller
                     'telefono' => $request->telefono,
                     'email' => $request->email,
                     'municipio_id' => $request->municipio_id,
-                    'user_id' => $request->user()->id
+                    'user_id' => $request->user()->id // no request
                 ]);
                 DocumentoProveedor::create([
                     'numero' => $request->numero,
                     'tipodocumento_id' => $request->tipodocumento_id,
-                    'user_id' => $request->user()->id,
-                    'proveedor_id' => $provedor->id
+                    'user_id' => $request->user()->id, //no request
+                    'proveedor_id' => $provedor->id //no request
                 ]);
 
                 return $provedor;
@@ -64,8 +65,22 @@ class ProveedorController extends Controller
     }
 
     public function show(Request $request){
-        if($request->user()->can('add_provedor')){
-            return response($request->user());
+        if($request->user()->can('add_proveedor')){
+            $provedor = Proveedor::all();
+            return response($provedor);
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+
+    }
+    ##   Filtro por nick y nombre del pooverdor
+    public function filtro(Request $request, $filtro){
+        if($request->user()->can('add_proveedor')){
+
+            $proveedor = Proveedor::filtro($filtro);
+            ResponseController::set_data(['provedores'=>$proveedor]);
+            return ResponseController::response('OK');
         }
         ResponseController::set_errors(true);
         ResponseController::set_messages('Usuario sin permiso');

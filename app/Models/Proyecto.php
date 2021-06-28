@@ -39,7 +39,17 @@ class Proyecto extends Model
     }
 
     public  function tipoVia(){
-        return $this->belongsToMany(TipoVia::class,'tipos_vias_proyecto','proyecto_id','tipo_via_id');
+        return $this->belongsToMany(TipoVia::class,
+            'tipos_vias_proyecto',
+            'proyecto_id',
+            'tipo_via_id');
     }
 
+    public  function tipoMaterial(){
+        return $this->belongsToMany(TipoMaterial::class,
+            'tipos_materiales_proyecto',
+            'proyecto_id',
+            'tipo_material_id',
+        );
+    }
 }

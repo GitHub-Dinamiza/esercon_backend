@@ -1,0 +1,48 @@
+POST {{url}}/auth/login
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "email":"developer",
+    "password":"1234",
+    "remenber_me": false
+}
+
+> {%
+    client.global.set("access_token",response.body.json.access_token);
+    %}
+###
+
+GET {{url}}/proveedor
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+### cargar proveherdores
+POST {{url}}/proveedor
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "razon_social": "Proveedor prueba",
+    "primer_nombre": "nombre",
+    "primer_apellido": "apellido",
+    "segundo_nombre": "nombre 2",
+    "segundo_apellido": "nombre 2",
+    "tipo_proveedor": "1",
+    "direccion": "direccion prueba",
+    "telefono": "33333",
+    "email": "prueba@prueba",
+    "municipio_id": "8001",
+
+    "numero": "12224",
+    "tipodocumento_id": "4"
+
+}
+
+###
+GET {{url}}/proveedor/filtro/pu
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
