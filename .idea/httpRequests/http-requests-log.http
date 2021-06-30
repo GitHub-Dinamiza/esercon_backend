@@ -1,3 +1,760 @@
+GET http://localhost:8000/api/v1/proveedor/filtro/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+<> 2021-06-30T151704.200.json
+
+###
+
+GET http://localhost:8000/api/v1/proveedor/filtro/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+<> 2021-06-30T151649.200.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"007",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "2",
+             "otro_servicio": "prueba servicio",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T151414.200.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"007",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "4",
+             "otro_servicio": "prueba servicio",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T144212.500.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"007",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "4",
+             "otro_servicio": "prueba servicio",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T143935.500.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"006",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "4",
+             "otro_servicio": "prueba servicio",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T143820.200.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"006",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "4",
+             "otro_servicio": "prueba servicio",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T142350.500.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"006",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "4",
+             "otro_servicio": "prueba servicio",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T141635.500.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"006",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "4",
+             "otro_servicio": "prueba servicio",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T141543.500.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"005",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "1",
+
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T140639.200.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"005",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "4",
+
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T140541.500.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"005",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "4",
+             "otroSErvicios": "servicios de pruebas",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T140043.500.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"005",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "4",
+             "otroSErvicios": "servicios de pruebas",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T134858.500.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"004",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "4",
+             "otroSErvicios": "servicios de pruebas",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T134837.500.json
+
+###
+
+POST http://localhost:8000/api/v1/proyecto
+Authorization: Bearer access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWFhNjZkZDFjODMwMjgwZGU1MGY3ZjMzNWQwMTI0ZjFiODRmNWNiZDhmMzUwMDRmMDhiYjdjMjRlYjA3YjcxZmNkZTFjYWRhZWIzYzVkMDQiLCJpYXQiOjE2MjUwNzg2NjEuNDQwMTE4LCJuYmYiOjE2MjUwNzg2NjEuNDQwMTIsImV4cCI6MTY1NjYxNDY2MS40MzA2NzMsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.f7Q3Xn3ikgBgfuLdpGCuMR2wlCa6ic5QmrxBeyk-orGt7LOg8Ef3GZVvrsQfbYJAkCMMcMOem7uhEmsXgKxZmMY2HSafUtZ7ZTq-w2JmYwY91NCdFeM6BlYtRw9nvrid9iROPvh7enmXLseb71F7g4dtteZIpUcjMR0FrBc4VqiVDd-xztTtGurH8majbXU8eF44xmlo6P1_IrnIIOEs26Sui_SeSnhBk2ULUeYeU2ieqqqz46cLaY5KmAYvsRAgf7TrILdwsKUQSmi_R40shgEr0PpiH_270MX13uCIssLmv3gVnu9bRtrjOVXY3hv9cPVrvvQ9CU2tZuAX1yHQfMckXejM-rLYNskCFrjUqVGzDAgP89wFxmoCKrKlho9zHW6sD5uOmCHmykxtm3fdhk_1JlbWoudZSnpsPrPWhzeZSKVR6UAnVaA8ZSoSd0rG66Qr3LMmp6FbCsbJrOEdR-soGz2QrxIogIBUt9sQ1ss19WM0hCD1eyvPmulQFjyeNeLe9u9Zh-SRYUM2-1MVvT6iocD0fa29aQW43lOOl6hpo4I_I-dnXiGT429X_1gpn3xx_-weGacm-vkXwUNr74OpKQgOzE1dptvn74xdXZpMvJ26CFovZLm3jAWTgdZel3y78_pNTkEdBuMne33KVLO0KykbfXXO8AktRteog0Q
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+  "codigo":"004",
+  "nombre":"proyecto-prueba-3",
+  "fecha_inicio":"01/01/2021",
+  "fecha_fin":"01/03/2021",
+  "municipio_inicio":"8001",
+  "ubicacion_inicial":"ubicacion-1",
+  "municipio_final":"8001",
+  "ubicacion_final":"ubicacion-2",
+  "horas_laboral":"8",
+  "temperatura":"36",
+
+   "tiposVias": [
+           {"tipovia_id": "1" },
+           {"tipovia_id": "4", "otros": "otro-prueba"}
+       ],
+   "tipoMaterial": [
+           {"tipo_material_id": "1"},
+           {"tipo_material_id": "4","otros": "otro-prueba"}
+      ],
+    "costoServicio":[
+         {
+             "servicio_id": "4",
+             "otroSErvicios": "servicios de pruebas",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
+    ]
+
+}
+
+<> 2021-06-30T134641.401.json
+
+###
+
+POST http://localhost:8000/api/v1/auth/login
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "email":"developer",
+    "password":"1234",
+    "remenber_me": false
+}
+
+<> 2021-06-30T134421.200.json
+
+###
+
+POST http://localhost:8000/api/v1/tempAdds
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTQyOWRhMDQ5ZDBhOGJiMDIwYmM2NGNkMWE4MWJiZDU2NjQ3NjU2ZDI3NTNiODEzNzQxMzhhZDljNjUzMDU4YzgzZWJhNTQwOTMzMTI4ODciLCJpYXQiOjE2MjQ5ODEzMjUuNDAwNTQxLCJuYmYiOjE2MjQ5ODEzMjUuNDAwNTQ1LCJleHAiOjE2NTY1MTczMjUuMzY1OTI2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.gmknfZ7TW-blOXxnhLKft0bNlpPxH_KAoJTLhlrt_Rzr8GJEc3ngMl93PB1UNCEanc41wNcqqd2eZ2sDcMgLy29GLUDZyDSHGGBWedcPnCI7OeTk-P3JttdlsdsjJjdTzrqgCZbolyB34bPtyczpOA14jIzh0uM2XJRxOmMRS0rfqIl_uhxtwHgeOhY2nRjSFOeqR9zZkTpBbyGjm2wZrm2u-DtQ-4XZqR4P2cO44NgnGImtKPZTEO4F6Q6uYqseglPYAIx8uVP4glehzrxmV7ILqc6sqDITR4viS4Tly3odTC44_92HvKc5QjeimH_vTFk_iK2Pb9hXUpA_uGaeNjVCclVW8RGZxbkutAkfGbKUC0SOklIt9mtj01TzJPcy41k2BZOvUSH03dsrtG26GniYEhSzO_qRHXeTN5_VWXd9UN1tHLWITKN0trI1pxWBmCTfM2xGzaRLl-VxnkeZDJjoVRIFuSM-FmTQzaMv7j0zWbgp2mW8CfPl7Vjh1PvzeG8gv2WYKr5VBYNOTNCq4z7GAF1GghcQuvw2IkXGCbaYpTtThEKeQS2x0dClFHu2Cza2BbJUk3hSqxDtFUbXh_QypN8uqUptdVJF-ksD80AamcVbCcpiFkc4uQQJD_3BkqRcWHxJQ73hVmZY17TEqxB6AMv6cm7Mz1KahAze3R0
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}
+
+<> 2021-06-29T110954.200.json
+
+###
+
+POST http://localhost:8000/api/v1/tempAdds
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTQyOWRhMDQ5ZDBhOGJiMDIwYmM2NGNkMWE4MWJiZDU2NjQ3NjU2ZDI3NTNiODEzNzQxMzhhZDljNjUzMDU4YzgzZWJhNTQwOTMzMTI4ODciLCJpYXQiOjE2MjQ5ODEzMjUuNDAwNTQxLCJuYmYiOjE2MjQ5ODEzMjUuNDAwNTQ1LCJleHAiOjE2NTY1MTczMjUuMzY1OTI2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.gmknfZ7TW-blOXxnhLKft0bNlpPxH_KAoJTLhlrt_Rzr8GJEc3ngMl93PB1UNCEanc41wNcqqd2eZ2sDcMgLy29GLUDZyDSHGGBWedcPnCI7OeTk-P3JttdlsdsjJjdTzrqgCZbolyB34bPtyczpOA14jIzh0uM2XJRxOmMRS0rfqIl_uhxtwHgeOhY2nRjSFOeqR9zZkTpBbyGjm2wZrm2u-DtQ-4XZqR4P2cO44NgnGImtKPZTEO4F6Q6uYqseglPYAIx8uVP4glehzrxmV7ILqc6sqDITR4viS4Tly3odTC44_92HvKc5QjeimH_vTFk_iK2Pb9hXUpA_uGaeNjVCclVW8RGZxbkutAkfGbKUC0SOklIt9mtj01TzJPcy41k2BZOvUSH03dsrtG26GniYEhSzO_qRHXeTN5_VWXd9UN1tHLWITKN0trI1pxWBmCTfM2xGzaRLl-VxnkeZDJjoVRIFuSM-FmTQzaMv7j0zWbgp2mW8CfPl7Vjh1PvzeG8gv2WYKr5VBYNOTNCq4z7GAF1GghcQuvw2IkXGCbaYpTtThEKeQS2x0dClFHu2Cza2BbJUk3hSqxDtFUbXh_QypN8uqUptdVJF-ksD80AamcVbCcpiFkc4uQQJD_3BkqRcWHxJQ73hVmZY17TEqxB6AMv6cm7Mz1KahAze3R0
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}
+
+<> 2021-06-29T110815.500.json
+
+###
+
+POST http://localhost:8000/api/v1/tempAdds
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTQyOWRhMDQ5ZDBhOGJiMDIwYmM2NGNkMWE4MWJiZDU2NjQ3NjU2ZDI3NTNiODEzNzQxMzhhZDljNjUzMDU4YzgzZWJhNTQwOTMzMTI4ODciLCJpYXQiOjE2MjQ5ODEzMjUuNDAwNTQxLCJuYmYiOjE2MjQ5ODEzMjUuNDAwNTQ1LCJleHAiOjE2NTY1MTczMjUuMzY1OTI2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.gmknfZ7TW-blOXxnhLKft0bNlpPxH_KAoJTLhlrt_Rzr8GJEc3ngMl93PB1UNCEanc41wNcqqd2eZ2sDcMgLy29GLUDZyDSHGGBWedcPnCI7OeTk-P3JttdlsdsjJjdTzrqgCZbolyB34bPtyczpOA14jIzh0uM2XJRxOmMRS0rfqIl_uhxtwHgeOhY2nRjSFOeqR9zZkTpBbyGjm2wZrm2u-DtQ-4XZqR4P2cO44NgnGImtKPZTEO4F6Q6uYqseglPYAIx8uVP4glehzrxmV7ILqc6sqDITR4viS4Tly3odTC44_92HvKc5QjeimH_vTFk_iK2Pb9hXUpA_uGaeNjVCclVW8RGZxbkutAkfGbKUC0SOklIt9mtj01TzJPcy41k2BZOvUSH03dsrtG26GniYEhSzO_qRHXeTN5_VWXd9UN1tHLWITKN0trI1pxWBmCTfM2xGzaRLl-VxnkeZDJjoVRIFuSM-FmTQzaMv7j0zWbgp2mW8CfPl7Vjh1PvzeG8gv2WYKr5VBYNOTNCq4z7GAF1GghcQuvw2IkXGCbaYpTtThEKeQS2x0dClFHu2Cza2BbJUk3hSqxDtFUbXh_QypN8uqUptdVJF-ksD80AamcVbCcpiFkc4uQQJD_3BkqRcWHxJQ73hVmZY17TEqxB6AMv6cm7Mz1KahAze3R0
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}
+
+<> 2021-06-29T110528.500.json
+
+###
+
+POST http://localhost:8000/api/v1/tempAdds
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTQyOWRhMDQ5ZDBhOGJiMDIwYmM2NGNkMWE4MWJiZDU2NjQ3NjU2ZDI3NTNiODEzNzQxMzhhZDljNjUzMDU4YzgzZWJhNTQwOTMzMTI4ODciLCJpYXQiOjE2MjQ5ODEzMjUuNDAwNTQxLCJuYmYiOjE2MjQ5ODEzMjUuNDAwNTQ1LCJleHAiOjE2NTY1MTczMjUuMzY1OTI2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.gmknfZ7TW-blOXxnhLKft0bNlpPxH_KAoJTLhlrt_Rzr8GJEc3ngMl93PB1UNCEanc41wNcqqd2eZ2sDcMgLy29GLUDZyDSHGGBWedcPnCI7OeTk-P3JttdlsdsjJjdTzrqgCZbolyB34bPtyczpOA14jIzh0uM2XJRxOmMRS0rfqIl_uhxtwHgeOhY2nRjSFOeqR9zZkTpBbyGjm2wZrm2u-DtQ-4XZqR4P2cO44NgnGImtKPZTEO4F6Q6uYqseglPYAIx8uVP4glehzrxmV7ILqc6sqDITR4viS4Tly3odTC44_92HvKc5QjeimH_vTFk_iK2Pb9hXUpA_uGaeNjVCclVW8RGZxbkutAkfGbKUC0SOklIt9mtj01TzJPcy41k2BZOvUSH03dsrtG26GniYEhSzO_qRHXeTN5_VWXd9UN1tHLWITKN0trI1pxWBmCTfM2xGzaRLl-VxnkeZDJjoVRIFuSM-FmTQzaMv7j0zWbgp2mW8CfPl7Vjh1PvzeG8gv2WYKr5VBYNOTNCq4z7GAF1GghcQuvw2IkXGCbaYpTtThEKeQS2x0dClFHu2Cza2BbJUk3hSqxDtFUbXh_QypN8uqUptdVJF-ksD80AamcVbCcpiFkc4uQQJD_3BkqRcWHxJQ73hVmZY17TEqxB6AMv6cm7Mz1KahAze3R0
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}
+
+<> 2021-06-29T110334.500.json
+
+###
+
+POST http://localhost:8000/api/v1/tempAdds
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTQyOWRhMDQ5ZDBhOGJiMDIwYmM2NGNkMWE4MWJiZDU2NjQ3NjU2ZDI3NTNiODEzNzQxMzhhZDljNjUzMDU4YzgzZWJhNTQwOTMzMTI4ODciLCJpYXQiOjE2MjQ5ODEzMjUuNDAwNTQxLCJuYmYiOjE2MjQ5ODEzMjUuNDAwNTQ1LCJleHAiOjE2NTY1MTczMjUuMzY1OTI2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.gmknfZ7TW-blOXxnhLKft0bNlpPxH_KAoJTLhlrt_Rzr8GJEc3ngMl93PB1UNCEanc41wNcqqd2eZ2sDcMgLy29GLUDZyDSHGGBWedcPnCI7OeTk-P3JttdlsdsjJjdTzrqgCZbolyB34bPtyczpOA14jIzh0uM2XJRxOmMRS0rfqIl_uhxtwHgeOhY2nRjSFOeqR9zZkTpBbyGjm2wZrm2u-DtQ-4XZqR4P2cO44NgnGImtKPZTEO4F6Q6uYqseglPYAIx8uVP4glehzrxmV7ILqc6sqDITR4viS4Tly3odTC44_92HvKc5QjeimH_vTFk_iK2Pb9hXUpA_uGaeNjVCclVW8RGZxbkutAkfGbKUC0SOklIt9mtj01TzJPcy41k2BZOvUSH03dsrtG26GniYEhSzO_qRHXeTN5_VWXd9UN1tHLWITKN0trI1pxWBmCTfM2xGzaRLl-VxnkeZDJjoVRIFuSM-FmTQzaMv7j0zWbgp2mW8CfPl7Vjh1PvzeG8gv2WYKr5VBYNOTNCq4z7GAF1GghcQuvw2IkXGCbaYpTtThEKeQS2x0dClFHu2Cza2BbJUk3hSqxDtFUbXh_QypN8uqUptdVJF-ksD80AamcVbCcpiFkc4uQQJD_3BkqRcWHxJQ73hVmZY17TEqxB6AMv6cm7Mz1KahAze3R0
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}
+
+<> 2021-06-29T105541.500.json
+
+###
+
+POST http://localhost:8000/api/v1/tempAdds
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTQyOWRhMDQ5ZDBhOGJiMDIwYmM2NGNkMWE4MWJiZDU2NjQ3NjU2ZDI3NTNiODEzNzQxMzhhZDljNjUzMDU4YzgzZWJhNTQwOTMzMTI4ODciLCJpYXQiOjE2MjQ5ODEzMjUuNDAwNTQxLCJuYmYiOjE2MjQ5ODEzMjUuNDAwNTQ1LCJleHAiOjE2NTY1MTczMjUuMzY1OTI2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.gmknfZ7TW-blOXxnhLKft0bNlpPxH_KAoJTLhlrt_Rzr8GJEc3ngMl93PB1UNCEanc41wNcqqd2eZ2sDcMgLy29GLUDZyDSHGGBWedcPnCI7OeTk-P3JttdlsdsjJjdTzrqgCZbolyB34bPtyczpOA14jIzh0uM2XJRxOmMRS0rfqIl_uhxtwHgeOhY2nRjSFOeqR9zZkTpBbyGjm2wZrm2u-DtQ-4XZqR4P2cO44NgnGImtKPZTEO4F6Q6uYqseglPYAIx8uVP4glehzrxmV7ILqc6sqDITR4viS4Tly3odTC44_92HvKc5QjeimH_vTFk_iK2Pb9hXUpA_uGaeNjVCclVW8RGZxbkutAkfGbKUC0SOklIt9mtj01TzJPcy41k2BZOvUSH03dsrtG26GniYEhSzO_qRHXeTN5_VWXd9UN1tHLWITKN0trI1pxWBmCTfM2xGzaRLl-VxnkeZDJjoVRIFuSM-FmTQzaMv7j0zWbgp2mW8CfPl7Vjh1PvzeG8gv2WYKr5VBYNOTNCq4z7GAF1GghcQuvw2IkXGCbaYpTtThEKeQS2x0dClFHu2Cza2BbJUk3hSqxDtFUbXh_QypN8uqUptdVJF-ksD80AamcVbCcpiFkc4uQQJD_3BkqRcWHxJQ73hVmZY17TEqxB6AMv6cm7Mz1KahAze3R0/detalleCosto
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}
+
+<> 2021-06-29T105355.401.json
+
+###
+
+POST http://localhost:8000/api/v1/tempAdds
+Authorization: Bearer eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA/detalleCosto
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}
+
+<> 2021-06-29T105154.401.json
+
+###
+
+POST http://localhost:8000/api/v1/tempAdds
+Authorization: Bearer 9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA/detalleCosto
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}
+
+<> 2021-06-29T105043.401.json
+
+###
+
+POST http://localhost:8000/api/v1/tempAdds
+Authorization: Bearer 9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA/detalleCosto
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}
+
+<> 2021-06-29T104341.401.json
+
+###
+
+POST http://localhost:8000/api/v1/auth/login
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "email":"developer",
+    "password":"1234",
+    "remenber_me": false
+}
+
+<> 2021-06-29T104205.200.json
+
+###
+
+POST http://localhost:8000/api/v1/tempAdds
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA/detalleCosto
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}
+
+<> 2021-06-29T104129.401.json
+
+###
+
+POST http://localhost:8000/api/v1/tempAdds
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA/detalleCosto
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}
+
+###
+
 POST http://localhost:8000/api/v1/proyecto
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
 Content-Type: application/json
@@ -661,308 +1418,6 @@ X-Requested-With: XMLHttpRequest
 }
 
 <> 2021-06-28T092550.500.json
-
-###
-
-POST http://localhost:8000/api/v1/costoServicio/1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-{
-    "servicio_id": "1",
-    "proveedor_id": "1",
-    "forma_pago": "Diaria",
-    "medio_pago": "Ejectivo",
-    "otro_medio_pago":"",
-    "pogo_a_realizar": "Esercon"
-}
-
-<> 2021-06-28T092500.500.json
-
-###
-
-POST http://localhost:8000/api/v1/costoServicio/1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-{
-    "serviocio_id": "1",
-    "proveedor_id": "1",
-    "forma_pago": "Diaria",
-    "medio_pago": "Ejectivo",
-    "otro_medio_pago":"",
-    "pogo_a_realizar": "Esercon"
-}
-
-<> 2021-06-28T092406.500.json
-
-###
-
-POST http://localhost:8000/api/v1/costoServicio/1
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-{
-    "serviocio_id": "1",
-    "proveedor_id": "1",
-    "forma_pago": "Diaria",
-    "medio_pago": "Ejectivo",
-    "otro_medio_pago":"",
-    "pogo_a_realizar": "Esercon"
-}
-
-<> 2021-06-28T092314.404.json
-
-###
-
-POST http://localhost:8000/api/v1/costoServicio
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-{
-    "serviocio_id": "1",
-    "proyecto_id": "1",
-    "proveedor_id": "1",
-    "forma_pago": "Diaria",
-    "medio_pago": "Ejectivo",
-    "otro_medio_pago":"",
-    "pogo_a_realizar": "Esercon"
-
-
-}
-
-<> 2021-06-28T084846.500.json
-
-###
-
-POST http://localhost:8000/api/v1/costoServicio
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-{
-    "serviocio_id": "1",
-    "proyecto_id": "1",
-    "proveedor_id": "1",
-    "forma_pago": "Diaria",
-    "medio_pago": "Ejectivo",
-    "otro_medio_pago":"",
-    "pogo_a_realizar": "Esercon"
-
-
-}
-
-<> 2021-06-28T084356.500.json
-
-###
-
-GET http://localhost:8000/api/v1/servicios
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-28T080018.200.json
-
-###
-
-GET http://localhost:8000/api/v1/servicios
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-28T075848.401.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/pu
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-28T051618.200.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/12222
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T171058.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/12222
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T170631.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/12222
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T170430.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/12222
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T170423.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/12222
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T170125.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/12222
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T165301.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/12222
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T165244.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/12222
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T162823.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/12222
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T162725.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/12222
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T162622.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/p
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T162420.200.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/2
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T162239.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/2
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T162110.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/2
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T162027.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/2
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T151215.200.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/2
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T151155.200.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/2
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T151131.200.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/2
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T145037.200.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/2
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T144944.500.json
-
-###
-
-GET http://localhost:8000/api/v1/proveedor/filtro/2
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGExMTgzNDg0NWMxZTllNGU1NjdhOTg5YTc0Y2VkZTFjMzEwYzc0MmViM2EwMjM3ODRmNDlhNzRjYjAyMzZlOWFkMGIyNThmZjZmOGQzOTMiLCJpYXQiOjE2MjQ2MzM4NzcuMjkyNjE5LCJuYmYiOjE2MjQ2MzM4NzcuMjkyNjIyLCJleHAiOjE2NTYxNjk4NzcuMjgxMzg1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.BD1X3U5kgFf0M9YRHe6tP1GyJ3kf59p1QhgAaM-o4aSkt1FkF_Ihm5gx_FtRxqSJ2j_9mpuJ_7e5aRfWihzBkTNLFIU4AMg6CpnitG4f99Y0vvzDNXnG8XN2XL9RBPxrIsGy84VPhF_KsXobHsY09g6kbGLvioUWuOlWNrs1wXzfaDHmNzqUUOr_lRw0SaQhnaeLbH0YGA5S8ky0sNOigSvVTNQvvvcSCq9zCqdLhDJiL_JcXjIoPXhXctUGhUfqDDZxYfEMDippCXwHz2REProK-Bs8l5qnlYIuhvsQh9kdQW_xrxJRLQeCtgA0ZGTU-XKMmV8v59ofoDlZbi2w2GF457CaQazvJxGTLXY02bT61ao0AjHlrPFaqAoF56coulC4TMHXGEQCGJD__5Oa5QSNjVb4-LvqRImqg-JHm5YiBktBBbymEtnS3jKii1E9s-Za5nKQ3MyvgobGi9ToA_3N9RkXeNoC9qlFZ228x9C1RiWoJ3lc85fZJxhCQniNAVrH8nfoUdovyiF5epJU3fAM-YqJ1kqF7XIEq8j5LJTGdPa0PlGHDjBRLoLqOy0En5HJEcZxjvUy9U_Jf8KJjjw7smabqiWQTjB305nbDerqmfgnkD5FCsv0soqnPxpdKxsHMiuFbcH46PYV04u08zs8NcAEW5EcWqDqLkubeHA
-Content-Type: application/json
-X-Requested-With: XMLHttpRequest
-
-<> 2021-06-25T144917.500.json
 
 ###
 

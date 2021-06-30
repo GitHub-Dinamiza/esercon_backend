@@ -1,9 +1,30 @@
 {
-  "message": "SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column \"servicio_id\" of relation \"proyecto_costo_servicio\" violates not-null constraint\nDETAIL:  Failing row contains (1, null, 1, 1, Diaria, Ejectivo, null, null, 2021-06-28 14:24:06, 2021-06-28 14:24:06). (SQL: insert into \"proyecto_costo_servicio\" (\"servicio_id\", \"proveedor_id\", \"proyecto_id\", \"forma_pago\", \"medio_pago\", \"otro_medio_pago\", \"pago_a_realizar\", \"updated_at\", \"created_at\") values (?, 1, 1, Diaria, Ejectivo, ?, ?, 2021-06-28 14:24:06, 2021-06-28 14:24:06) returning \"id\")",
-  "exception": "Illuminate\\Database\\QueryException",
-  "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
-  "line": 678,
+  "message": "Object of class Closure could not be converted to string",
+  "exception": "Error",
+  "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/PostgresConnection.php",
+  "line": 37,
   "trace": [
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/PostgresConnection.php",
+      "line": 37,
+      "function": "bindValue",
+      "class": "PDOStatement",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+      "line": 341,
+      "function": "bindValues",
+      "class": "Illuminate\\Database\\PostgresConnection",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+      "line": 671,
+      "function": "Illuminate\\Database\\{closure}",
+      "class": "Illuminate\\Database\\Connection",
+      "type": "->"
+    },
     {
       "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
       "line": 638,
@@ -109,15 +130,43 @@
     },
     {
       "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/app/Http/Controllers/Proyecto/ProyectoController.php",
-      "line": 250,
+      "line": 76,
       "function": "__callStatic",
       "class": "Illuminate\\Database\\Eloquent\\Model",
       "type": "::"
     },
     {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Concerns/ManagesTransactions.php",
+      "line": 29,
+      "function": "App\\Http\\Controllers\\Proyecto\\{closure}",
+      "class": "App\\Http\\Controllers\\Proyecto\\ProyectoController",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php",
+      "line": 384,
+      "function": "transaction",
+      "class": "Illuminate\\Database\\Connection",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php",
+      "line": 261,
+      "function": "__call",
+      "class": "Illuminate\\Database\\DatabaseManager",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/app/Http/Controllers/Proyecto/ProyectoController.php",
+      "line": 82,
+      "function": "__callStatic",
+      "class": "Illuminate\\Support\\Facades\\Facade",
+      "type": "::"
+    },
+    {
       "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
       "line": 54,
-      "function": "addCostoSevicio",
+      "function": "store",
       "class": "App\\Http\\Controllers\\Proyecto\\ProyectoController",
       "type": "->"
     },

@@ -1,69 +1,95 @@
 {
-  "message": "Call to undefined method Illuminate\\Database\\Eloquent\\Builder::numeroDocumento()",
-  "exception": "BadMethodCallException",
-  "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php",
-  "line": 50,
+  "message": "SQLSTATE[23503]: Foreign key violation: 7 ERROR:  insert or update on table \"proyecto_costo_servicio\" violates foreign key constraint \"proyecto_costo_servicio_servicio_id_foreign\"\nDETAIL:  Key (servicio_id)=(4) is not present in table \"servicios\". (SQL: insert into \"proyecto_costo_servicio\" (\"servicio_id\", \"proveedor_id\", \"proyecto_id\", \"forma_pago\", \"medio_pago\", \"otro_medio_pago\", \"pago_a_realizar\", \"updated_at\", \"created_at\") values (4, 1, 21, Diaria, Efectivo, , Esercon, 2021-06-30 19:05:41, 2021-06-30 19:05:41) returning \"id\")",
+  "exception": "Illuminate\\Database\\QueryException",
+  "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+  "line": 678,
   "trace": [
     {
-      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php",
-      "line": 36,
-      "function": "throwBadMethodCallException",
-      "class": "Illuminate\\Database\\Eloquent\\Builder",
-      "type": "::"
-    },
-    {
-      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-      "line": 1563,
-      "function": "forwardCallTo",
-      "class": "Illuminate\\Database\\Eloquent\\Builder",
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+      "line": 638,
+      "function": "runQueryCallback",
+      "class": "Illuminate\\Database\\Connection",
       "type": "->"
     },
     {
-      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/app/Models/Proveedor.php",
-      "line": 30,
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+      "line": 346,
+      "function": "run",
+      "class": "Illuminate\\Database\\Connection",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+      "line": 316,
+      "function": "select",
+      "class": "Illuminate\\Database\\Connection",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php",
+      "line": 24,
+      "function": "selectFromWriteConnection",
+      "class": "Illuminate\\Database\\Connection",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+      "line": 2882,
+      "function": "processInsertGetId",
+      "class": "Illuminate\\Database\\Query\\Processors\\PostgresProcessor",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+      "line": 1560,
+      "function": "insertGetId",
+      "class": "Illuminate\\Database\\Query\\Builder",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+      "line": 1052,
       "function": "__call",
       "class": "Illuminate\\Database\\Eloquent\\Builder",
       "type": "->"
     },
     {
       "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
-      "line": 1321,
-      "function": "scopeFiltro",
-      "class": "App\\Models\\Proveedor",
+      "line": 1017,
+      "function": "insertAndSetId",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
       "type": "->"
     },
     {
-      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-      "line": 1136,
-      "function": "callNamedScope",
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+      "line": 858,
+      "function": "performInsert",
       "class": "Illuminate\\Database\\Eloquent\\Model",
       "type": "->"
     },
     {
       "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-      "line": 1117,
+      "line": 816,
+      "function": "save",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Support/helpers.php",
+      "line": 263,
       "function": "Illuminate\\Database\\Eloquent\\{closure}",
       "class": "Illuminate\\Database\\Eloquent\\Builder",
       "type": "->"
     },
     {
       "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-      "line": 1135,
-      "function": "callScope",
-      "class": "Illuminate\\Database\\Eloquent\\Builder",
-      "type": "->"
-    },
-    {
-      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
-      "line": 1556,
-      "function": "callNamedScope",
-      "class": "Illuminate\\Database\\Eloquent\\Builder",
-      "type": "->"
+      "line": 817,
+      "function": "tap"
     },
     {
       "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php",
       "line": 23,
-      "function": "__call",
+      "function": "create",
       "class": "Illuminate\\Database\\Eloquent\\Builder",
       "type": "->"
     },
@@ -82,17 +108,45 @@
       "type": "->"
     },
     {
-      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/app/Http/Controllers/Proveedor/ProveedorController.php",
-      "line": 81,
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/app/Http/Controllers/Proyecto/ProyectoController.php",
+      "line": 73,
       "function": "__callStatic",
       "class": "Illuminate\\Database\\Eloquent\\Model",
       "type": "::"
     },
     {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Concerns/ManagesTransactions.php",
+      "line": 29,
+      "function": "App\\Http\\Controllers\\Proyecto\\{closure}",
+      "class": "App\\Http\\Controllers\\Proyecto\\ProyectoController",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/DatabaseManager.php",
+      "line": 384,
+      "function": "transaction",
+      "class": "Illuminate\\Database\\Connection",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php",
+      "line": 261,
+      "function": "__call",
+      "class": "Illuminate\\Database\\DatabaseManager",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/app/Http/Controllers/Proyecto/ProyectoController.php",
+      "line": 79,
+      "function": "__callStatic",
+      "class": "Illuminate\\Support\\Facades\\Facade",
+      "type": "::"
+    },
+    {
       "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
       "line": 54,
-      "function": "filtro",
-      "class": "App\\Http\\Controllers\\Proveedor\\ProveedorController",
+      "function": "store",
+      "class": "App\\Http\\Controllers\\Proyecto\\ProyectoController",
       "type": "->"
     },
     {

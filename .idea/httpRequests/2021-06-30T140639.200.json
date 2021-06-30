@@ -1,0 +1,11 @@
+{
+  "errors": false,
+  "success": true,
+  "status_code": "200",
+  "messages": [
+    "Proyecto creado"
+  ],
+  "data": {
+    "proyecto_id": 22
+  }
+}

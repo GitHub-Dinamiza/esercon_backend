@@ -7,8 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
 use App\Http\Resources\proyectoAllResource;
 use App\Models\ArchivoProyecto;
+use App\Models\costoServicioDetalle;
 use App\Models\Proyecto;
 use App\Models\ProyectoCosto;
+use App\Models\Servicio;
+use App\Models\TipoCostoServicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -59,6 +62,7 @@ class ProyectoController extends Controller
                     }
                 }
                 foreach ($request->costoServicio as $index => $req){
+
                     $costoServicio = ProyectoCosto::create(
                         [
                             'servicio_id'=>$req["servicio_id"],
@@ -72,12 +76,6 @@ class ProyectoController extends Controller
                     );
 
                 }
-
-
-
-
-
-
                 return $proyecto;
             });
 
@@ -270,4 +268,27 @@ class ProyectoController extends Controller
             );
             return response($costoServicio->id);
     }
+### Detalle costo servicio
+    public function  addDetalleCosto(Request $request){
+        $costoDetalleCosto = costoServicioDetalle::create([
+            'proyecto_costo_servicio_id'=>$request->proyectoCostoServicio,
+            'tipo_costo_servicio_id'=>$request->tipoCostoServicio,
+            'valor'=>$request->valor
+        ]);
+    }
+
+    ### Temp
+    public function addS(Request $request){
+        $tipoCostoServicio = TipoCostoServicio::create([
+            'servicio_id'=>$request->servicio_id,
+            'nombre'=>$request->nombre
+        ]);
+        return response($tipoCostoServicio);
+    }
+
+    public function  showTipocostoServicio(Request $request){
+        $tipoCostoServicio = TipoCostoServicio::all();
+        return response($tipoCostoServicio);
+    }
+
 }

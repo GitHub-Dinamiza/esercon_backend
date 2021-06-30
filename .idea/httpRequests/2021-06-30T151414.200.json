@@ -2,8 +2,10 @@
   "errors": false,
   "success": true,
   "status_code": "200",
-  "messages": [],
+  "messages": [
+    "Proyecto creado"
+  ],
   "data": {
-    "provedores": []
+    "proyecto_id": 30
   }
 }

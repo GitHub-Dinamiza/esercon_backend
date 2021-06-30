@@ -42,7 +42,7 @@ X-Requested-With: XMLHttpRequest
 }
 
 ###
-GET {{url}}/proveedor/filtro/pu
+GET {{url}}/proveedor/filtro/2
 Authorization: Bearer {{token}}
 Content-Type: application/json
 X-Requested-With: XMLHttpRequest

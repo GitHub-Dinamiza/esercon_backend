@@ -23,39 +23,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbd7d978-e510-4423-aee9-c72a66db07aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-24T144007.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-24T144521.405.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-24T150548.401.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-24T150607.401.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-24T150619.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-24T150636.401.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-24T150735.401.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-24T150809.401.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-24T151833.401.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-24T151913.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T101117.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T101331.401.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T101351.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T122631.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T122639.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T122823.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T141635.404.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T141810.404.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T141925.404.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T143038.404.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T143305.404.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T143443.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T143758.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T143832.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T144506.404.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T144803.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T144917.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T144944.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T145037.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T151131.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T151155.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T151215.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162027.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162110.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162239.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162420.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162622.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162725.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162823.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T165244.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T165301.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T170125.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T170423.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T170430.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T170631.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T171058.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T051618.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T075848.401.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T080018.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T084356.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T084846.500.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" beforeDir="false" afterPath="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientHttp/http-client.env.json" beforeDir="false" afterPath="$PROJECT_DIR$/ClientHttp/http-client.env.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Proyecto/ProyectoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Proyecto/ProyectoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Proyecto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Proyecto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/TipoCostoServicio.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_16_073504_create_proyecto_costo_servicio_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_16_073504_create_proyecto_costo_servicio_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -247,10 +243,7 @@
     </key>
   </component>
   <component name="RunManager" selected="HTTP Request.ProyectoHttpRequest#1">
-    <configuration name="ProveedorHTTPRequest#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/ClientHttp/ProveedorHTTPRequest.http" index="2" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="ProveedorHTTPRequest#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/ClientHttp/ProveedorHTTPRequest.http" index="3" runType="Run single request">
+    <configuration name="ProveedorHTTPRequest#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/ClientHttp/ProveedorHTTPRequest.http" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="ProveedorHTTPRequest#4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/ClientHttp/ProveedorHTTPRequest.http" index="4" runType="Run single request">
@@ -262,6 +255,9 @@
     <configuration name="ProyectoHttpRequest#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="ProyectoHttpRequest#5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" index="5" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -269,10 +265,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.ProyectoHttpRequest#1" />
+        <item itemvalue="HTTP Request.ProveedorHTTPRequest#1" />
+        <item itemvalue="HTTP Request.ProyectoHttpRequest#5" />
         <item itemvalue="HTTP Request.ProyectoHttpRequest#2" />
         <item itemvalue="HTTP Request.ProveedorHTTPRequest#4" />
-        <item itemvalue="HTTP Request.ProveedorHTTPRequest#3" />
-        <item itemvalue="HTTP Request.ProveedorHTTPRequest#2" />
       </list>
     </recent_temporary>
   </component>
@@ -317,7 +313,11 @@
       <workItem from="1624631759655" duration="2663000" />
       <workItem from="1624635678990" duration="503000" />
       <workItem from="1624636196833" duration="16024000" />
-      <workItem from="1624873986967" duration="28902000" />
+      <workItem from="1624873986967" duration="34717000" />
+      <workItem from="1624970121299" duration="15209000" />
+      <workItem from="1624994791475" duration="1203000" />
+      <workItem from="1625058117517" duration="599000" />
+      <workItem from="1625066693156" duration="9468000" />
     </task>
     <servers />
   </component>

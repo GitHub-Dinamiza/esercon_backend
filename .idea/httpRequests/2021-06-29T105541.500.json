@@ -1,27 +1,174 @@
 {
-  "message": "",
-  "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-  "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
-  "line": 43,
+  "message": "Call to undefined method App\\Models\\TipoCostoServicio::add()",
+  "exception": "BadMethodCallException",
+  "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php",
+  "line": 50,
   "trace": [
     {
-      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
-      "line": 162,
-      "function": "handleMatchedRoute",
-      "class": "Illuminate\\Routing\\AbstractRouteCollection",
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php",
+      "line": 36,
+      "function": "throwBadMethodCallException",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
+      "type": "::"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+      "line": 1890,
+      "function": "forwardCallTo",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+      "line": 1902,
+      "function": "__call",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/app/Http/Controllers/Proyecto/ProyectoController.php",
+      "line": 286,
+      "function": "__callStatic",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
+      "type": "::"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
+      "line": 54,
+      "function": "addS",
+      "class": "App\\Http\\Controllers\\Proyecto\\ProyectoController",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php",
+      "line": 45,
+      "function": "callAction",
+      "class": "Illuminate\\Routing\\Controller",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+      "line": 254,
+      "function": "dispatch",
+      "class": "Illuminate\\Routing\\ControllerDispatcher",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Route.php",
+      "line": 197,
+      "function": "runController",
+      "class": "Illuminate\\Routing\\Route",
       "type": "->"
     },
     {
       "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
-      "line": 647,
-      "function": "match",
-      "class": "Illuminate\\Routing\\RouteCollection",
+      "line": 695,
+      "function": "run",
+      "class": "Illuminate\\Routing\\Route",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+      "line": 128,
+      "function": "Illuminate\\Routing\\{closure}",
+      "class": "Illuminate\\Routing\\Router",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/app/Http/Middleware/RoleMiddleware.php",
+      "line": 28,
+      "function": "Illuminate\\Pipeline\\{closure}",
+      "class": "Illuminate\\Pipeline\\Pipeline",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+      "line": 167,
+      "function": "handle",
+      "class": "App\\Http\\Middleware\\RoleMiddleware",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php",
+      "line": 50,
+      "function": "Illuminate\\Pipeline\\{closure}",
+      "class": "Illuminate\\Pipeline\\Pipeline",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+      "line": 167,
+      "function": "handle",
+      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+      "line": 127,
+      "function": "Illuminate\\Pipeline\\{closure}",
+      "class": "Illuminate\\Pipeline\\Pipeline",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+      "line": 103,
+      "function": "handleRequest",
+      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Middleware/ThrottleRequests.php",
+      "line": 55,
+      "function": "handleRequestUsingNamedLimiter",
+      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+      "line": 167,
+      "function": "handle",
+      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php",
+      "line": 44,
+      "function": "Illuminate\\Pipeline\\{closure}",
+      "class": "Illuminate\\Pipeline\\Pipeline",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+      "line": 167,
+      "function": "handle",
+      "class": "Illuminate\\Auth\\Middleware\\Authenticate",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+      "line": 103,
+      "function": "Illuminate\\Pipeline\\{closure}",
+      "class": "Illuminate\\Pipeline\\Pipeline",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+      "line": 697,
+      "function": "then",
+      "class": "Illuminate\\Pipeline\\Pipeline",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+      "line": 672,
+      "function": "runRouteWithinStack",
+      "class": "Illuminate\\Routing\\Router",
       "type": "->"
     },
     {
       "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
       "line": 636,
-      "function": "findRoute",
+      "function": "runRoute",
       "class": "Illuminate\\Routing\\Router",
       "type": "->"
     },

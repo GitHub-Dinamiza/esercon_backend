@@ -1,13 +1,123 @@
 {
-  "message": "Too few arguments to function App\\Http\\Controllers\\Proyecto\\ProyectoController::addCostoSevicio(), 1 passed in /home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Controller.php on line 54 and exactly 2 expected",
-  "exception": "ArgumentCountError",
-  "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/app/Http/Controllers/Proyecto/ProyectoController.php",
-  "line": 240,
+  "message": "SQLSTATE[42703]: Undefined column: 7 ERROR:  column \"updated_at\" of relation \"tipo_costo_servicio\" does not exist\nLINE 1: ...o \"tipo_costo_servicio\" (\"servicio_id\", \"nombre\", \"updated_a...\n                                                             ^ (SQL: insert into \"tipo_costo_servicio\" (\"servicio_id\", \"nombre\", \"updated_at\", \"created_at\") values (1, archivo prueba, 2021-06-29 16:08:15, 2021-06-29 16:08:15) returning \"id\")",
+  "exception": "Illuminate\\Database\\QueryException",
+  "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+  "line": 678,
   "trace": [
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+      "line": 638,
+      "function": "runQueryCallback",
+      "class": "Illuminate\\Database\\Connection",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+      "line": 346,
+      "function": "run",
+      "class": "Illuminate\\Database\\Connection",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Connection.php",
+      "line": 316,
+      "function": "select",
+      "class": "Illuminate\\Database\\Connection",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php",
+      "line": 24,
+      "function": "selectFromWriteConnection",
+      "class": "Illuminate\\Database\\Connection",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php",
+      "line": 2882,
+      "function": "processInsertGetId",
+      "class": "Illuminate\\Database\\Query\\Processors\\PostgresProcessor",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+      "line": 1560,
+      "function": "insertGetId",
+      "class": "Illuminate\\Database\\Query\\Builder",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+      "line": 1052,
+      "function": "__call",
+      "class": "Illuminate\\Database\\Eloquent\\Builder",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+      "line": 1017,
+      "function": "insertAndSetId",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+      "line": 858,
+      "function": "performInsert",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+      "line": 816,
+      "function": "save",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Support/helpers.php",
+      "line": 263,
+      "function": "Illuminate\\Database\\Eloquent\\{closure}",
+      "class": "Illuminate\\Database\\Eloquent\\Builder",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+      "line": 817,
+      "function": "tap"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php",
+      "line": 23,
+      "function": "create",
+      "class": "Illuminate\\Database\\Eloquent\\Builder",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+      "line": 1890,
+      "function": "forwardCallTo",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+      "line": 1902,
+      "function": "__call",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
+      "type": "->"
+    },
+    {
+      "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/app/Http/Controllers/Proyecto/ProyectoController.php",
+      "line": 288,
+      "function": "__callStatic",
+      "class": "Illuminate\\Database\\Eloquent\\Model",
+      "type": "::"
+    },
     {
       "file": "/home/leunamz/Documentos/Dinamiza/proyecto/esercon_back/ersercon/vendor/laravel/framework/src/Illuminate/Routing/Controller.php",
       "line": 54,
-      "function": "addCostoSevicio",
+      "function": "addS",
       "class": "App\\Http\\Controllers\\Proyecto\\ProyectoController",
       "type": "->"
     },

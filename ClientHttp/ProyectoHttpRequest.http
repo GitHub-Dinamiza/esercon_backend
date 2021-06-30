@@ -4,7 +4,7 @@ Content-Type: application/json
 X-Requested-With: XMLHttpRequest
 
 {
-  "codigo":"004",
+  "codigo":"007",
   "nombre":"proyecto-prueba-3",
   "fecha_inicio":"01/01/2021",
   "fecha_fin":"01/03/2021",
@@ -14,6 +14,7 @@ X-Requested-With: XMLHttpRequest
   "ubicacion_final":"ubicacion-2",
   "horas_laboral":"8",
   "temperatura":"36",
+
    "tiposVias": [
            {"tipovia_id": "1" },
            {"tipovia_id": "4", "otros": "otro-prueba"}
@@ -24,14 +25,14 @@ X-Requested-With: XMLHttpRequest
       ],
     "costoServicio":[
          {
-                                "servicio_id": "1",
-                                "proveedor_id": "1",
-                                "forma_pago": "Diaria",
-                                "medio_pago": "Efectivo",
-                                "otro_medio_pago":"",
-                                "pago_a_realizar": "Esercon"
-
-                            }
+             "servicio_id": "2",
+             "otro_servicio": "prueba servicio",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon"
+         }
     ]
 
 }
@@ -56,10 +57,29 @@ X-Requested-With: XMLHttpRequest
 
 ###
 GET {{url}}/servicios
-Authorization: Bearer {{token}}
+Authorization: Bearer {{token}}/detalleCosto
 Content-Type: application/json
 X-Requested-With: XMLHttpRequest
 
 ###
+POST {{url}}/detalleCosto
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
 
+{
+    "proyectoCostoServicio": "1",
+    "tipoCostoServicio": "",
+    "valor":""
+        }
 
+###
+POST {{url}}/tempAdds
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "servicio_id": "1",
+    "nombre": "archivo prueba"
+}

@@ -141,6 +141,11 @@ Route::group(['middleware'=>'auth:api'],function (){
         Route::group(['prefix'=>'costoServicio'],function (){
              Route::post('/{idProyecto}','Proyecto\ProyectoController@addCostoSevicio');
         });
+### Detalle Costo
+        Route::group(['prefix'=>'detalleCosto'],function(){
+            Route::post('','Proyecto\ProyectoController@addDetalleCosto');
+        });
+        Route::post('tempAdds','Proyecto\ProyectoController@addS');
     });
 
 
