@@ -25,7 +25,7 @@ class  CreateProyectoCostoServicioTable extends Migration
             ]);
             $table->string('otro_medio_pago')->nullable();
             $table->enum('pago_a_realizar',[
-                'Esercon','proveedor'
+                'Esercon','Proveedor'
             ]);
             $table->timestamps();
 

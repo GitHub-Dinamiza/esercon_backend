@@ -49,6 +49,7 @@ class ProyectoController extends Controller
                     'temperatura'=>$request->temperatura,
                     'user_id'=>$request->user()->id
                 ]);
+
                 if($request->tiposVias != []){
                     foreach ($request->tiposVias as $index => $req) {
                         $proyecto->tipoVia()->attach($req["tipovia_id"],
@@ -66,7 +67,7 @@ class ProyectoController extends Controller
                     $costoServicio = ProyectoCosto::create(
                         [
                             'servicio_id'=>$req["servicio_id"],
-                            'proveedor_id'=>$req["proveedor_id"],
+                            'proveedor_id'=>$req["proveedor_d"],
                             'proyecto_id'=>$proyecto->id,
                             'forma_pago'=>$req["forma_pago"],
                             'medio_pago'=>$req["medio_pago"],

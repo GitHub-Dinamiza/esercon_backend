@@ -23,36 +23,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbd7d978-e510-4423-aee9-c72a66db07aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T144944.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T145037.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T151131.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T151155.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T151215.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162027.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162110.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162239.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162420.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162622.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162725.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T162823.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T165244.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T165301.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T170125.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T170423.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T170430.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T170631.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-25T171058.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T051618.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T075848.401.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T080018.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T084356.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T084846.500.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2021-07-02T085049.401.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2021-07-02T085059.200.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2021-07-02T085203.401.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2021-07-02T085226.401.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2021-07-02T085238.200.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T092550.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T092840.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T100405.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T124448.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T124546.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T124600.500.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" beforeDir="false" afterPath="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClientHttp/http-client.env.json" beforeDir="false" afterPath="$PROJECT_DIR$/ClientHttp/http-client.env.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Proyecto/ProyectoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Proyecto/ProyectoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_16_073504_create_proyecto_costo_servicio_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_16_073504_create_proyecto_costo_servicio_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/PermmissionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PermmissionSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +230,7 @@
       <recent name="$PROJECT_DIR$/app/Http/Api" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.ProyectoHttpRequest#1">
+  <component name="RunManager" selected="HTTP Request.ProyectoHttpRequest#3">
     <configuration name="ProveedorHTTPRequest#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/ClientHttp/ProveedorHTTPRequest.http" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -252,7 +240,7 @@
     <configuration name="ProyectoHttpRequest#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="ProyectoHttpRequest#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" index="2" runType="Run single request">
+    <configuration name="ProyectoHttpRequest#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="ProyectoHttpRequest#5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" index="5" runType="Run single request">
@@ -264,11 +252,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.ProyectoHttpRequest#1" />
+        <item itemvalue="HTTP Request.ProyectoHttpRequest#3" />
         <item itemvalue="HTTP Request.ProveedorHTTPRequest#1" />
-        <item itemvalue="HTTP Request.ProyectoHttpRequest#5" />
-        <item itemvalue="HTTP Request.ProyectoHttpRequest#2" />
         <item itemvalue="HTTP Request.ProveedorHTTPRequest#4" />
+        <item itemvalue="HTTP Request.ProyectoHttpRequest#1" />
+        <item itemvalue="HTTP Request.ProyectoHttpRequest#5" />
       </list>
     </recent_temporary>
   </component>
@@ -317,7 +305,8 @@
       <workItem from="1624970121299" duration="15209000" />
       <workItem from="1624994791475" duration="1203000" />
       <workItem from="1625058117517" duration="599000" />
-      <workItem from="1625066693156" duration="9468000" />
+      <workItem from="1625066693156" duration="13432000" />
+      <workItem from="1625146129399" duration="5795000" />
     </task>
     <servers />
   </component>

@@ -57,7 +57,7 @@ X-Requested-With: XMLHttpRequest
 
 ###
 GET {{url}}/servicios
-Authorization: Bearer {{token}}/detalleCosto
+Authorization: Bearer {{token}}
 Content-Type: application/json
 X-Requested-With: XMLHttpRequest
 

@@ -90,11 +90,5 @@ class PermmissionSeeder extends Seeder
             "name"=>"actulizar proveedor",
             "slug"=>"update_proveedor"
         ]);
-        Permission::create([
-            "name"=>"consultar proveedor",
-            "slug"=>"update_proveedor"
-        ]);
-
-
     }
 }
