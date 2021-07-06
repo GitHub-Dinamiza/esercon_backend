@@ -1,4 +1,4 @@
-POST {{url}}/auth/login
+POST {{host}}/auth/login
 Content-Type: application/json
 X-Requested-With: XMLHttpRequest
 
@@ -13,13 +13,13 @@ X-Requested-With: XMLHttpRequest
     %}
 ###
 
-GET {{url}}/proveedor
+GET {{host}}/proveedor
 Authorization: Bearer {{token}}
 Content-Type: application/json
 X-Requested-With: XMLHttpRequest
 
 ### cargar proveherdores
-POST {{url}}/proveedor
+POST {{host}}/proveedor
 Authorization: Bearer {{token}}
 Content-Type: application/json
 X-Requested-With: XMLHttpRequest
@@ -42,7 +42,7 @@ X-Requested-With: XMLHttpRequest
 }
 
 ###
-GET {{url}}/proveedor/filtro/2
+GET {{host}}/proveedor/filtro/2
 Authorization: Bearer {{token}}
 Content-Type: application/json
 X-Requested-With: XMLHttpRequest

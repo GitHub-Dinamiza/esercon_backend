@@ -1,0 +1,11 @@
+### Login
+
+POST {{host}}/auth/login
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "email":"developer",
+    "password":"1234",
+    "remenber_me": false
+}

@@ -10,7 +10,7 @@ class costoServicioDetalle extends Model
     use HasFactory;
    protected $table = 'costo_servicio_detalle';
    protected $fillable =[
-       'proyecto_costo_servicio_id',
+       'proyecto_costo_servico_id',
        'tipo_costo_servicio_id',
        'valor'
    ];

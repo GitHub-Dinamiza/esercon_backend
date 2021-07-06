@@ -35,6 +35,8 @@ class ProyectoController extends Controller
     public function store(Request $request){
         if($request->user()->can('add_proyecto')){
             $proyecto = DB::transaction(function ()use ($request){
+
+                ### Creacion de proyecto
                 $proyecto =Proyecto::create([
 
                     'codigo'=>$request->codigo,
@@ -62,19 +64,63 @@ class ProyectoController extends Controller
                             , $req["tipo_material_id"]==4?['otros'=>$req["otros"]]:[]);
                     }
                 }
+
+                ### se recorres  el reequest  para  crear para la  crecion de costo servicio
                 foreach ($request->costoServicio as $index => $req){
 
-                    $costoServicio = ProyectoCosto::create(
-                        [
-                            'servicio_id'=>$req["servicio_id"],
-                            'proveedor_id'=>$req["proveedor_d"],
-                            'proyecto_id'=>$proyecto->id,
-                            'forma_pago'=>$req["forma_pago"],
-                            'medio_pago'=>$req["medio_pago"],
-                            'otro_medio_pago'=>$req["medio_pago"]=='Otros'?$req["otro_medio_pago"]:"" ,
-                            'pago_a_realizar'=>$req["pago_a_realizar"]
-                        ]
-                    );
+                    ## Encaso de que servicio id sea otros se creara un servicio nuevo 
+                    if($req !=[]){
+
+                        $serv = $req["servicio_id"];
+
+                        if($req["servicio_id"]==4){
+                            $serv = Servicio::create([
+                                'nombre'=>$req["otro_servicio"]
+                            ]);
+                            $serv = $serv->id;
+                        }
+
+                        ## Creacion de costo Servicio 
+                        $costoServicio = ProyectoCosto::create(
+                            [
+                                'servicio_id'=>$serv,
+                                'proveedor_id'=>$req["proveedor_id"],
+                                'proyecto_id'=>$proyecto->id,
+                                'forma_pago'=>$req["forma_pago"],
+                                'medio_pago'=>$req["medio_pago"],
+                                'otro_medio_pago'=>$req["medio_pago"]=='Otros'?$req["otro_medio_pago"]:"" ,
+                                'pago_a_realizar'=>$req["pago_a_realizar"]
+                            ]
+                        );
+                        
+                        ## se cargan los el detalle de los servicios
+                        foreach($req["detalle"] as $index => $costo){
+                            if($costo != []){
+                                $ti = $costo['tipo_costo_servicio_id'];
+
+                                if($costo["tipo_costo_servicio_id"]== 4){
+                                    $ti = TipoCostoServicio::create([
+                                        
+                                        'servicio_id'=>$serv,
+                                        'nombre'=>$costo["otro_costo_servicio"]
+
+                                        ]);
+                                    $ti =$ti->id;                      
+                                }
+                                
+                                $costo = costoServicioDetalle::create([
+
+                                    'proyecto_costo_servico_id'=>$costoServicio->id,
+                                    'tipo_costo_servicio_id'=>$ti,
+                                    'valor'=>$costo["valor"]
+
+                                ]); 
+                            }
+                        
+                        }
+
+                    }
+                    
 
                 }
                 return $proyecto;

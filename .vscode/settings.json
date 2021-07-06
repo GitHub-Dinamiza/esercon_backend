@@ -1,0 +1,16 @@
+{
+    "rest-client.environmentVariables": {
+
+        "$shared":{
+            "version": "v1"
+        },
+        "local":{
+            "host":"http://localhost:8000/api/v1",
+            "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjkzOTVhYTQ3ZjFkMzFiMmViNjlhNzg3ZTg5ZjJkOTA1NjdjNmYyMDJjMTFmMTg4ZjYzMDMzZTUzZWEzMDRmYzYzODIwNTc3NTZiOTgyMDIiLCJpYXQiOjE2MjU1NzY5OTAuMzg0NjM2LCJuYmYiOjE2MjU1NzY5OTAuMzg0NjM5LCJleHAiOjE2NTcxMTI5OTAuMzY1NjgzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.EmyrDIQkzXCb7rHARw_g_TfTay8jsixN3dPCYaiZx1jOndy3Du9qP8Ek-XdvnyvhV9TmXuwK_GWs1_Fv2o3XotiaIqZnUGoCfiYy6oL22mHJaYohx_XX6BHACkCXoGByZcVGgmFgZPtEvhqx1DK8do_CslT-5KzVMlZrc3d7cLd3WeM-lNuwSI0RT-L_7lV4zqL3Pq4jSEdBAeU_yLzeLOaluxkkUuNAFcdbfB0f7kt18uA2-ylhydhhKP3TR9UflBLd0SLr5Asr_-5cbigzMCe9GDMIfzJ7f4BxiPG3DXqOOEA-SfMODGTMnLZeNZm5eNMy_gkNSM1Rxg5Lop0GTplSTEdP-qG6FrRAFTBIjrK0tYkfck1TO5aQtkKPSQaPrjAOpgvDzrePy0TVepz3w5cFd6IkZfeZEyC5dxh9gTEX1FVOSsbyfLaT2qraem_hS76Vzk6UtJhI2Cevgyye1eu6EQQJzuDZCaryp9bnuaavuNZ4uGCPbASJq7Qi66IzE0J5-VWaiUDeKtRiM-6_9cTWNVDy59hzjmj2w8ok6kNpXAt09H4CxaFvl8p2PxjwxQ901PjjMM3F6KgDEAxYIPqyE40_QwnIv7ckmnQt-Mg9v_iWYsrrPKgbzaThMuIigjCV1OUMVajeKi2qjUg_m5QGU_ojgo8c8M2jyRoCiVI"
+        },
+        "preprodution":{
+            "host":"",
+            "token":"{{}}"
+        }
+    }
+}

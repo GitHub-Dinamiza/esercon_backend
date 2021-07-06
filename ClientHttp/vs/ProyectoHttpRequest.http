@@ -4,7 +4,7 @@ Content-Type: application/json
 X-Requested-With: XMLHttpRequest
 
 {
-  "codigo":"007",
+  "codigo":"008",
   "nombre":"proyecto-prueba-3",
   "fecha_inicio":"01/01/2021",
   "fecha_fin":"01/03/2021",
@@ -25,13 +25,22 @@ X-Requested-With: XMLHttpRequest
       ],
     "costoServicio":[
          {
-             "servicio_id": "2",
-             "otro_servicio": "prueba servicio",
+             "servicio_id": "4",
+             "otro_servicio": "prueba servicio1",
              "proveedor_id": "1",
              "forma_pago": "Diaria",
              "medio_pago": "Efectivo",
              "otro_medio_pago":"",
-             "pago_a_realizar": "Esercon"
+             "pago_a_realizar": "Esercon",
+             "detalle":[
+                 {
+                    
+                    "tipo_costo_servicio_id":"4",
+                    "otro_costo_servicio":"otro servicio",
+                    "valor":"100000"
+                },
+                 {}
+             ]
          }
     ]
 

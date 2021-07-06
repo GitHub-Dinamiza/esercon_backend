@@ -1,0 +1,15 @@
+{
+    "rest-client.envariomentVaribles":{
+        "$shared":{
+            "version": "v1"
+        },
+        "local":{
+            "host":"http://localhost",
+            "token":"{{}}"
+        },
+        "preprodution":{
+            "host":"",
+            "token":"{{}}"
+        }
+    }
+}
