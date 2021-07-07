@@ -81,8 +81,8 @@ class ProyectoController extends Controller
                         }
 
                         ## Creacion de costo Servicio 
-                        $costoServicio = ProyectoCosto::create(
-                            [
+                        $costoServicio = ProyectoCosto::create([
+
                                 'servicio_id'=>$serv,
                                 'proveedor_id'=>$req["proveedor_id"],
                                 'proyecto_id'=>$proyecto->id,
@@ -90,11 +90,11 @@ class ProyectoController extends Controller
                                 'medio_pago'=>$req["medio_pago"],
                                 'otro_medio_pago'=>$req["medio_pago"]=='Otros'?$req["otro_medio_pago"]:"" ,
                                 'pago_a_realizar'=>$req["pago_a_realizar"]
-                            ]
-                        );
+                            ]);
                         
                         ## se cargan los el detalle de los servicios
                         foreach($req["detalle"] as $index => $costo){
+
                             if($costo != []){
                                 $ti = $costo['tipo_costo_servicio_id'];
 
@@ -116,7 +116,6 @@ class ProyectoController extends Controller
 
                                 ]); 
                             }
-                        
                         }
 
                     }
@@ -335,7 +334,10 @@ class ProyectoController extends Controller
 
     public function  showTipocostoServicio(Request $request){
         $tipoCostoServicio = TipoCostoServicio::all();
-        return response($tipoCostoServicio);
+        ResponseController::set_data(['costo_detalle'=>$tipoCostoServicio ]);
+        return ResponseController::response('OK');
+
+        
     }
 
 }

@@ -4,7 +4,7 @@ Content-Type: application/json
 X-Requested-With: XMLHttpRequest
 
 {
-  "codigo":"008",
+  "codigo":"010",
   "nombre":"proyecto-prueba-3",
   "fecha_inicio":"01/01/2021",
   "fecha_fin":"01/03/2021",
@@ -26,7 +26,7 @@ X-Requested-With: XMLHttpRequest
     "costoServicio":[
          {
              "servicio_id": "4",
-             "otro_servicio": "prueba servicio1",
+             "otro_servicio": "prueba servicio4",
              "proveedor_id": "1",
              "forma_pago": "Diaria",
              "medio_pago": "Efectivo",
@@ -92,3 +92,9 @@ X-Requested-With: XMLHttpRequest
     "servicio_id": "1",
     "nombre": "archivo prueba"
 }
+
+### DEtalle costo  el nombre del costo 
+GET {{host}}/detalleCosto
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
