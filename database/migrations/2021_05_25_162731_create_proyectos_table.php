@@ -35,6 +35,17 @@ class CreateProyectosTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
         });
+        /**
+         *  - Ducracion de Proyecto (dias ) - int  
+         * 
+         * - propietario Doble troque  enum (Propio, Alquilado, mixto)
+         * - Dobletroque propios candido  - int
+         * - Dobletroque Alquilados cantidad  - int
+         * - Valor MetroCubico P - float
+         * - valor MetroCubico A - float 
+         * - valor Contrato  - float
+         * - Volor anticipo Contrato - float 
+         */
     }
 
     /**

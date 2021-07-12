@@ -4,8 +4,8 @@ Content-Type: application/json
 X-Requested-With: XMLHttpRequest
 
 {
-  "codigo":"010",
-  "nombre":"proyecto-prueba-3",
+  "codigo":"011",
+  "nombre":"proyecto-prueba-4",
   "fecha_inicio":"01/01/2021",
   "fecha_fin":"01/03/2021",
   "municipio_inicio":"8001",
@@ -17,36 +17,66 @@ X-Requested-With: XMLHttpRequest
 
    "tiposVias": [
            {"tipovia_id": "1" },
-           {"tipovia_id": "4", "otros": "otro-prueba"}
+           {"tipovia_id": "2" },
+           {"tipovia_id": "4", "otros": "bambu"}
        ],
-   "tipoMaterial": [
-           {"tipo_material_id": "1"},
-           {"tipo_material_id": "4","otros": "otro-prueba"}
+
+   "rellenos": [
+           {"tipo_material_id": "1"}
+
       ],
     "costoServicio":[
          {
              "servicio_id": "4",
-             "otro_servicio": "prueba servicio4",
+             "otro_servicio": "prueba servicio7",
              "proveedor_id": "1",
              "forma_pago": "Diaria",
              "medio_pago": "Efectivo",
              "otro_medio_pago":"",
              "pago_a_realizar": "Esercon",
              "detalle":[
-                 {
-                    
-                    "tipo_costo_servicio_id":"4",
-                    "otro_costo_servicio":"otro servicio",
-                    "valor":"100000"
-                },
-                 {}
-             ]
+                    {
+
+                        "tipo_costo_servicio_id":"4",
+                        "otro_costo_servicio":"almuerzo ",
+                        "valor":"10000"
+                     }
+                  ]
+         },
+          {
+             "servicio_id": "4",
+             "otro_servicio": "prueba servicio8",
+             "proveedor_id": "1",
+             "forma_pago": "Diaria",
+             "medio_pago": "Efectivo",
+             "otro_medio_pago":"",
+             "pago_a_realizar": "Esercon",
+             "detalle":[
+                    {
+
+                        "tipo_costo_servicio_id":"4",
+                        "otro_costo_servicio":"almuerzo ",
+                        "valor":"10000"
+                     }
+                  ]
          }
-    ]
+    ],
+    "condiciones_economicas":[
+                                {
+                                    "nombre_condicion_economica_id":"1",
+                                    "otro_condicion_econoimica":"",
+                                    "pago_a_realizar":"Proveedor",
+                                    "forma_pago":"Semanal",
+                                    "medio_pago":"Tranferencia"
+
+                                }
+
+                            ]
+
 
 }
-###
 
+###
 
 POST {{host}}/costoServicio/2
 Authorization: Bearer {{token}}
@@ -93,8 +123,16 @@ X-Requested-With: XMLHttpRequest
     "nombre": "archivo prueba"
 }
 
-### DEtalle costo  el nombre del costo 
+### DEtalle costo  el nombre del costo
 GET {{host}}/detalleCosto
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+
+### Condiciones Economicas
+
+GET {{host}}/condicionesEconomicas
 Authorization: Bearer {{token}}
 Content-Type: application/json
 X-Requested-With: XMLHttpRequest

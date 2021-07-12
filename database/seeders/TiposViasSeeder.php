@@ -34,11 +34,11 @@ class TiposViasSeeder extends Seeder
         #tipo material
 
         TipoMaterial::create([
-            'nombre'=>'Excavacion',
+            'nombre'=>'Relleno',
             'descripcion'=>''
         ]);
          TipoMaterial::create([
-             'nombre'=>'Desechos',
+             'nombre'=>'Excavacion',
              'descripcion'=>''
          ]);
         TipoMaterial::create([

@@ -16,7 +16,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\Http\Resources\Proyecto as ResourceProyecto;
-
+use App\Models\Proyecto\CondicionesEconomica;
+use App\Models\Proyecto\NombreCondicionesEconomica;
 
 class ProyectoController extends Controller
 {
@@ -50,6 +51,9 @@ class ProyectoController extends Controller
                     'horas_laboral_dia'=>$request->horas_laboral,
                     'temperatura'=>$request->temperatura,
                     'user_id'=>$request->user()->id
+                    /**
+                     *  Nuevos Campos (codiciones ingreso)
+                     */
                 ]);
 
                 if($request->tiposVias != []){
@@ -68,7 +72,7 @@ class ProyectoController extends Controller
                 ### se recorres  el reequest  para  crear para la  crecion de costo servicio
                 foreach ($request->costoServicio as $index => $req){
 
-                    ## Encaso de que servicio id sea otros se creara un servicio nuevo 
+                    ## Encaso de que servicio id sea otros se creara un servicio nuevo
                     if($req !=[]){
 
                         $serv = $req["servicio_id"];
@@ -80,7 +84,7 @@ class ProyectoController extends Controller
                             $serv = $serv->id;
                         }
 
-                        ## Creacion de costo Servicio 
+                        ## Creacion de costo Servicio
                         $costoServicio = ProyectoCosto::create([
 
                                 'servicio_id'=>$serv,
@@ -91,7 +95,7 @@ class ProyectoController extends Controller
                                 'otro_medio_pago'=>$req["medio_pago"]=='Otros'?$req["otro_medio_pago"]:"" ,
                                 'pago_a_realizar'=>$req["pago_a_realizar"]
                             ]);
-                        
+
                         ## se cargan los el detalle de los servicios
                         foreach($req["detalle"] as $index => $costo){
 
@@ -100,28 +104,55 @@ class ProyectoController extends Controller
 
                                 if($costo["tipo_costo_servicio_id"]== 4){
                                     $ti = TipoCostoServicio::create([
-                                        
+
                                         'servicio_id'=>$serv,
                                         'nombre'=>$costo["otro_costo_servicio"]
 
                                         ]);
-                                    $ti =$ti->id;                      
+                                    $ti =$ti->id;
                                 }
-                                
+
                                 $costo = costoServicioDetalle::create([
 
                                     'proyecto_costo_servico_id'=>$costoServicio->id,
                                     'tipo_costo_servicio_id'=>$ti,
                                     'valor'=>$costo["valor"]
 
-                                ]); 
+                                ]);
                             }
                         }
 
+
+
                     }
-                    
+
 
                 }
+
+                 ### Condiciones Economica
+                 foreach($request->condiciones_economicas as $index =>$req){
+                    $nce=$req["nombre_condicion_economica_id"];
+                    if($nce==4){
+                        $nce= NombreCondicionesEconomica::create([
+                            'nombre'=>$req["otro_condicion_economica"]
+                        ]);
+
+                        $nce=$nce->id;
+
+                    }
+
+                    $ce = CondicionesEconomica::create([
+
+                        'nombre_condicion_economica_id'=>$nce,
+                        'proyecto_id'=>$proyecto->id,
+                        'forma_pago'=>$req["forma_pago"],
+                        'medio_pago'=>$req["medio_pago"],
+                        'pago_a_realizar'=>$req["pago_a_realizar"]
+
+                    ]);
+
+
+                 }
                 return $proyecto;
             });
 
@@ -323,21 +354,15 @@ class ProyectoController extends Controller
         ]);
     }
 
-    ### Temp
-    public function addS(Request $request){
-        $tipoCostoServicio = TipoCostoServicio::create([
-            'servicio_id'=>$request->servicio_id,
-            'nombre'=>$request->nombre
-        ]);
-        return response($tipoCostoServicio);
-    }
+    ###
+
 
     public function  showTipocostoServicio(Request $request){
         $tipoCostoServicio = TipoCostoServicio::all();
         ResponseController::set_data(['costo_detalle'=>$tipoCostoServicio ]);
         return ResponseController::response('OK');
 
-        
+
     }
 
 }

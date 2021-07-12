@@ -123,14 +123,17 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             Route::post('{id}/tipovias','Proyecto\ProyectoController@tipoVia');
             Route::delete('{id}/tipovias','Proyecto\ProyectoController@eliminarTipoVia');
+
             # Reyeno material
             Route::post('{id}/relleno','Proyecto\ProyectoController@addMaterial');
             Route::delete('{id}/relleno','Proyecto\ProyectoController@eliminarTipoMaterial');
             #Servicios
             Route::post('/servicios','Proyecto\ServiciosController@store');
 
-### Servios de  para creaciode costoServicios
+
         });
+
+ ### Servios de  para creaciode costoServicios
         Route::group(['prefix'=>'servicios'],function (){
             #Servicios
             Route::post('','Proyecto\ServiciosController@store');
@@ -147,14 +150,10 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             Route::get('', [ProyectoController::class, 'showTipocostoServicio'])->name('detalleCosto.show');
         });
-       
+
     });
 
+###Condiciones Economicas
 
+    Route::get('condicionesEconomicas','Proyecto\CondicionesEconomicaController@showNombre');
 });
-
-Route::get('rutas', 'Rutas\RutasController@show');
-
-
-
-
