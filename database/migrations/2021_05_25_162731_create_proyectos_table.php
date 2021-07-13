@@ -26,6 +26,14 @@ class CreateProyectosTable extends Migration
             $table->integer('horas_laboral_dia');
             $table->integer('temperatura');
             $table->boolean('estado')->default(true);
+            $table->enum('propietario_dobletroque',['Propetario','Alquilado','Mixto']);
+            $table->integer('duracion_dias');
+            $table->integer('cantidad_vehiculo_propio')->default(0);
+            $table->integer('cantidad_vehiculo_alquilado')->default(0);
+            $table->double('valor_metrocubico_propio','12,2')->default(0);
+            $table->double('valor_metrocubico_alquilado','12,2')->default(0);
+            $table->double('valor_contrato','12.2')->default(0);
+            $table->double('valor_anticipo_contrato','12,2')->default(0);
             $table->unsignedBigInteger('user_id');
             $table->softDeletes();
             $table->timestamps();
@@ -36,15 +44,15 @@ class CreateProyectosTable extends Migration
 
         });
         /**
-         *  - Ducracion de Proyecto (dias ) - int  
-         * 
+         *  - Ducracion de Proyecto (dias ) - int
+         *
          * - propietario Doble troque  enum (Propio, Alquilado, mixto)
          * - Dobletroque propios candido  - int
          * - Dobletroque Alquilados cantidad  - int
          * - Valor MetroCubico P - float
-         * - valor MetroCubico A - float 
+         * - valor MetroCubico A - float
          * - valor Contrato  - float
-         * - Volor anticipo Contrato - float 
+         * - Volor anticipo Contrato - float
          */
     }
 

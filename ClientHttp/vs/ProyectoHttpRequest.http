@@ -14,6 +14,13 @@ X-Requested-With: XMLHttpRequest
   "ubicacion_final":"ubicacion-2",
   "horas_laboral":"8",
   "temperatura":"36",
+  "duracion_proyecto":"",
+  "cantidad_vehiculo_propio":"",
+  "cantidad_vehiculo_alquilado":"",
+  "valor_metrocubico_propio":"",
+  "valor_metrocubico_alquilado":"",
+  "valor_contrato":"",
+  "valor_anticipo_contrato":"",
 
    "tiposVias": [
            {"tipovia_id": "1" },
@@ -67,8 +74,8 @@ X-Requested-With: XMLHttpRequest
                                     "otro_condicion_econoimica":"",
                                     "pago_a_realizar":"Proveedor",
                                     "forma_pago":"Semanal",
-                                    "medio_pago":"Tranferencia"
-
+                                    "medio_pago":"Tranferencia",
+                                    "otro_medio_pago":""
                                 }
 
                             ]

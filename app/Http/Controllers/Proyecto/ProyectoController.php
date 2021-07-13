@@ -50,6 +50,14 @@ class ProyectoController extends Controller
                     'ubicacion_final'=>$request->ubicacion_final,
                     'horas_laboral_dia'=>$request->horas_laboral,
                     'temperatura'=>$request->temperatura,
+                    'propietario_dobletroque'=>$request->propietario_dobletroque,
+                    'duracion_dias'=>$request->duracion_proyecto,
+                    'cantidad_vehiculo_propio'=>$request->cantidad_vehiculo_propio,
+                    'cantidad_vehiculo_alquilado'=>$request->cantidad_vehiculo_alquilado,
+                    'valor_metrocubico_propio'=>$request->valor_metrocubico_propio,
+                    'valor_metrocubico_alquilado'=>$request->valor_metrocubico_alquilado,
+                    'valor_contrato'=>$request->valor_contrato,
+                    'valor_anticipo_contrato'=>$request->valor_anticipo_contrato,
                     'user_id'=>$request->user()->id
                     /**
                      *  Nuevos Campos (codiciones ingreso)

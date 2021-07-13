@@ -14,10 +14,16 @@ class Proyecto extends Model
     protected $table = 'proyectos';
 
     protected $fillable = [
-        'codigo',            'nombre',             'fecha_inicio',
-        'fecha_fin',         'municipio_inicio_id','ubicacion_inicial',
-        'municipio_final_id','ubicacion_final',    'horas_laboral_dia',
-        'temperatura',       'estado',             'user_id'
+        'codigo',                 'nombre',             'fecha_inicio',
+        'fecha_fin',              'municipio_inicio_id','ubicacion_inicial',
+        'municipio_final_id',     'ubicacion_final',    'horas_laboral_dia',
+        'temperatura',            'estado',             'user_id',
+        'propietario_dobletroque', 'duracion_dias',     'cantidad_vehiculo_propio',
+        'cantidad_vehiculo_alquilado',
+        'valor_metrocubico_propio',
+        'valor_metrocubico_alquilado',
+        'valor_contrato',
+        'valor_anticipo_contrato'
     ];
 ### Relacion
     public function proveedor(){
