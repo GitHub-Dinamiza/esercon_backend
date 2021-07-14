@@ -151,6 +151,11 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::get('', [ProyectoController::class, 'showTipocostoServicio'])->name('detalleCosto.show');
         });
 
+###
+        Route::prefix('consumo_pago_estimado')->group(function () {
+            Route::get('', 'Proyecto\CostoPagoEstimadoController@getGastoEstimado');
+        });
+
     });
 
 ###Condiciones Economicas

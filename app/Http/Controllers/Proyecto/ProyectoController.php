@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\DB;
 
 use App\Http\Resources\Proyecto as ResourceProyecto;
 use App\Models\Proyecto\CondicionesEconomica;
+use App\Models\Proyecto\GastoEstimadoOperaciones;
+use App\Models\Proyecto\GastoEstimadoProyecto;
 use App\Models\Proyecto\NombreCondicionesEconomica;
 
 class ProyectoController extends Controller
@@ -161,6 +163,35 @@ class ProyectoController extends Controller
 
 
                  }
+
+                ### Costo Estimado pago Operaciones
+                 foreach($request->datos_operacion as $index=> $req){
+
+                    $gastoEO = GastoEstimadoOperaciones::where('nombre' ,$index)->first();
+
+                    GastoEstimadoProyecto::create([
+                        'gasto_estimado_operaciones_id'=>$gastoEO->id,
+                        'proyecto_id'=>$proyecto->id,
+                        'valor'=>$req,
+                        'user_id'=>$request->user()->id
+                    ]);
+
+
+                }
+
+                foreach($request->datos_administracion as $index=> $req){
+
+                    $gastoEO = GastoEstimadoOperaciones::where('nombre' ,$index)->first();
+
+                    GastoEstimadoProyecto::create([
+                        'gasto_estimado_operaciones_id'=>$gastoEO->id,
+                        'proyecto_id'=>$proyecto->id,
+                        'valor'=>$req,
+                        'user_id'=>$request->user()->id
+                    ]);
+                }
+
+
                 return $proyecto;
             });
 

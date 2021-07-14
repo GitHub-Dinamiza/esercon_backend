@@ -14,7 +14,7 @@ class TipoCostoServicio extends Model
 
     ### relaciones
     public function servicio(){
-        return $this->belongsTo();
+      //  return $this->belongsTo();
     }
     public function  costoServicioDetalle(){
         return $this->hasMany(ProyectoCosto::class);

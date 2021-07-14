@@ -53,12 +53,12 @@ class RoleController extends Controller
         return ResponseController::response('OK');
     }
 
-    public function update($id,Response $response)
+    public function update($id,Request $request)
     {
         try{
             $role = Role::find($id);
-            $role->name = $response->name;
-            $role->slug = $response->slug;
+            $role->name = $request->name;
+            $role->slug =$request->slug;
             $role->save;
         } catch (\Exception $e){
             ResponseController::set_errors(true);
