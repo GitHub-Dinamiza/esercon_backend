@@ -34,8 +34,7 @@ class CreateProyectosTable extends Migration
             $table->double('valor_metrocubico_alquilado','12,2')->default(0);
             $table->double('valor_contrato','12.2')->default(0);
             $table->double('valor_anticipo_contrato','12,2')->default(0);
-            $table->integer('Antiguedad_vehiculos');//indesiso
-            $table->text('otras_caracteristicas')->nullable();
+
             $table->unsignedBigInteger('user_id');
             $table->softDeletes();
             $table->timestamps();
