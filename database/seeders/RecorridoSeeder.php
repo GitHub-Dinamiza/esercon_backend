@@ -67,7 +67,7 @@ class RecorridoSeeder extends Seeder
         }
 
         AccionRecorrido::create([
-            'nombre'=>'Cagar'
+            'nombre'=>'Cargar'
         ]);
         AccionRecorrido::create([
             'nombre'=>'Descargar'
