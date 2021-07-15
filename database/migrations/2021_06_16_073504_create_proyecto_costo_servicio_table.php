@@ -21,7 +21,7 @@ class  CreateProyectoCostoServicioTable extends Migration
             $table->enum('forma_pago',
             ['Diaria','Semanal','Quincenal','Mensual']);
             $table->enum('medio_pago',[
-                'Efectivo','Tranferencia','Credito','Otros'
+                'Efectivo','Transferencia','Credito','Otros'
             ]);
             $table->string('otro_medio_pago')->nullable();
             $table->enum('pago_a_realizar',[
