@@ -15,4 +15,12 @@ class GastoEstimadoOperaciones extends Model
     protected $fillable = ['nombre','tipo_dato'];
 
     public $timestamps = false;
+
+    public function scopeDatosOperativos($query){
+        return $query->where('tipo_dato','GO');
+    }
+
+    public function scopeDatosAdministrativos($query){
+        return $query->where('tipo_dato','GO');
+    }
 }

@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\Proyecto\CondicionesEconomica;
+use App\Models\Proyecto\GastoEstimadoProyecto;
+use App\Models\Proyecto\RecorridoUbicacionProyecto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -63,5 +66,22 @@ class Proyecto extends Model
     }
    public function  servicioCosto(){
         return $this->hasMany(ProyectoCosto::class);
+   }
+
+   public function condicionesEconomicas(){
+       return $this->hasMany(CondicionesEconomica::class);
+   }
+
+   public function gastoEstimado(){
+        return $this->hasMany(GastoEstimadoProyecto::class);
+   }
+
+   public function datosAdministivos(){
+
+   }
+
+   public function recorrido (){
+
+       return $this->hasMany(RecorridoUbicacionProyecto::class);
    }
 }

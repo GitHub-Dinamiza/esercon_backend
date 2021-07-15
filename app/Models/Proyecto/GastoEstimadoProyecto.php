@@ -13,4 +13,9 @@ class GastoEstimadoProyecto extends Model
 
     protected $table = 'gasto_estimado_proyecto';
     protected $fillable = ['proyecto_id','gasto_estimado_operaciones_id','valor','user_id'];
+
+    public function gastoEstimadoO(){
+        return $this->hasMany(GastoEstimadoOperaciones::class);
+    }
+
 }

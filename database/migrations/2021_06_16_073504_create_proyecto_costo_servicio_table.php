@@ -19,7 +19,7 @@ class  CreateProyectoCostoServicioTable extends Migration
             $table->unsignedBigInteger('proveedor_id');
             $table->unsignedBigInteger('proyecto_id');
             $table->enum('forma_pago',
-            ['Diaria','Semanal','Quinsenal','Mensual']);
+            ['Diaria','Semanal','Quincenal','Mensual']);
             $table->enum('medio_pago',[
                 'Efectivo','Tranferencia','Credito','Otros'
             ]);
