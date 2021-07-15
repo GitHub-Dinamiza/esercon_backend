@@ -20,6 +20,7 @@ use App\Models\Proyecto\CondicionesEconomica;
 use App\Models\Proyecto\GastoEstimadoOperaciones;
 use App\Models\Proyecto\GastoEstimadoProyecto;
 use App\Models\Proyecto\NombreCondicionesEconomica;
+use App\Models\Proyecto\RecorridoUbicacionProyecto;
 
 class ProyectoController extends Controller
 {
@@ -60,6 +61,8 @@ class ProyectoController extends Controller
                     'valor_metrocubico_alquilado'=>$request->valor_metrocubico_alquilado,
                     'valor_contrato'=>$request->valor_contrato,
                     'valor_anticipo_contrato'=>$request->valor_anticipo_contrato,
+                    'antiguedad_vehiculos_anios'=>$request->antiguedad_vehiculo,
+                    'otro_requerimientos'=>$request->otros_requerimientos,
                     'user_id'=>$request->user()->id
                     /**
                      *  Nuevos Campos (codiciones ingreso)
@@ -134,6 +137,8 @@ class ProyectoController extends Controller
 
 
 
+
+
                     }
 
 
@@ -191,6 +196,18 @@ class ProyectoController extends Controller
                     ]);
                 }
 
+                  ### recorrido
+
+                foreach ($request->recorridos as $index => $req){
+
+                    RecorridoUbicacionProyecto::create([
+                        'proyecto_id'=>$proyecto->id,
+                        'recorrido_inicio_id'=>$req["recorrido_inicio_id"],
+                        'recorrido_final_id'=>$req["recorrido_final_id"],
+                        'accion_id'=>$req["accion_id"],
+                        'user_id'=>$request->user()->id
+                    ]);
+                }
 
                 return $proyecto;
             });

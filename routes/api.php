@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Proyecto\ProyectoController;
+use App\Http\Controllers\Proyecto\UbicacionRecorridoController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -155,6 +157,10 @@ Route::group(['middleware'=>'auth:api'],function (){
         Route::prefix('consumo_pago_estimado')->group(function () {
             Route::get('', 'Proyecto\CostoPagoEstimadoController@getGastoEstimado');
         });
+
+### Recorrido ubicacion
+        Route::get('recorrido/accion', 'Proyecto\UbicacionRecorridoController@getAccionRecorido');
+        Route::get('recorrido/ubicacion', 'Proyecto\UbicacionRecorridoController@getUbicacionRecorrido');
 
     });
 

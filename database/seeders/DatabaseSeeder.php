@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TiposViasSeeder::class);
         $this->call(CondecionesEconomicasSeeder::class);
         $this->call(GastosEstimadoYOperativoSeeder::class);
+        $this->call(RecorridoSeeder::class);
+
     }
 }
