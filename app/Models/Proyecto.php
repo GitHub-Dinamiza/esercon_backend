@@ -23,7 +23,10 @@ class Proyecto extends Model
         'valor_metrocubico_propio',
         'valor_metrocubico_alquilado',
         'valor_contrato',
-        'valor_anticipo_contrato'
+        'valor_anticipo_contrato',
+        'antiguedad_vehiculos_anios',
+        'otro_requerimientos'
+
     ];
 ### Relacion
     public function proveedor(){

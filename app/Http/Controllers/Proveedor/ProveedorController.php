@@ -66,8 +66,10 @@ class ProveedorController extends Controller
 
     public function show(Request $request){
         if($request->user()->can('add_proveedor')){
-            $provedor = Proveedor::all();
-            return response($provedor);
+            $proveedor = Proveedor::all();
+            ResponseController::set_data(['provedores'=>$proveedor]);
+            return ResponseController::response('OK');
+
         }
         ResponseController::set_errors(true);
         ResponseController::set_messages('Usuario sin permiso');

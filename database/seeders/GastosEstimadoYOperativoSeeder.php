@@ -45,7 +45,7 @@ class GastosEstimadoYOperativoSeeder extends Seeder
             ['nombre'=>'pago_peajes' ,'tipodato'=>'GO'],
             ['nombre'=>'pago_conductor_dia' ,'tipodato'=>'GO'],
             ['nombre'=>'pago_hidratacion_dia' ,'tipodato'=>'GO'],
-            ['nombre'=>'pago_llantas_dia' ,'tipodato'=>'GO'],
+            ['nombre'=>'pago_parqueadero_dia' ,'tipodato'=>'GO'],
             ['nombre'=>'pago_soat_dia' ,'tipodato'=>'GO'],
             ['nombre'=>'pago_tecnomecanica_dia','tipodato'=>'GO'],
             ['nombre'=>'pago_seguro_dia','tipodato'=>'GO'],

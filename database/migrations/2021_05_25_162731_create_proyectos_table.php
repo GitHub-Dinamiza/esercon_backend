@@ -35,6 +35,8 @@ class CreateProyectosTable extends Migration
             $table->double('valor_contrato','12.2')->default(0);
             $table->double('valor_anticipo_contrato','12,2')->default(0);
 
+            $table->integer('antiguedad_vehiculos_anios');
+            $table->text('otro_requerimientos')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->softDeletes();
             $table->timestamps();
