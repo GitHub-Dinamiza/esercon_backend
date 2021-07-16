@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Proyecto\CondicionesEconomica;
+use App\Models\Proyecto\GastoEstimadoOperaciones;
 use App\Models\Proyecto\GastoEstimadoProyecto;
 use App\Models\Proyecto\RecorridoUbicacionProyecto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -74,6 +75,7 @@ class Proyecto extends Model
 
    public function gastoEstimado(){
         return $this->hasMany(GastoEstimadoProyecto::class);
+
    }
 
    public function datosAdministivos(){

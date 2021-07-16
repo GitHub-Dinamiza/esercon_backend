@@ -4,10 +4,11 @@ namespace App\Http\Resources;
 
 use App\Http\Resources\Proyecto\CondicionesEconomicas;
 use App\Http\Resources\Proyecto\CostoServisio;
+use App\Http\Resources\Proyecto\GastoEstimado;
 use App\Http\Resources\Proyecto\Recorrido;
 use App\Http\Resources\Proyecto\TipoMaterial;
 use App\Http\Resources\Proyecto\TipoVias;
-
+use App\Models\Proyecto\GastoEstimadoProyecto;
 use Illuminate\Http\Resources\Json\JsonResource;
 use phpDocumentor\Reflection\Types\Collection;
 
@@ -63,9 +64,7 @@ class Proyecto extends JsonResource
 
             "condicones economicas"=>CondicionesEconomicas::collection($this->condicionesEconomicas),
 
-            "datos operativos"=>Recorrido::collection($this->gastoEstimado->gastoEstimadoO->scopeDatosOperativos),
-
-            "datos administracion"=>null,
+            "consumo y pagos estimado"=>GastoEstimado::collection($this->gastoEstimado),
 
             "recorrido"=>Recorrido::collection($this->recorrido)
         ];

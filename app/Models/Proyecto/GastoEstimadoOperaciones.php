@@ -21,6 +21,6 @@ class GastoEstimadoOperaciones extends Model
     }
 
     public function scopeDatosAdministrativos($query){
-        return $query->where('tipo_dato','GO');
+        return $query->where('tipo_dato','GA');
     }
 }
