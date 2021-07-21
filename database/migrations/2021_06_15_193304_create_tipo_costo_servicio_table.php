@@ -16,12 +16,13 @@ class CreateTipoCostoServicioTable extends Migration
         Schema::create('tipo_costo_servicio', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('servicio_id');
-            $table->string('nombre');
+            $table->string('nombre')->unique();
             $table->softDeletes();
 
             $table->foreign('servicio_id')
                 ->references('id')
                 ->on('servicios')->cascadeOnDelete();
+
         });
     }
 

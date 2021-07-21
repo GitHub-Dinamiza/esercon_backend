@@ -31,8 +31,10 @@ class Proyecto extends JsonResource
             "fecha_inicio"=>$this->fecha_inicio ,
             "fecha_fin"=>$this->fecha_fin ,
             "municipio_inicio"=>$this->municipioInicial->nombre,
+            "municipio_inicio_id"=>$this->municipio_inicio_id,
             "ubicacion_inicial"=>$this->ubicacion_inicial,
             "municipio_final"=>$this->municipioFinal->nombre ,
+            "municipio_final_id"=>$this->municipio_final_id,
             "ubicacion_final"=>$this->ubicacion_final,
             "horas_laboral_dia"=>$this->horas_laboral_dia ,
             "temperatura"=>$this->temperatura ,
@@ -44,7 +46,7 @@ class Proyecto extends JsonResource
             "valor_metrocubico_alquilado"=>$this->valor_metrocubico_alquilado,
             "valor_contrato"=>$this->valor_contrato,
             "valor_anticipo_contrato"=>$this->valor_anticipo_contrato,
-            "antiguedad_vehiculo"=>$this->antiguedad_vehiculos_anios. " Años",
+            "antiguedad_vehiculo"=>$this->antiguedad_vehiculos_anios,
             "otros_requerimientos"=>$this->otro_requerimientos,
 
 

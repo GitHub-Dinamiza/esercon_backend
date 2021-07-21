@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Proyecto;
 use App\Http\Controllers\cargarArchivoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
+use App\Http\Requests\Proyecto\CreateProyectoRequest;
 use App\Http\Resources\proyectoAllResource;
 use App\Models\ArchivoProyecto;
 use App\Models\costoServicioDetalle;
@@ -21,6 +22,8 @@ use App\Models\Proyecto\GastoEstimadoOperaciones;
 use App\Models\Proyecto\GastoEstimadoProyecto;
 use App\Models\Proyecto\NombreCondicionesEconomica;
 use App\Models\Proyecto\RecorridoUbicacionProyecto;
+use Illuminate\Contracts\Validation\Validator as ValidationValidator;
+use Validator;
 
 class ProyectoController extends Controller
 {
@@ -36,7 +39,9 @@ class ProyectoController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request){
+    public function store(CreateProyectoRequest $request){
+       // $validator = ValidationValidator::make($request->all());
+
         if($request->user()->can('add_proyecto')){
             $proyecto = DB::transaction(function ()use ($request){
 
@@ -483,166 +488,6 @@ class ProyectoController extends Controller
             ResponseController::set_messages('Proyecto');
             ResponseController::set_data(['data'=>$proyecto]);
             return ResponseController::response('OK');
-        }
-        ResponseController::set_errors(true);
-        ResponseController::set_messages('Usuario sin permiso');
-        return ResponseController::response('UNAUTHORIZED');
-    }
-
-    public function update(Request $request, $id){
-        //dd($request->user()->can('update_proyecto'));
-        if(($request->user()->can('update_proyecto'))== true){
-
-            $bandera = false;
-
-            $proyecto = Proyecto::find($id);
-            $servicio = ProyectoCosto::find($request->servicio_id);
-            $costo = costoServicioDetalle::find($request->costoServicioDetalle_id);
-            $condicionesEcomicas = CondicionesEconomica::find($request->condicionesEconomicas_id);
-            $gastaEstimandoProyecto =  GastoEstimadoProyecto::find($request->gastaEstimandoProyecto_id);
-            $recorridoUbicacionProyecto = RecorridoUbicacionProyecto::find($request->recorridoUbicacionProyecto_id);
-
-            if($proyecto != null){
-
-                if($request->codigo = null){
-
-                    $proyecto->codigo=$request->codigo;
-                    $bandera = true;
-                }
-
-                if($request->nombre != null){
-                    $proyecto->nombre=$request->nombre;
-                    $bandera = true;
-                }
-
-                if($request->fecha_inicio != null){
-                    $proyecto->fecha_inicio=$request->fecha_inicio;
-                    $bandera = true;
-                }
-
-                if($request->fecha_fin != null){
-                    $proyecto->fecha_fin=$request->fecha_fin;
-                    $bandera = true;
-                }
-
-                if($request->municipio_inicio != null){
-                    $proyecto->municipio_inicio_id=$request->municipio_inicio;
-                    $bandera = true;
-                }
-
-                if($request->ubicacion_inicial != null){
-                    $proyecto->ubicacion_inicial=$request->ubicacion_inicial;
-                    $bandera = true;
-                }
-
-
-                if($request->municipio_final != null){
-                    $proyecto->municipio_final_id=$request->municipio_final;
-                    $bandera = true;
-                }
-
-                if($request->ubicacion_final != null){
-                    $proyecto->ubicacion_final=$request->ubicacion_final;
-                    $bandera = true;
-                }
-
-                if($request->horas_laboral != null){
-                    $proyecto->horas_laboral_dia=$request->horas_laboral;
-                    $bandera = true;
-                }
-
-                if($request->temperatura != null){
-                    $proyecto->temperatura=$request->temperatura;
-                    $bandera = true;
-                }
-
-                if($request->propietario_dobletroque != null){
-                    $proyecto->propietario_dobletroque=$request->propietario_dobletroque;
-                    $bandera = true;
-                }
-
-                if($request->duracion_proyecto != null){
-                    $proyecto->duracion_dias=$request->duracion_proyecto;
-                    $bandera = true;
-                }
-
-                if($request->cantidad_vehiculo_propio != null){
-                    $proyecto->cantidad_vehiculo_propio=$request->cantidad_vehiculo_propio;
-                    $bandera = true;
-                }
-
-                if($request->cantidad_vehiculo_alquilado != null){
-                    $proyecto->cantidad_vehiculo_alquilado=$request->cantidad_vehiculo_alquilado;
-                    $bandera = true;
-                }
-
-                if($request->valor_metrocubico_propio != null){
-                    $proyecto->valor_metrocubico_propio=$request->valor_metrocubico_propio;
-                    $bandera = true;
-                }
-
-                if($request->valor_metrocubico_alquilado != null){
-                    $proyecto->valor_metrocubico_alquilado=$request->valor_metrocubico_alquilado;
-                    $bandera = true;
-                }
-
-                if($request->valor_contrato != null){
-                    $proyecto->valor_contrato=$request->valor_contrato;
-                    $bandera = true;
-                }
-
-                if($request->valor_anticipo_contrato != null){
-                    $proyecto->valor_anticipo_contrato=$request->valor_anticipo_contrato;
-                    $bandera = true;
-                }
-
-                if($request->antiguedad_vehiculo != null){
-                    $proyecto->antiguedad_vehiculos_anios=$request->antiguedad_vehiculo;
-                    $bandera = true;
-                }
-
-                if($request->otros_requerimientos != null){
-                    $proyecto->otro_requerimientos=$request->otros_requerimientos;
-                    $bandera = true;
-                }
-
-            }
-        /*
-
-         if($servicio != null){
-
-                if( $request->){
-                    $servicio->servicio_id=$serv;
-                }
-
-                if( $request->){
-                    $servicio->proveedor_id=$req["proveedor_id"];
-                }
-
-                if( $request->){
-                    $servicio->proyecto_id=$proyecto->id;
-                }
-
-                if( $request->){
-                    $servicio->forma_pago=$req["forma_pago"];
-                }
-
-                if( $request->){
-                    $servicio->medio_pago=$req["medio_pago"];
-                }
-
-                if( $request->){
-                    $servicio->otro_medio_pago=$req["medio_pago"]=='Otros'?$req["otro_medio_pago"]:"" ;
-                }
-
-                if( $request->){
-                    $servicio->pago_a_realizar=$req["pago_a_realizar"];
-                }
-
-             }    */
-
-
-
         }
         ResponseController::set_errors(true);
         ResponseController::set_messages('Usuario sin permiso');

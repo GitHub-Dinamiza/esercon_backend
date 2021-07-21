@@ -162,7 +162,7 @@ Route::group(['middleware'=>'auth:api'],function (){
 ### Recorrido ubicacion
         Route::get('recorrido/accion', 'Proyecto\UbicacionRecorridoController@getAccionRecorrido');
         Route::get('recorrido/ubicacion', 'Proyecto\UbicacionRecorridoController@getUbicacionRecorrido');
-
+        Route::post('ubicacion', 'Proyecto\UbicacionRecorridoController@store');
     });
 
 ###Condiciones Economicas
