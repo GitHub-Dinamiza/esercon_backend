@@ -236,7 +236,7 @@ class ProyectoController extends Controller
     public function show(Request $request){
         if($request->user()->can('show_proyecto')){
 
-            ResponseController::set_data(['data'=>proyectoAllResource::collection(Proyecto::all()) ]);
+            ResponseController::set_data(['Proyecto'=>proyectoAllResource::collection(Proyecto::all()) ]);
             return ResponseController::response('OK');
         }
         ResponseController::set_errors(true);
