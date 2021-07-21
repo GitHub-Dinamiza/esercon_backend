@@ -69,7 +69,7 @@ class Proyecto extends JsonResource
 
             "condicones_economicas"=>CondicionesEconomicas::collection($this->condicionesEconomicas),
 
-            "consumo_agos_estimado"=>GastoEstimado::collection($this->gastoEstimado),
+            "consumo_gasto_estimado"=>GastoEstimado::collection($this->gastoEstimado),
 
             "recorrido"=>Recorrido::collection($this->recorrido)
         ];
