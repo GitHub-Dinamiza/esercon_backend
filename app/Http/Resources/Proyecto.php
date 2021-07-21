@@ -31,9 +31,12 @@ class Proyecto extends JsonResource
             "fecha_inicio"=>$this->fecha_inicio ,
             "fecha_fin"=>$this->fecha_fin ,
             "municipio_inicio"=>$this->municipioInicial->nombre,
+            "departamento_inicio_id" => $this->municipioInicial->departamento_id,
             "municipio_inicio_id"=>$this->municipio_inicio_id,
+
             "ubicacion_inicial"=>$this->ubicacion_inicial,
             "municipio_final"=>$this->municipioFinal->nombre ,
+            "departamento_final_id"=>$this->municipioFinal->departamento_id,
             "municipio_final_id"=>$this->municipio_final_id,
             "ubicacion_final"=>$this->ubicacion_final,
             "horas_laboral_dia"=>$this->horas_laboral_dia ,

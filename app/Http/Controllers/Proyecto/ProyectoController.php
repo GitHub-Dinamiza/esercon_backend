@@ -486,7 +486,7 @@ class ProyectoController extends Controller
                 $proyecto->save();
             }
             ResponseController::set_messages('Proyecto');
-            ResponseController::set_data(['data'=>$proyecto]);
+            ResponseController::set_data(['Proyecto'=>$proyecto]);
             return ResponseController::response('OK');
         }
         ResponseController::set_errors(true);
