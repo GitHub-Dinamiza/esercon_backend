@@ -14,6 +14,14 @@ class Recorrido extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id'=>$this->id,
+            'recorrido_inicio_id'=>$this->recorrido_inicio_id,
+            'recorrido_inicio'=>$this->ubicacionInicial->nombre,
+            'recorrido_final_id' => $this->recorrido_final_id,
+            'recorrido_final'=> $this->ubicacionFinal->nombre,
+           ' accion_id'=> $this->accion_id,
+           'accion'=> $this->accion->nombre
+        ];
     }
 }

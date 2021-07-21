@@ -19,4 +19,8 @@ class costoServicioDetalle extends Model
        return $this->belongsTo(ProyectoCosto::class);
    }
 
+   public function  tipoCostoServicio(){
+       return $this->belongsTo(TipoCostoServicio::class);
+   }
+
 }

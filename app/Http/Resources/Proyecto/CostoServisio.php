@@ -15,7 +15,7 @@ class CostoServisio extends JsonResource
      */
     public function toArray($request)
     {
-
+                $cost = $this->costoServicioDetalle;
 
        //return parent::toArray($request);
        return [
@@ -29,9 +29,9 @@ class CostoServisio extends JsonResource
                     'pago_a_realizar'=> $this->pago_a_realizar,
                     'created_at'=> $this->created_at,
                     'updated_at'=> $this->updated_at,
-                    'detalle'=> new Collection(
-                        $this->costoServicioDetalle
-                    )
+                    'detalle'=> CostoServicioDetalle::Collection(
+                        $cost
+                                          )
         ];
     }
 }
