@@ -15,7 +15,9 @@ class GastoEstimado extends JsonResource
     public function toArray($request)
     {
         return [
-                    $this->gastoEstimadoO->nombre=>$this->valor,
+                    'id'=>$this->id,
+                   'nombre'=> $this->gastoEstimadoO->nombre,
+                   'valor'=>$this->valor,
                     'tipo_dato'=>$this->gastoEstimadoO->tipo_dato
                 ];
     }

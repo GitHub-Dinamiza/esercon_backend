@@ -14,13 +14,14 @@ X-Requested-With: XMLHttpRequest
   "ubicacion_final":"ubicacion-2",
   "horas_laboral":"8",
   "temperatura":"36",
-  "duracion_proyecto":"",
-  "cantidad_vehiculo_propio":"",
-  "cantidad_vehiculo_alquilado":"",
-  "valor_metrocubico_propio":"",
-  "valor_metrocubico_alquilado":"",
-  "valor_contrato":"",
-  "valor_anticipo_contrato":"",
+  "propietario_dobletroque":"Mixto",
+  "duracion_proyecto":"160",
+  "cantidad_vehiculo_propio":"9",
+  "cantidad_vehiculo_alquilado":"5",
+  "valor_metrocubico_propio":"1000",
+  "valor_metrocubico_alquilado":"1500",
+  "valor_contrato":"100000000000",
+  "valor_anticipo_contrato":"200000",
 
    "tiposVias": [
            {"tipovia_id": "1" },
@@ -78,7 +79,46 @@ X-Requested-With: XMLHttpRequest
                                     "otro_medio_pago":""
                                 }
 
-                            ]
+                            ],
+    "datos_operacion":{
+
+                            "Consumo de combustible por día":"",
+                            "Consumo de lubricante por día":"",
+                            "Consumo de refrigerante":"",
+                            "Consumo de grasa":"",
+                            "Consumo de llantas por día":"",
+                            "Pago de peajes":"",
+                            "Pago conductor por día":"",
+                            "Pago de hidratación por día":"",
+                            "Pago parqueadero por día":"",
+                            "Pago SOAT por día":"",
+                            "Pago Tecnomecánica por día":"",
+                            "Pago de seguro todo riesgo por día":"",
+                            "Pago cuota leasing por día":"",
+                            "Pago lavado por día":"",
+                            "Pago mantenimiento por día":"",
+                            "Pago Administración por día"  :""
+    },
+    "datos_administracion":{
+                            "Salario conductor por dia":"",
+                            "S. ger. Nal. Operaciones por dia":"",
+                            "S. ger. Regional operaciones por dia":"",
+                            "S. ger. Recursos humanos por dia":"",
+                            "S. asistente rec humanos por día":"",
+                            "Salario gerencia administrativa por día":"",
+                            "Salario supervidor asignado por día":"",
+                            "Pago arriendo oficina por día":"",
+                            "Pago servicios oficina por día":"",
+                            "Pago alojamiento por día":"",
+                            "Pago alimentación por día":"",
+                            "Pago alquiler de camionetas por día":"",
+                            "Pago tiquetes aéreos por día":"",
+                            "Pago transporte terrestre por día":"",
+                            "Pago gasolina camionetas por día":"",
+                            "Pago papelería por día":"",
+                            "Pago insumos oficina por día":"",
+                            "Pago otros gastos oficina":""
+    }
 
 
 }
@@ -143,3 +183,20 @@ GET {{host}}/condicionesEconomicas
 Authorization: Bearer {{token}}
 Content-Type: application/json
 X-Requested-With: XMLHttpRequest
+
+
+###
+GET {{host}}/consumo_pago_estimado
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+###
+PATCH {{host}}/proyecto/
+Authorization: Bearer {{token}}
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+
+}

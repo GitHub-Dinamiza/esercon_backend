@@ -28,22 +28,22 @@ class Proyecto extends JsonResource
             'id'=>$this->id,
             'nombre'=>$this->nombre,
             "codigo"=>$this->codigo,
-            "fecha inicio"=>$this->fecha_inicio ,
-            "fecha fin"=>$this->fecha_fin ,
-            "municipio inicio"=>$this->municipioInicial->nombre,
-            "ubicacion inicial"=>$this->ubicacion_inicial,
-            "municipio final"=>$this->municipioFinal->nombre ,
-            "ubicacion final"=>$this->ubicacion_final,
-            "horas laboral dia"=>$this->horas_laboral_dia ,
+            "fecha_inicio"=>$this->fecha_inicio ,
+            "fecha_fin"=>$this->fecha_fin ,
+            "municipio_inicio"=>$this->municipioInicial->nombre,
+            "ubicacion_inicial"=>$this->ubicacion_inicial,
+            "municipio_final"=>$this->municipioFinal->nombre ,
+            "ubicacion_final"=>$this->ubicacion_final,
+            "horas_laboral_dia"=>$this->horas_laboral_dia ,
             "temperatura"=>$this->temperatura ,
-            "propietario dobletroque"=>$this->propietario_dobletroque,
-            "duracion proyecto"=>$this->duracion_dias,
-            "cantidad vehiculo propio"=>$this->cantidad_vehiculo_propio,
-            "cantidad vehiculo alquilado"=>$this->cantidad_vehiculo_alquilado,
-            "valor metrocubico propio"=>$this->valor_metrocubico_propio,
-            "valor metrocubico alquilado"=>$this->valor_metrocubico_alquilado,
-            "valor contrato"=>$this->valor_contrato,
-            "valor anticipo contrato"=>$this->valor_anticipo_contrato,
+            "propietario_dobletroque"=>$this->propietario_dobletroque,
+            "duracion_proyecto"=>$this->duracion_dias,
+            "cantidad_vehiculo_propio"=>$this->cantidad_vehiculo_propio,
+            "cantidad_vehiculo_alquilado"=>$this->cantidad_vehiculo_alquilado,
+            "valor_metrocubico_propio"=>$this->valor_metrocubico_propio,
+            "valor_metrocubico_alquilado"=>$this->valor_metrocubico_alquilado,
+            "valor_contrato"=>$this->valor_contrato,
+            "valor_anticipo_contrato"=>$this->valor_anticipo_contrato,
             "antiguedad_vehiculo"=>$this->antiguedad_vehiculos_anios. " Años",
             "otros_requerimientos"=>$this->otro_requerimientos,
 
@@ -52,19 +52,19 @@ class Proyecto extends JsonResource
 
             "usuario"=>$this->user->name ,
 
-            "fecha de creacion"=>$this->created_at ,
-            "fecha de atualizacion"=>$this->updated_at ,
+            "fecha_creacion"=>$this->created_at ,
+            "fecha_atualizacion"=>$this->updated_at ,
             "contratos"=>DocumentoResource::collection($this->archivos),
 
-            "tipo vias"=>TipoVias::collection($this->tipoVia),
+            "tipo_vias"=>TipoVias::collection($this->tipoVia),
 
             "rellenos"=>TipoMaterial::collection($this->tipoMaterial),
 
-            "costo servicio"=>CostoServisio::collection($this->servicioCosto),
+            "costo_servicio"=>CostoServisio::collection($this->servicioCosto),
 
-            "condicones economicas"=>CondicionesEconomicas::collection($this->condicionesEconomicas),
+            "condicones_economicas"=>CondicionesEconomicas::collection($this->condicionesEconomicas),
 
-            "consumo y pagos estimado"=>GastoEstimado::collection($this->gastoEstimado),
+            "consumo_agos_estimado"=>GastoEstimado::collection($this->gastoEstimado),
 
             "recorrido"=>Recorrido::collection($this->recorrido)
         ];

@@ -19,4 +19,10 @@ class ProyectoCosto extends Model
     public function  proyecto(){
         return $this->belongsTo(Proyecto::class);
     }
+
+    public function costoServicioDetalle(){
+        return $this->hasMany(costoServicioDetalle::class,'proyecto_costo_servico_id');
+    }
+
+
 }

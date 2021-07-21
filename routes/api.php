@@ -118,6 +118,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::get('','Proyecto\ProyectoController@show');
             Route::get('{id}','Proyecto\ProyectoController@get');
             Route::delete('{id}','Proyecto\ProyectoController@destroy');
+            Route::patch('{id}','Proyecto\ProyectoController@update1');
 
 
             Route::post('{id}/documento','Proyecto\ProyectoController@cargarArchivo');
