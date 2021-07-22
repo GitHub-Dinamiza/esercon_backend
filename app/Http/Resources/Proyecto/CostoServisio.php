@@ -21,6 +21,7 @@ class CostoServisio extends JsonResource
        return [
                     'id'=> $this->id,
                     'servicio_id'=>$this->servicio_id,
+                    'nombre_servicio'=>$this->servicio->nombre,
                     'proveedor_id'=> $this->proveedor_id,
                     'proyecto_id'=> $this->proyecto_id,
                     'forma_pago'=> $this->forma_pago,
