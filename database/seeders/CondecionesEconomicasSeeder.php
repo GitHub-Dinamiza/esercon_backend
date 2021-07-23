@@ -25,9 +25,10 @@ class CondecionesEconomicasSeeder extends Seeder
 
             ['nombre'=>'Galon de gasolina', 'servicio_id'=>'2'],
             ['nombre'=>'Galon de diesel', 'servicio_id'=>'2'],
-            ['nombre'=>'Lavado General', 'servicio_id'=>'3'],
 
             ['nombre'=>'Otros', 'servicio_id'=>'4'],
+            ['nombre'=>'Lavado General', 'servicio_id'=>'3'],
+
 
             ['nombre'=>'Lavado Motor', 'servicio_id'=>'3'],
             ['nombre'=>'Lavado Debajo', 'servicio_id'=>'3'],
