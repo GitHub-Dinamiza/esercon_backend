@@ -45,7 +45,7 @@ class CreateProyectoRequest extends FormRequest
                 'valor_anticipo_contrato'=> 'required',
 
                 'antiguedad_vehiculo'=> 'required',
-                'otros_requerimientos'=> 'required',
+                'otros_requerimientos'=> '',
                 'tiposVias'=>'required|array',
                 'tiposVias.*.tipovia_id'=>'required',
                 'rellenos'=>'required|array',
@@ -67,7 +67,7 @@ class CreateProyectoRequest extends FormRequest
 
                 'condiciones_economicas' => 'required|array',
                 'condiciones_economicas.*.nombre_condicion_economica_id' => 'required',
-                'condiciones_economicas.*.otro_condicion_econoimica' => '',
+                'condiciones_economicas.*.otro_condicion_econoimica' => 'required_if:condiciones_economicas.*.nombre_condicion_economica_id,4',
                 'condiciones_economicas.*.pago_a_realizar' => 'required',
                 'condiciones_economicas.*.forma_pago' => 'required',
                 'condiciones_economicas.*.medio_pago' => 'required',
@@ -117,120 +117,6 @@ class CreateProyectoRequest extends FormRequest
                 'recorridos.*.accion_id'=>'required',
 
 
-
-
-              /*   "tiposVias": [
-                         {"tipovia_id": "1" },
-                         {"tipovia_id": "2" },
-                         {"tipovia_id": "4", "otros": "bambu"}
-                     ],
-
-                 "rellenos": [
-                         {"tipo_material_id": "1"}
-
-                    ],
-                  "costoServicio":[
-                       {
-                           "servicio_id": "1",
-                           "otro_servicio": "prueba servicio7",
-                           "proveedor_id": "1",
-                           "forma_pago": "Diaria",
-                           "medio_pago": "Efectivo",
-                           "otro_medio_pago":"",
-                           "pago_a_realizar": "Esercon",
-                           "detalle":[
-                                  {
-                                      "tipo_costo_servicio_id":"1",
-                                      "otro_costo_servicio":"almuerzo ",
-                                      "valor":"10000"
-                                   }
-                                ]
-                       },
-                        {
-                           "servicio_id": "2",
-                           "otro_servicio": "prueba servicio8",
-                           "proveedor_id": "1",
-                           "forma_pago": "Diaria",
-                           "medio_pago": "Efectivo",
-                           "otro_medio_pago":"",
-                           "pago_a_realizar": "Esercon",
-                           "detalle":[
-                                  {
-
-                                      "tipo_costo_servicio_id":"4",
-                                      "otro_costo_servicio":"almuerzo ",
-                                      "valor":"10000"
-                                   }
-                                ]
-                       }
-                  ],
-                  "condiciones_economicas":[
-                                              {
-                                                  "nombre_condicion_economica_id":"1",
-                                                  "otro_condicion_econoimica":"",
-                                                  "pago_a_realizar":"Proveedor",
-                                                  "forma_pago":"Semanal",
-                                                  "medio_pago":"Tranferencia",
-                                                  "otro_medio_pago":""
-                                              }
-
-                                          ],
-                  "datos_operacion":{
-                                          "consumo_combustible_dia":"0",
-                                          "consumo_lubricante_dia":"0",
-                                          "consumo_refrigerante_dia":"0",
-                                          "consumo_grasa":"0",
-                                          "consumo_llantas_dia":"0",
-                                          "pago_peajes":"0",
-                                          "pago_conductor_dia":"0",
-                                          "pago_hidratacion_dia":"0",
-                                          "pago_parqueadero_dia":"0",
-                                          "pago_soat_dia":"0",
-                                          "pago_tecnomecanica_dia":"0",
-                                          "pago_seguro_dia":"0",
-                                          "pago_leasing_dia":"0",
-                                          "pago_lavado_dia":"0",
-                                          "pago_mantenimiento_dia":"0",
-                                          "pago_admin_dia":"0"
-                  },
-                  "datos_administracion":{
-                                          "salario_conductor_dia":"0",
-                                          "salario_gerencia_nacional_operaciones_dia":"0",
-                                          "salario_gerencia_regional_operaciones_dia":"0",
-                                          "salario_gerencia_recursos_humanos_dia":"0",
-                                          "salario_asistente_recursos_humanos_dia":"0",
-                                          "salario_gerencia_administracion_dia":"0",
-                                          "salarios_upervisor_asignado_dia":"0",
-                                          "pago_arriendo_oficina_dia":"0",
-                                          "pagos_servicios_oficina_dia":"0",
-                                          "pago_alojamiento_dia":"0",
-                                          "pago_alimentacion_dia":"0",
-                                          "pago_alquiler_camionetas_dia":"0",
-                                          "pago_tiquetes_aereos_dia":"0",
-                                          "pago_transporte_terrestre_dia":"0",
-                                          "pago_gasolina_camionetas_dia":"0",
-                                          "pago_papeleria_dia":"0",
-                                          "pago_insumos_oficina_dia":"0",
-                                          "pago_gastos_oficina":"0"
-                  },
-                  "recorridos":[
-                      {
-                          "recorrido_inicio_id":"1",
-                          "recorrido_final_id":"2",
-                          "accion_id":"2"
-                      },
-                      {
-                          "recorrido_inicio_id":"2",
-                          "recorrido_final_id":"1",
-                          "accion_id":"1"
-                      },
-                      {
-                          "recorrido_inicio_id":"1",
-                          "recorrido_final_id":"3",
-                          "accion_id":"2"
-                      }
-                  ]
-              */
 
 
 

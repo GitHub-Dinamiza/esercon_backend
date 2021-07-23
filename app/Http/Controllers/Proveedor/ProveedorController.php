@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Proveedor;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
 use App\Http\Controllers\ResponsePermisoController;
+use App\Http\Requests\Proveedor\CreateProveedorRequest;
 use App\Models\DocumentoProveedor;
 use App\Models\Proveedor;
 use Illuminate\Http\Request;
@@ -16,11 +17,12 @@ class ProveedorController extends Controller
         $this->middleware('auth:api');
     }
 
-    public function store(Request $request){
+    public function store(CreateProveedorRequest $request){
 
         if($request->user()->can('add_proveedor')) {
 
-            ### Falta Validacion
+            $razonSicial = $request->tipo_documento == 1? 1:0;
+
 
         $provedor=    DB::transaction(function () use ($request) {
                 $provedor = Proveedor::create([
@@ -29,7 +31,7 @@ class ProveedorController extends Controller
                     'primer_apellido' => $request->primer_apellido,
                     'segundo_nombre' => $request->segundo_nombre,
                     'segundo_apellido' => $request->segundo_apellido,
-                    'tipo_proveedor' => $request->tipo_proveedor,
+                    'tipo_proveedor' => $request->tipo_proveedor,// Juridico o natural
                     'direccion' => $request->direccion,
                     'telefono' => $request->telefono,
                     'email' => $request->email,

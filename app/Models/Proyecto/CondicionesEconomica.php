@@ -19,5 +19,9 @@ class CondicionesEconomica extends Model
         'forma_pago',
         'medio_pago',
         'pago_a_realizar'];
+
+    public function nombreCondicionesEconomica(){
+        return $this->belongsTo(NombreCondicionesEconomica::class,'nombre_condicion_economica_id');
+     }
 }
 

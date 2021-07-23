@@ -19,4 +19,5 @@ class NombreCondicionesEconomica extends Model
     public $timestamps =false;
 
 
+
 }
