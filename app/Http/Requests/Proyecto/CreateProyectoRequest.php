@@ -67,7 +67,7 @@ class CreateProyectoRequest extends FormRequest
 
                 'condiciones_economicas' => 'required|array',
                 'condiciones_economicas.*.nombre_condicion_economica_id' => 'required',
-                'condiciones_economicas.*.otro_condicion_econoimica' => 'required_if:condiciones_economicas.*.nombre_condicion_economica_id,4',
+                'condiciones_economicas.*.otro_condicion_economica' => 'required_if:condiciones_economicas.*.nombre_condicion_economica_id,4',
                 'condiciones_economicas.*.pago_a_realizar' => 'required',
                 'condiciones_economicas.*.forma_pago' => 'required',
                 'condiciones_economicas.*.medio_pago' => 'required',
