@@ -18,7 +18,7 @@ class Proyecto extends Model
     protected $table = 'proyectos';
 
     protected $fillable = [
-          'nombre',             'fecha_inicio',
+         'codigo', 'nombre',             'fecha_inicio',
         'fecha_fin',              'municipio_inicio_id','ubicacion_inicial',
         'municipio_final_id',     'ubicacion_final',    'horas_laboral_dia',
         'temperatura',            'estado',             'user_id',

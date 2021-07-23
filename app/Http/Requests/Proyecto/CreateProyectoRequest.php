@@ -25,7 +25,7 @@ class CreateProyectoRequest extends FormRequest
     {
         return [
 
-                'codigo'=> 'required|unique:proyectos,codigo',
+                'codigo'=> 'required',
                 'nombre'=> 'required|unique:proyectos,nombre',
                 'fecha_inicio'=> 'required',
                 'fecha_fin'=> 'required|date|after:fecha_inicio',
