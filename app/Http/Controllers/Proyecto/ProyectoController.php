@@ -22,7 +22,9 @@ use App\Models\Proyecto\GastoEstimadoOperaciones;
 use App\Models\Proyecto\GastoEstimadoProyecto;
 use App\Models\Proyecto\NombreCondicionesEconomica;
 use App\Models\Proyecto\RecorridoUbicacionProyecto;
+use Exception;
 use Illuminate\Contracts\Validation\Validator as ValidationValidator;
+use InvalidArgumentException;
 use Validator;
 
 class ProyectoController extends Controller
@@ -262,231 +264,294 @@ class ProyectoController extends Controller
  ### ACtualizar
     public function update1(Request $request, $id){
         if($request->user()->can('update_proyecto')){
-            $bandera = false;
-            $proyecto = Proyecto::find($id);
-            if($proyecto != null){
-
-                if($request->codigo != null){
-
-                    $proyecto->codigo=$request->codigo;
-                    $bandera = true;
-                }
-
-                if($request->nombre != null){
-                    $proyecto->nombre=$request->nombre;
-                    $bandera = true;
-                }
-
-                if($request->fecha_inicio != null){
-                    $proyecto->fecha_inicio=$request->fecha_inicio;
-                    $bandera = true;
-                }
-
-                if($request->fecha_fin != null){
-                    $proyecto->fecha_fin=$request->fecha_fin;
-                    $bandera = true;
-                }
-
-                if($request->municipio_inicio != null){
-                    $proyecto->municipio_inicio_id=$request->municipio_inicio;
-                    $bandera = true;
-                }
-
-                if($request->ubicacion_inicial != null){
-                    $proyecto->ubicacion_inicial=$request->ubicacion_inicial;
-                    $bandera = true;
-                }
 
 
-                if($request->municipio_final != null){
-                    $proyecto->municipio_final_id=$request->municipio_final;
-                    $bandera = true;
-                }
 
-                if($request->ubicacion_final != null){
-                    $proyecto->ubicacion_final=$request->ubicacion_final;
-                    $bandera = true;
-                }
 
-                if($request->horas_laboral != null){
-                    $proyecto->horas_laboral_dia=$request->horas_laboral;
-                    $bandera = true;
-                }
 
-                if($request->temperatura != null){
-                    $proyecto->temperatura=$request->temperatura;
-                    $bandera = true;
-                }
+            try{
+                $proyecto = DB::transaction(function ()use ($request, $id){
 
-                if($request->propietario_dobletroque != null){
-                    $proyecto->propietario_dobletroque=$request->propietario_dobletroque;
-                    $bandera = true;
-                }
+                    //DATA REQUEST
+                    $codigo = $request->codigo;
+                    $nombre = $request->nombre;
+                    $fecha_inicio = $request->fecha_inicio;
+                    $fecha_fin = $request->fecha_fin;
+                    $municipio_inicio = $request->municipio_inicio;
+                    $ubicacion_inicial = $request->ubicacion_inicial;
+                    $municipio_final = $request->municipio_final;
+                    $ubicacion_final = $request->ubicacion_final;
+                    $horas_laboral = $request->horas_laboral;
+                    $temperatura = $request->temperatura;
+                    $propietario_dobletroque = $request->propietario_dobletroque;
+                    $duracion_proyecto = $request->duracion_proyecto;
+                    $cantidad_vehiculo_propio = $request->cantidad_vehiculo_propio;
+                    $cantidad_vehiculo_alquilado = $request->cantidad_vehiculo_alquilado;
+                    $valor_metrocubico_propio = $request->valor_metrocubico_propio;
+                    $valor_metrocubico_alquilado = $request->valor_metrocubico_alquilado;
+                    $valor_contrato = $request->valor_contrato;
+                    $valor_anticipo_contrato = $request->valor_anticipo_contrato;
+                    $antiguedad_vehiculo = $request->antiguedad_vehiculo;
+                    $otros_requerimientos = $request->otros_requerimientos;
+                    $proyecto = Proyecto::find($id);
+                    $bandera = false;
+                        if($proyecto != null){
 
-                if($request->duracion_proyecto != null){
-                    $proyecto->duracion_dias=$request->duracion_proyecto;
-                    $bandera = true;
-                }
+                            if($codigo != null || $codigo != ''){
 
-                if($request->cantidad_vehiculo_propio != null){
-                    $proyecto->cantidad_vehiculo_propio=$request->cantidad_vehiculo_propio;
-                    $bandera = true;
-                }
+                                $proyecto->codigo=$request->codigo;
+                                $bandera = true;
+                            }
 
-                if($request->cantidad_vehiculo_alquilado != null){
-                    $proyecto->cantidad_vehiculo_alquilado=$request->cantidad_vehiculo_alquilado;
-                    $bandera = true;
-                }
+                            if($nombre != null || $nombre != ''){
+                                $proyecto->nombre=$request->nombre;
+                                $bandera = true;
+                            }
 
-                if($request->valor_metrocubico_propio != null){
-                    $proyecto->valor_metrocubico_propio=$request->valor_metrocubico_propio;
-                    $bandera = true;
-                }
+                            if($fecha_inicio != null || $fecha_inicio != ''){
+                                $proyecto->fecha_inicio=$request->fecha_inicio;
+                                $bandera = true;
+                            }
 
-                if($request->valor_metrocubico_alquilado != null){
-                    $proyecto->valor_metrocubico_alquilado=$request->valor_metrocubico_alquilado;
-                    $bandera = true;
-                }
+                            if($fecha_fin != null  || $fecha_fin != ''){
+                                $proyecto->fecha_fin=$request->fecha_fin;
+                                $bandera = true;
+                            }
 
-                if($request->valor_contrato != null){
-                    $proyecto->valor_contrato=$request->valor_contrato;
-                    $bandera = true;
-                }
+                            if($municipio_inicio != null || $municipio_inicio !=''){
+                                $proyecto->municipio_inicio_id=$request->municipio_inicio;
+                                $bandera = true;
+                            }
 
-                if($request->valor_anticipo_contrato != null){
-                    $proyecto->valor_anticipo_contrato=$request->valor_anticipo_contrato;
-                    $bandera = true;
-                }
+                            if($ubicacion_inicial != null || $ubicacion_inicial !=''){
+                                $proyecto->ubicacion_inicial=$request->ubicacion_inicial;
+                                $bandera = true;
+                            }
 
-                if($request->antiguedad_vehiculo != null){
-                    $proyecto->antiguedad_vehiculos_anios=$request->antiguedad_vehiculo;
-                    $bandera = true;
-                }
 
-                if($request->otros_requerimientos != null){
-                    $proyecto->otro_requerimientos =$request->otros_requerimientos;
-                    $bandera = true;
-                }
-            }
+                            if($municipio_final != null || $municipio_final != ''){
+                                $proyecto->municipio_final_id=$request->municipio_final;
+                                $bandera = true;
+                            }
 
-            if($request->costoServicio != null || $request->costoServicio != []){
+                            if($ubicacion_final != null || $ubicacion_final != ''){
+                                $proyecto->ubicacion_final=$request->ubicacion_final;
+                                $bandera = true;
+                            }
 
-                foreach($request->costoServicio as $index => $req){
+                            if($horas_laboral != null || $horas_laboral){
+                                $proyecto->horas_laboral_dia=$request->horas_laboral;
+                                $bandera = true;
+                            }
 
-                    $servicio_id=$req["servicio_id"];
-                    $proveedor_id = $req["proveedor_id"];
-                    $forma_pago = $req["forma_pago"];
-                    $medio_pago =$req["medio_pago"];
-                    $otro_medio_pago = $req["otro_medio_pago"];
-                    $pago_a_realizar = $req["pago_a_realizar"];
+                            if($temperatura != null || $temperatura != ''){
+                                $proyecto->temperatura=$request->temperatura;
+                                $bandera = true;
+                            }
 
-                     $cambio = false;
-                    $proyecCosto = ProyectoCosto::find($req["id"]);
-                    if($proyecCosto != null || $proyecCosto!=[] ){
+                            if($propietario_dobletroque != null || $propietario_dobletroque != ''){
+                                $proyecto->propietario_dobletroque=$request->propietario_dobletroque;
+                                $bandera = true;
+                            }
 
-                        if($servicio_id != null){
-                            $proyecCosto->servicio_id = $req["servicio_id"];
-                            $cambio = true;
-                        }
-                        //dd($req["proveedor_id"]);
-                        if($proveedor_id != null){
-                           $proyecCosto->proveedor_id = $req["proveedor_id"];
-                           $cambio = true;
-                        }
+                            if($duracion_proyecto != null || $duracion_proyecto != '' ){
+                                $proyecto->duracion_dias=$request->duracion_proyecto;
+                                $bandera = true;
+                            }
 
-                        if($forma_pago != null){
-                            $proyecCosto->forma_pago = $req["forma_pago"];
-                            $cambio = true;
-                        }
+                            if($cantidad_vehiculo_propio != null || $cantidad_vehiculo_propio != ''){
+                                $proyecto->cantidad_vehiculo_propio=$request->cantidad_vehiculo_propio;
+                                $bandera = true;
+                            }
 
-                        if($medio_pago != null){
-                            $proyecCosto->medio_pago = $req["medio_pago"];
-                            $cambio = true;
-                        }
+                            if($cantidad_vehiculo_alquilado != null || $cantidad_vehiculo_alquilado != '' ){
+                                $proyecto->cantidad_vehiculo_alquilado=$request->cantidad_vehiculo_alquilado;
+                                $bandera = true;
+                            }
 
-                        if($otro_medio_pago != null){
-                            $proyecCosto->otro_medio_pago = $req["otro_medio_pago"];
-                            $cambio = true;
+                            if($valor_metrocubico_propio != null || $valor_metrocubico_propio != ''){
+                                $proyecto->valor_metrocubico_propio=$request->valor_metrocubico_propio;
+                                $bandera = true;
+                            }
+
+                            if($valor_metrocubico_alquilado != null || $valor_metrocubico_alquilado != ''){
+                                $proyecto->valor_metrocubico_alquilado=$request->valor_metrocubico_alquilado;
+                                $bandera = true;
+                            }
+
+                            if($valor_contrato != null || $valor_contrato != '' ){
+                                $proyecto->valor_contrato=$request->valor_contrato;
+                                $bandera = true;
+                            }
+
+                            if($valor_anticipo_contrato != null){
+                                $proyecto->valor_anticipo_contrato=$request->valor_anticipo_contrato;
+                                $bandera = true;
+                            }
+
+                            if($antiguedad_vehiculo != null || $antiguedad_vehiculo !=''){
+                                $proyecto->antiguedad_vehiculos_anios=$request->antiguedad_vehiculo;
+                                $bandera = true;
+                            }
+
+                            if($otros_requerimientos != null || $otros_requerimientos != ''){
+                                $proyecto->otro_requerimientos =$request->otros_requerimientos;
+                                $bandera = true;
+                            }
+
+
+
+
+
+
                         }
 
-                        if($pago_a_realizar != null){
-                            $proyecCosto->pago_a_realizar = $req["pago_a_realizar"];
-                            $cambio = true;
+                        if($request->costoServicio != null || $request->costoServicio != []){
+
+                            foreach($request->costoServicio as $index => $req){
+
+                                $servicio_id=$req["servicio_id"];
+                                $proveedor_id = $req["proveedor_id"];
+                                $forma_pago = $req["forma_pago"];
+                                $medio_pago =$req["medio_pago"];
+                                $otro_medio_pago = $req["otro_medio_pago"]== null ? '':$req["otro_medio_pago"];
+                                $pago_a_realizar = $req["pago_a_realizar"];
+
+                                $cambio = false;
+
+                                $proyecCosto = ProyectoCosto::find($req["id"]);
+
+                                if($proyecCosto != null || $proyecCosto!=[] ){
+
+                                    if($servicio_id != null){
+                                        $proyecCosto->servicio_id = $req["servicio_id"];
+                                        $cambio = true;
+                                    }
+                                    //dd($req["proveedor_id"]);
+                                    if ($proveedor_id  != null || $proveedor_id != '')
+                                    {
+                                        $proyecCosto->proveedor_id =$proveedor_id;
+                                        $cambio = true;
+                                    }
+
+                                    if($forma_pago != null){
+                                        $proyecCosto->forma_pago = $req["forma_pago"];
+                                        $cambio = true;
+                                    }
+
+                                    if($medio_pago != null){
+                                        $proyecCosto->medio_pago = $req["medio_pago"];
+                                        $cambio = true;
+                                    }
+
+                                    if($otro_medio_pago != null || $otro_medio_pago != ''){
+                                        $proyecCosto->otro_medio_pago = $req["otro_medio_pago"];
+                                        $cambio = true;
+                                    }
+
+                                    if($pago_a_realizar != null){
+                                        $proyecCosto->pago_a_realizar = $req["pago_a_realizar"];
+                                        $cambio = true;
+                                    }
+
+                                    if($cambio){
+
+                                    $proyecCosto->save();
+                                    }
+
+                                }
+                                else{
+                                    throw new Exception("costo servicio indefinido ");
+                                }
+                                 $detalle = $req["detalle"] ;
+
+                                foreach($detalle as $index => $r){
+
+                                $detalleCosto = costoServicioDetalle::find($r["id"]);
+
+
+                                $detalleCosto->tipo_costo_servicio_id= $r["tipo_costo_servicio_id"];
+                                $detalleCosto->valor=$r["valor"];
+                                $detalleCosto->save();
+
+                            }
+
+                            }
                         }
-                        if($cambio){
-                        $proyecCosto->save();
-                         }
-                    }
-                   $detalle = $req["detalle"] ;
-                   foreach($detalle as $index => $r){
 
-                    $detalleCosto = costoServicioDetalle::find($r["id"]);
-                    $detalleCosto->proyecto_costo_servico_id=$r["proyecto_costo_servico_id"];
-                    $detalleCosto->tipo_costo_servicio_id= $r["tipo_costo_servicio_id"];
-                    $detalleCosto->valor=$r["valor"];
-                    $detalleCosto->save();
+                        if($request->condiciones_economicas != null || $request->condiciones_economicas != []){
 
-                   }
+                            foreach($request->condiciones_economicas as $index => $req){
 
-                }
+
+                            $condicionesEconomicasid= $req["id"];
+                            $nombreCondicionEconomica= $req["nombre_condicion_economica_id"];
+
+                            $formaPago = $req["forma_pago"];
+                            $medioPago = $req["medio_pago"];
+                            $pagoRealizar  = $req["pago_a_realizar"];
+
+                            $condicionesEconomica = CondicionesEconomica::find($condicionesEconomicasid);
+
+                            $condicionesEconomica->nombre_condicion_economica_id = $nombreCondicionEconomica;
+                            //$condicionesEconomica->proyecto_id = $proyectoId;
+                            $condicionesEconomica->forma_pago = $formaPago;
+                            $condicionesEconomica->medio_pago = $medioPago;
+                            $condicionesEconomica->pago_a_realizar = $pagoRealizar;
+
+                            $condicionesEconomica->save();
+                            }
+                        }
+
+                        if($request->consumo_pago_estimado != null || $request->consumo_pago_estimado  != []){
+
+                            foreach($request->consumo_pago_estimado as $index=>$req){
+                                //dd($req[]);
+                                $gastoEO = GastoEstimadoOperaciones::where('nombre' ,$index)->get();
+                                $gastoEstimadoProyecto = GastoEstimadoProyecto::find($req["id"]);
+                                $gastoEstimadoProyecto->valor = $req["valor"];
+                                $gastoEstimadoProyecto->save();
+
+                            }
+                        }
+                        if($request->recorridos != null ||$request->recorridos != []){
+                            foreach($request->recorridos as $index=>$req){
+                                $recorrido = RecorridoUbicacionProyecto::find($req["id"]);
+
+
+
+                                $recorrido_inicio_id = $req["recorrido_inicio_id"];
+                                $recorrido_final_id =$req["recorrido_final_id"];
+                                $accion_id =$req["accion_id"];
+                                $recorrido->recorrido_inicio_id = $recorrido_inicio_id;
+                                $recorrido->recorrido_final_id = $recorrido_final_id;
+                                $recorrido->accion_id = $accion_id;
+
+                                $recorrido->save();
+                            }
+                        }
+
+                        if($bandera){
+                            $proyecto->save();
+
+                            }
+                            return $proyecto;
+             });
+            }catch(Exception $e){
+                ResponseController::set_errors(true);
+                ResponseController::set_messages(['Error'=>$e]);
+
+                return ResponseController::response('BAD REQUEST');
+            }
+            catch (InvalidArgumentException $e) {
+                ResponseController::set_errors(true);
+                ResponseController::set_messages(['Error Argumento'=>$e]);
+
+                return ResponseController::response('BAD REQUEST');
             }
 
-            if($request->condiciones_economicas != null || $request->condiciones_economicas != []){
-
-                foreach($request->condiciones_economicas as $index => $req){
-
-
-                   $condicionesEconomicasid= $req["id"];
-                   $nombreCondicionEconomica= $req["nombre_condicion_economica_id"];
-                   $proyectoId = $req["proyecto_id"];
-                   $formaPago = $req["forma_pago"];
-                   $medioPago = $req["medio_pago"];
-                   $pagoRealizar  = $req["pago_a_realizar"];
-
-                   $condicionesEconomica = CondicionesEconomica::find($condicionesEconomicasid);
-
-                   $condicionesEconomica->nombre_condicion_economica_id = $nombreCondicionEconomica;
-                   //$condicionesEconomica->proyecto_id = $proyectoId;
-                   $condicionesEconomica->forma_pago = $formaPago;
-                   $condicionesEconomica->medio_pago = $medioPago;
-                   $condicionesEconomica->pago_a_realizar = $pagoRealizar;
-
-                   $condicionesEconomica->save();
-                }
-            }
-
-            if($request->consumo_pago_estimado != null || $request->consumo_pago_estimado  != []){
-
-                foreach($request->consumo_pago_estimado as $index=>$req){
-                    //dd($req[]);
-                    $gastoEO = GastoEstimadoOperaciones::where('nombre' ,$index)->get();
-                    $gastoEstimadoProyecto = GastoEstimadoProyecto::find($req["id"]);
-                    $gastoEstimadoProyecto->valor = $req["valor"];
-                    $gastoEstimadoProyecto->save();
-
-                }
-            }
-            if($request->recorridos != null ||$request->recorridos != []){
-                foreach($request->recorridos as $index=>$req){
-                    $recorrido = RecorridoUbicacionProyecto::find($req["id"]);
-
-
-
-                    $recorrido_inicio_id = $req["recorrido_inicio_id"];
-                    $recorrido_final_id =$req["recorrido_final_id"];
-                    $accion_id =$req["accion_id"];
-                    $recorrido->recorrido_inicio_id = $recorrido_inicio_id;
-                    $recorrido->recorrido_final_id = $recorrido_final_id;
-                    $recorrido->accion_id = $accion_id;
-
-                    $recorrido->save();
-                }
-            }
-            if($bandera){
-                $proyecto->save();
-            }
-            ResponseController::set_messages('Proyecto');
-            ResponseController::set_data(['Proyecto'=>$proyecto]);
+            ResponseController::set_messages('update proyecto');
+            ResponseController::set_data(['Proyecto'=> $proyecto]);
             return ResponseController::response('OK');
         }
         ResponseController::set_errors(true);
