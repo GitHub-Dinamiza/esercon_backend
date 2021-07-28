@@ -269,7 +269,7 @@ class ProyectoController extends Controller
 
 
 
-            try{
+
                 $proyecto = DB::transaction(function ()use ($request, $id){
 
                     //DATA REQUEST
@@ -293,6 +293,10 @@ class ProyectoController extends Controller
                     $valor_anticipo_contrato = $request->valor_anticipo_contrato;
                     $antiguedad_vehiculo = $request->antiguedad_vehiculo;
                     $otros_requerimientos = $request->otros_requerimientos;
+
+                    $tipoVias = $request->tipo_vias;
+                    $relleno = $request->rellenos;
+
                     $proyecto = Proyecto::find($id);
                     $bandera = false;
                         if($proyecto != null){
@@ -399,7 +403,35 @@ class ProyectoController extends Controller
                                 $bandera = true;
                             }
 
+                            if($tipoVias != null || $tipoVias != []){
 
+                                foreach ($tipoVias as $index => $d){
+
+                                    if($d["estado"]== "delete"){
+                                        $proyecto->tipoVia()->detach($d["id"]);
+                                    }
+                                    if($d["estado"]== "new" ){
+                                        $proyecto->tipoVia()->attach($d["tipo_via_id"]);
+                                    }
+
+                                }
+
+                                $bandera = true;
+                            }
+
+                            if($relleno != null || $relleno != []){
+
+                                foreach($relleno as $index => $d){
+
+                                    if($d["estado"]== "delete"){
+                                        $proyecto->tipoMaterial()->detach($d["id"]);
+                                    }
+                                    if($d["estado"]== "new" ){
+                                        $proyecto->tipoMaterial()->attach($d["tipo_material_id"]);
+                                    }
+                                }
+
+                            }
 
 
 
@@ -537,18 +569,7 @@ class ProyectoController extends Controller
                             }
                             return $proyecto;
              });
-            }catch(Exception $e){
-                ResponseController::set_errors(true);
-                ResponseController::set_messages(['Error'=>$e]);
 
-                return ResponseController::response('BAD REQUEST');
-            }
-            catch (InvalidArgumentException $e) {
-                ResponseController::set_errors(true);
-                ResponseController::set_messages(['Error Argumento'=>$e]);
-
-                return ResponseController::response('BAD REQUEST');
-            }
 
             ResponseController::set_messages('update proyecto');
             ResponseController::set_data(['Proyecto'=> $proyecto]);
