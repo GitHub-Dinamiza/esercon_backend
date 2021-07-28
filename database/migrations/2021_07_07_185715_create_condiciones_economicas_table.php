@@ -17,7 +17,7 @@ class CreateCondicionesEconomicasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('nombre_condicion_economica_id');
             $table->unsignedBigInteger('proyecto_id');
-            $table->enum('forma_pago', ['Diaria','Semanal','Quinsenal','Mensual']);
+            $table->enum('forma_pago', ['Diaria','Semanal','Quincenal','Mensual']);
             $table->enum('medio_pago',['Efectivo','Transferencia','Credito','Otros']);
             $table->enum('pago_a_realizar',['Esercon','Proveedor']);
             $table->softDeletes();

@@ -411,7 +411,10 @@ class ProyectoController extends Controller
                                         $proyecto->tipoVia()->detach($d["id"]);
                                     }
                                     if($d["estado"]== "new" ){
-                                        $proyecto->tipoVia()->attach($d["tipo_via_id"]);
+
+                                       // $proyecto->tipoVia()->attach($d["tipo_via_id"]);
+                                       $proyecto->tipoVia()->attach($d["tipo_via_id"],
+                                       $d["tipo_via_id"]==4?['otros'=>$d["otros"]]:[]);
                                     }
 
                                 }
@@ -427,7 +430,8 @@ class ProyectoController extends Controller
                                         $proyecto->tipoMaterial()->detach($d["id"]);
                                     }
                                     if($d["estado"]== "new" ){
-                                        $proyecto->tipoMaterial()->attach($d["tipo_material_id"]);
+                                        $proyecto->tipoMaterial()->attach($d["tipo_material_id"]
+                                        , $d["tipo_material_id"]==4?['otros'=>$d["otros"]]:[]);
                                     }
                                 }
 
@@ -443,70 +447,145 @@ class ProyectoController extends Controller
                             foreach($request->costoServicio as $index => $req){
 
                                 $servicio_id=$req["servicio_id"];
+                                $otro_servicio = $req["otro_servicio"];
                                 $proveedor_id = $req["proveedor_id"];
                                 $forma_pago = $req["forma_pago"];
                                 $medio_pago =$req["medio_pago"];
                                 $otro_medio_pago = $req["otro_medio_pago"]== null ? '':$req["otro_medio_pago"];
                                 $pago_a_realizar = $req["pago_a_realizar"];
+                                $estado= $req["estado"];
 
                                 $cambio = false;
+                                if ($estado == "update"){
 
-                                $proyecCosto = ProyectoCosto::find($req["id"]);
 
-                                if($proyecCosto != null || $proyecCosto!=[] ){
+                                    $proyecCosto = ProyectoCosto::find($req["id"]);
 
-                                    if($servicio_id != null){
-                                        $proyecCosto->servicio_id = $req["servicio_id"];
-                                        $cambio = true;
+                                    if($proyecCosto != null || $proyecCosto!=[] ){
+
+                                        if($servicio_id != null){
+                                            $proyecCosto->servicio_id = $req["servicio_id"];
+                                            $cambio = true;
+                                        }
+                                        //dd($req["proveedor_id"]);
+                                        if ($proveedor_id  != null || $proveedor_id != '')
+                                        {
+                                            $proyecCosto->proveedor_id =$proveedor_id;
+                                            $cambio = true;
+                                        }
+
+                                        if($forma_pago != null){
+                                            $proyecCosto->forma_pago = $req["forma_pago"];
+                                            $cambio = true;
+                                        }
+
+                                        if($medio_pago != null){
+                                            $proyecCosto->medio_pago = $req["medio_pago"];
+                                            $cambio = true;
+                                        }
+
+                                        if($otro_medio_pago != null || $otro_medio_pago != ''){
+                                            $proyecCosto->otro_medio_pago = $req["otro_medio_pago"];
+                                            $cambio = true;
+                                        }
+
+                                        if($pago_a_realizar != null || $pago_a_realizar != ''){
+                                            $proyecCosto->pago_a_realizar = $req["pago_a_realizar"];
+                                            $cambio = true;
+                                        }
+
+                                        if($cambio){
+
+
+                                        $proyecCosto->save();
+                                        }
+
                                     }
-                                    //dd($req["proveedor_id"]);
-                                    if ($proveedor_id  != null || $proveedor_id != '')
-                                    {
-                                        $proyecCosto->proveedor_id =$proveedor_id;
-                                        $cambio = true;
-                                    }
 
-                                    if($forma_pago != null){
-                                        $proyecCosto->forma_pago = $req["forma_pago"];
-                                        $cambio = true;
-                                    }
 
-                                    if($medio_pago != null){
-                                        $proyecCosto->medio_pago = $req["medio_pago"];
-                                        $cambio = true;
-                                    }
+                                    $detalle = $req["detalle"] ;
 
-                                    if($otro_medio_pago != null || $otro_medio_pago != ''){
-                                        $proyecCosto->otro_medio_pago = $req["otro_medio_pago"];
-                                        $cambio = true;
-                                    }
+                                    foreach($detalle as $index => $r){
 
-                                    if($pago_a_realizar != null){
-                                        $proyecCosto->pago_a_realizar = $req["pago_a_realizar"];
-                                        $cambio = true;
-                                    }
+                                       if ($r["id"] != null ||$r["id"] != ''){
 
-                                    if($cambio){
+                                            $detalleCosto = costoServicioDetalle::find($r["id"]);
 
-                                    $proyecCosto->save();
-                                    }
+
+                                            $detalleCosto->tipo_costo_servicio_id= $r["tipo_costo_servicio_id"];
+                                            $detalleCosto->valor=$r["valor"];
+                                            $detalleCosto->save();
+
+
+                                       }
+
+
 
                                 }
-                                else{
-                                    throw new Exception("costo servicio indefinido ");
                                 }
-                                 $detalle = $req["detalle"] ;
 
-                                foreach($detalle as $index => $r){
+                                if ($estado == "new"){
 
-                                $detalleCosto = costoServicioDetalle::find($r["id"]);
+                                    if($req !=[]){
+
+                                        $serv = $servicio_id;
+
+                                        if($servicio_id==4){
+                                            $serv = Servicio::create([
+                                                'nombre'=>$otro_servicio
+                                            ]);
+                                            $serv = $serv->id;
+                                        }
+
+                                        ## Creacion de costo Servicio
+                                        $costoServicio = ProyectoCosto::create([
+
+                                                'servicio_id'=>$serv,
+                                                'proveedor_id'=>$proveedor_id,
+                                                'proyecto_id'=>$proyecto->id,
+                                                'forma_pago'=>$forma_pago,
+                                                'medio_pago'=>$medio_pago,
+                                                'otro_medio_pago'=>$medio_pago=='Otros'?$otro_medio_pago:"" ,
+                                                'pago_a_realizar'=>$pago_a_realizar
+                                            ]);
+
+                                        ## se cargan los el detalle de los servicios
+                                        foreach($req["detalle"] as $index => $costo){
+
+                                            if($costo != []){
+                                                $ti = $costo['tipo_costo_servicio_id'];
+
+                                                if($costo["tipo_costo_servicio_id"]== 4){
+                                                    $ti = TipoCostoServicio::create([
+
+                                                        'servicio_id'=>$serv,
+                                                        'nombre'=>$costo["otro_costo_servicio"]
+
+                                                        ]);
+                                                    $ti =$ti->id;
+                                                }
+
+                                                $costo = costoServicioDetalle::create([
+
+                                                    'proyecto_costo_servico_id'=>$costoServicio->id,
+                                                    'tipo_costo_servicio_id'=>$ti,
+                                                    'valor'=>$costo["valor"]
+
+                                                ]);
+                                            }
+                                        }
+
+                                    }
+                                }
+
+                                if($estado == "delete" ){
+
+                                    $proyecCosto = ProyectoCosto::find($req["id"]);
+                                    $proyecCosto->delete();
+                                }
 
 
-                                $detalleCosto->tipo_costo_servicio_id= $r["tipo_costo_servicio_id"];
-                                $detalleCosto->valor=$r["valor"];
-                                $detalleCosto->save();
 
-                            }
 
                             }
                         }

@@ -55,7 +55,7 @@ class Proyecto extends Model
         return $this->belongsToMany(TipoVia::class,
             'tipos_vias_proyecto',
             'proyecto_id',
-            'tipo_via_id');
+            'tipo_via_id')->withPivot('otros');
     }
 
     public  function tipoMaterial(){
@@ -63,7 +63,7 @@ class Proyecto extends Model
             'tipos_materiales_proyecto',
             'proyecto_id',
             'tipo_material_id',
-        );
+        )->withPivot('otros');
     }
    public function  servicioCosto(){
         return $this->hasMany(ProyectoCosto::class);

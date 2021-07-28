@@ -22,7 +22,7 @@ class CreateCostoServicioDetalleTable extends Migration
 
             $table->foreign('proyecto_costo_servico_id')
                 ->on('proyecto_costo_servicio')
-                ->references('id');
+                ->references('id')->onDelete('cascade');
             $table->foreign('tipo_costo_servicio_id')
                 ->on('tipo_costo_servicio')
                 ->references('id');
