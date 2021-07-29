@@ -119,7 +119,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::get('{id}','Proyecto\ProyectoController@get');
             Route::delete('{id}','Proyecto\ProyectoController@destroy');
             Route::patch('{id}','Proyecto\ProyectoController@update1');
-
+            Route::post('validador', 'Proyecto\ProyectoController@validadorProyecto');
 
             Route::post('{id}/documento','Proyecto\ProyectoController@cargarArchivo');
             Route::delete('{id}/documento','Proyecto\ProyectoController@borrarAchivo');

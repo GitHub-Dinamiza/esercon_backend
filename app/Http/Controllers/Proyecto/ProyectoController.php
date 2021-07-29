@@ -37,6 +37,21 @@ class ProyectoController extends Controller
         $this->middleware('auth:api');
     }
 
+    public function validadorProyecto(Request $request){
+
+        $proyecto = Proyecto::where('codigo',$request->codigo)->get();
+
+        if(count($proyecto)> 0){
+
+            ResponseController::set_messages('a existe un proyecto registrado con el codigo ingresado ');
+
+            return ResponseController::response('OK');
+        }
+
+        ResponseController::set_messages('El codigo no esta registrado ');
+        return ResponseController::response('BAD REQUEST');
+    }
+
     /***
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
@@ -264,10 +279,6 @@ class ProyectoController extends Controller
  ### ACtualizar
     public function update1(Request $request, $id){
         if($request->user()->can('update_proyecto')){
-
-
-
-
 
 
                 $proyecto = DB::transaction(function ()use ($request, $id){
@@ -590,27 +601,44 @@ class ProyectoController extends Controller
                             }
                         }
 
+                    ###Coondiciones economica
                         if($request->condiciones_economicas != null || $request->condiciones_economicas != []){
+
+
 
                             foreach($request->condiciones_economicas as $index => $req){
 
+                                if($req["estado"]=='update'){
 
-                            $condicionesEconomicasid= $req["id"];
-                            $nombreCondicionEconomica= $req["nombre_condicion_economica_id"];
+                                    $condicionesEconomicasid= $req["id"];
+                                    $nombreCondicionEconomica= $req["nombre_condicion_economica_id"];
 
-                            $formaPago = $req["forma_pago"];
-                            $medioPago = $req["medio_pago"];
-                            $pagoRealizar  = $req["pago_a_realizar"];
+                                    $formaPago = $req["forma_pago"];
+                                    $medioPago = $req["medio_pago"];
+                                    $pagoRealizar  = $req["pago_a_realizar"];
 
-                            $condicionesEconomica = CondicionesEconomica::find($condicionesEconomicasid);
+                                    $condicionesEconomica = CondicionesEconomica::find($condicionesEconomicasid);
 
-                            $condicionesEconomica->nombre_condicion_economica_id = $nombreCondicionEconomica;
-                            //$condicionesEconomica->proyecto_id = $proyectoId;
-                            $condicionesEconomica->forma_pago = $formaPago;
-                            $condicionesEconomica->medio_pago = $medioPago;
-                            $condicionesEconomica->pago_a_realizar = $pagoRealizar;
+                                    $condicionesEconomica->nombre_condicion_economica_id = $nombreCondicionEconomica;
+                                    //$condicionesEconomica->proyecto_id = $proyectoId;
+                                    $condicionesEconomica->forma_pago = $formaPago;
+                                    $condicionesEconomica->medio_pago = $medioPago;
+                                    $condicionesEconomica->pago_a_realizar = $pagoRealizar;
 
-                            $condicionesEconomica->save();
+                                    $condicionesEconomica->save();
+
+                                }
+
+                                if($req["estado"]=='new'){
+
+                                }
+
+                                if($req["estado"]=='delete'){
+                                    $condicionesEconomica = CondicionesEconomica::find($condicionesEconomicasid);
+                                    $condicionesEconomica->delete();
+                                }
+
+
                             }
                         }
 
