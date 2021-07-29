@@ -27,34 +27,34 @@ class CondecionesEconomicasSeeder extends Seeder
             ['nombre'=>'Galon de diesel', 'servicio_id'=>'2'],
 
             ['nombre'=>'Otros', 'servicio_id'=>'4'],
-            ['nombre'=>'Lavado General', 'servicio_id'=>'3'],
+            ['nombre'=>'Lavado general', 'servicio_id'=>'3'],
 
 
-            ['nombre'=>'Lavado Motor', 'servicio_id'=>'3'],
-            ['nombre'=>'Lavado Debajo', 'servicio_id'=>'3'],
-            ['nombre'=>'Hospedaje Noche', 'servicio_id'=>'5'],
+            ['nombre'=>'Lavado motor', 'servicio_id'=>'3'],
+            ['nombre'=>'Lavado debajo', 'servicio_id'=>'3'],
+            ['nombre'=>'Hospedaje noche', 'servicio_id'=>'5'],
             ['nombre'=>'Desayuno', 'servicio_id'=>'6'],
             ['nombre'=>'Almuerzo', 'servicio_id'=>'6'],
             ['nombre'=>'Cena', 'servicio_id'=>'6'],
             ['nombre'=>'Lubricacion semanal', 'servicio_id'=>'7'],
-            ['nombre'=>'Lubricacion Dos veces por semana', 'servicio_id'=>'7'],
-            ['nombre'=>'Lubricacion Quincena', 'servicio_id'=>'7'],
+            ['nombre'=>'Lubricacion dos veces por semana', 'servicio_id'=>'7'],
+            ['nombre'=>'Lubricacion quincenal', 'servicio_id'=>'7'],
             ['nombre'=>'Despinchado por unidad', 'servicio_id'=>'8']
 
         ];
 
       Servicio::create([
-        'nombre'=>'Parqueadero dobleTroque'
+        'nombre'=>'Parqueadero dobletroque'
       ]);
       Servicio::create([
         'nombre'=>'Estacion de servicio'
       ]);
       Servicio::create([
-        'nombre'=>'Lavado dobleTroque'
+        'nombre'=>'Lavado dobletroque'
       ]);
 
       Servicio::create([
-        'nombre'=>'otros'
+        'nombre'=>'Otros'
       ]);
 
       Servicio::create([
@@ -62,7 +62,7 @@ class CondecionesEconomicasSeeder extends Seeder
       ]);
 
       Servicio::create([
-        'nombre'=>'Servicio de Alimentacion'
+        'nombre'=>'Servicio de alimentacion'
       ]);
 
       Servicio::create([
@@ -70,12 +70,12 @@ class CondecionesEconomicasSeeder extends Seeder
       ]);
 
       Servicio::create([
-        'nombre'=>'servicio de Despinchado'
+        'nombre'=>'Servicio de despinchado'
       ]);
 
     ### Nombre Condiciones Economicas
         NombreCondicionesEconomica::create([
-            'nombre'=>'Pago de certificaciones de vehículos'
+            'nombre'=>'Pago de certificaciones de vehiculos'
         ]);
         NombreCondicionesEconomica::create([
             'nombre'=>'Pago de refrigerante'
@@ -87,7 +87,7 @@ class CondecionesEconomicasSeeder extends Seeder
             'nombre'=>'Otros'
         ]);
         NombreCondicionesEconomica::create([
-            'nombre'=>'Pago de dotación'
+            'nombre'=>'Pago de dotacion'
         ]);
 
         foreach ($costo as $index=> $d)
