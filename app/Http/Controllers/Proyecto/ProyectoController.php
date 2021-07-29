@@ -45,11 +45,11 @@ class ProyectoController extends Controller
 
             ResponseController::set_messages('a existe un proyecto registrado con el codigo ingresado ');
 
-            return ResponseController::response('OK');
+            return ResponseController::response('BAD REQUEST');
         }
 
         ResponseController::set_messages('El codigo no esta registrado ');
-        return ResponseController::response('BAD REQUEST');
+        return ResponseController::response('OK');
     }
 
     /***
