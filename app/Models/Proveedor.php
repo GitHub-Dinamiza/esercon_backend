@@ -25,6 +25,10 @@ class Proveedor extends Model
        return $this->hasMany(DocumentoProveedor::class);
     }
 
+    public function municipio(){
+        return $this->belongsTo(Municipio::class, 'municipio_id');
+    }
+
     public function scopeFiltro($query, $filtro){
             return $query->where('razon_social','like',"%$filtro%")->get();
     }

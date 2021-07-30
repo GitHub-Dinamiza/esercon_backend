@@ -35,6 +35,8 @@ class ProveedorResource extends JsonResource
             'telefono'=>$this->telefono,
             'email'=>$this->email,
             'municipio_id'=>$this->municipio_id,
+            'municipio'=>$this->municipio->nombre,
+            'departamento_id'=>$this->municipio->departamento_id,
             'user_id'=>$this->user_id,
             'numeros_identicacion'=>DocumentoProveedorResource::collection($this->numeroDocumento)
 
