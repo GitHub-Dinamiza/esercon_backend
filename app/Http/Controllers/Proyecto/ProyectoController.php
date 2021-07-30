@@ -43,7 +43,7 @@ class ProyectoController extends Controller
 
         if(count($proyecto)> 0){
 
-            ResponseController::set_messages('a existe un proyecto registrado con el codigo ingresado ');
+            ResponseController::set_messages('existe un proyecto registrado con el codigo ingresado ');
 
             return ResponseController::response('BAD REQUEST');
         }
@@ -610,8 +610,18 @@ class ProyectoController extends Controller
 
                                 if($req["estado"]=='update'){
 
+                                    $nce=$req["nombre_condicion_economica_id"];
+                                    if($nce==4){
+                                        $nce= NombreCondicionesEconomica::create([
+                                            'nombre'=>$req["otro_condicion_economica"]
+                                        ]);
+
+                                        $nce=$nce->id;
+
+                                    }
+
                                     $condicionesEconomicasid= $req["id"];
-                                    $nombreCondicionEconomica= $req["nombre_condicion_economica_id"];
+                                    $nombreCondicionEconomica= $nce;
 
                                     $formaPago = $req["forma_pago"];
                                     $medioPago = $req["medio_pago"];
@@ -630,6 +640,26 @@ class ProyectoController extends Controller
                                 }
 
                                 if($req["estado"]=='new'){
+
+                                    $nce=$req["nombre_condicion_economica_id"];
+                                    if($nce==4){
+                                        $nce= NombreCondicionesEconomica::create([
+                                            'nombre'=>$req["otro_condicion_economica"]
+                                        ]);
+
+                                        $nce=$nce->id;
+
+                                    }
+
+                                    $ce = CondicionesEconomica::create([
+
+                                        'nombre_condicion_economica_id'=>$nce,
+                                        'proyecto_id'=>$proyecto->id,
+                                        'forma_pago'=>$req["forma_pago"],
+                                        'medio_pago'=>$req["medio_pago"],
+                                        'pago_a_realizar'=>$req["pago_a_realizar"]
+
+                                    ]);
 
                                 }
 

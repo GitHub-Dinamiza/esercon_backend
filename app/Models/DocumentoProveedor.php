@@ -19,6 +19,11 @@ class DocumentoProveedor extends Model
     public function proveedor(){
        return $this->belongsTo(Proveedor::class);
     }
+
+
+    public function tipoDocumento(){
+        return $this->belongsTo(TipoDocumento::class, 'tipodocumento_id');
+    }
     public function scopeFiltro1($query, $filtro){
         return $query->where('numero',$filtro)->get();
     }

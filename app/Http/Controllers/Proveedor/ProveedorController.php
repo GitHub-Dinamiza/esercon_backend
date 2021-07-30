@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
 use App\Http\Controllers\ResponsePermisoController;
 use App\Http\Requests\Proveedor\CreateProveedorRequest;
+use App\Http\Resources\Proveedor\ProveedorResource;
 use App\Models\DocumentoProveedor;
 use App\Models\Proveedor;
 use Illuminate\Http\Request;
@@ -65,11 +66,17 @@ class ProveedorController extends Controller
 
 
     }
+     public function getIdProveedor(Request $request, $id){
+
+        $proveedor = Proveedor::find($id);
+     }
 
     public function show(Request $request){
         if($request->user()->can('add_proveedor')){
             $proveedor = Proveedor::all();
-            ResponseController::set_data(['provedores'=>$proveedor]);
+            $rProveedor = ProveedorResource::collection($proveedor);
+
+            ResponseController::set_data(['provedores'=>$rProveedor ]);
             return ResponseController::response('OK');
 
         }
