@@ -469,13 +469,23 @@ class ProyectoController extends Controller
                                 $cambio = false;
                                 if ($estado == "update"){
 
+                                    $serv = $servicio_id;
+
+                                    if($servicio_id==4){
+                                        $serv = Servicio::create([
+                                            'nombre'=>$otro_servicio
+                                        ]);
+                                        $serv = $serv->id;
+                                    }
+
+
 
                                     $proyecCosto = ProyectoCosto::find($req["id"]);
 
                                     if($proyecCosto != null || $proyecCosto!=[] ){
 
                                         if($servicio_id != null){
-                                            $proyecCosto->servicio_id = $req["servicio_id"];
+                                            $proyecCosto->servicio_id =  $serv;
                                             $cambio = true;
                                         }
                                         //dd($req["proveedor_id"]);
@@ -514,25 +524,6 @@ class ProyectoController extends Controller
                                     }
 
 
-                                    $detalle = $req["detalle"] ;
-
-                                    foreach($detalle as $index => $r){
-
-                                       if ($r["id"] != null ||$r["id"] != ''){
-
-                                            $detalleCosto = costoServicioDetalle::find($r["id"]);
-
-
-                                            $detalleCosto->tipo_costo_servicio_id= $r["tipo_costo_servicio_id"];
-                                            $detalleCosto->valor=$r["valor"];
-                                            $detalleCosto->save();
-
-
-                                       }
-
-
-
-                                }
                                 }
 
                                 if ($estado == "new"){
@@ -553,7 +544,7 @@ class ProyectoController extends Controller
 
                                                 'servicio_id'=>$serv,
                                                 'proveedor_id'=>$proveedor_id,
-                                                'proyecto_id'=>$proyecto->id,
+                                                'proyecto_id'=>$id,
                                                 'forma_pago'=>$forma_pago,
                                                 'medio_pago'=>$medio_pago,
                                                 'otro_medio_pago'=>$medio_pago=='Otros'?$otro_medio_pago:"" ,
@@ -595,18 +586,67 @@ class ProyectoController extends Controller
                                     $proyecCosto->delete();
                                 }
 
+                                $detalle = $req["detalle"] ;
+
+                                foreach($detalle as $index => $r){
+
+                                   if ($r["id"] != null ||$r["id"] != ''){
+
+                                        $detalleCosto = costoServicioDetalle::find($r["id"]);
+
+                                        $ti = $r['tipo_costo_servicio_id'];
+
+                                        if($r["tipo_costo_servicio_id"]== 4){
+                                            $ti = TipoCostoServicio::create([
+
+                                                'servicio_id'=>$serv,
+                                                'nombre'=>$r["otro_costo_servicio"]
+
+                                                ]);
+                                            $ti =$ti->id;
+                                        }
+
+                                        if($r["estado"]=="update"){
+                                             $detalleCosto->$ti;
+                                        $detalleCosto->valor=$r["valor"];
+                                        $detalleCosto->save();
+                                        }
+
+                                        if($r["estado"]== "new"){
+
+                                            $costo = costoServicioDetalle::create([
+
+                                                'proyecto_costo_servico_id'=>$req["id"],
+                                                'tipo_costo_servicio_id'=>$ti,
+                                                'valor'=>$r["valor"]
+
+                                            ]);
+
+                                        }
+
+                                        if($r["estado"]=="delete"){
+
+                                            $detalleCosto->delete();
+                                        }
 
 
+
+
+                                   }
+                            }
 
                             }
+
                         }
 
+
+
                     ###Coondiciones economica
-                        if($request->condiciones_economicas != null || $request->condiciones_economicas != []){
+                        if($request->condicones_economicas != null || $request->condiciones_economicas != []){
 
 
 
-                            foreach($request->condiciones_economicas as $index => $req){
+                            foreach($request->condicones_economicas as $index => $req){
 
                                 if($req["estado"]=='update'){
 
@@ -664,7 +704,7 @@ class ProyectoController extends Controller
                                 }
 
                                 if($req["estado"]=='delete'){
-                                    $condicionesEconomica = CondicionesEconomica::find($condicionesEconomicasid);
+                                    $condicionesEconomica = CondicionesEconomica::find($req["id"]);
                                     $condicionesEconomica->delete();
                                 }
 
