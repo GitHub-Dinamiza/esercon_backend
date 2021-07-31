@@ -774,7 +774,7 @@ class ProyectoController extends Controller
         $proyecto= Proyecto::find($id);
         $subirAchivo =new cargarArchivoController;
 
-        $path = 'Proyectos/'.$proyecto->nombre.'/';
+        $path = 'Proyectos/'.$proyecto->id.'/';
         $dataArchivoCargado = json_decode($subirAchivo->uploadFile($request, $path));
 
         //dd($dataArchivoCargado->name);
