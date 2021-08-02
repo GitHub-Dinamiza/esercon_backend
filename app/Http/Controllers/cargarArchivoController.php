@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class cargarArchivoController extends Controller
 {
     public  function uploadFile(Request $request, $path){
+
         if($request->hasFile('file')){
             $file =$request->file('file');
             $fileName = $file->getClientOriginalName();

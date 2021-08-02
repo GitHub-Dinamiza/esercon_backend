@@ -774,7 +774,7 @@ class ProyectoController extends Controller
         $proyecto= Proyecto::find($id);
         $subirAchivo =new cargarArchivoController;
 
-        $path = 'Proyectos/'.$proyecto->id.'/';
+        $path = 'Proyectos/Contratos/';
         $dataArchivoCargado = json_decode($subirAchivo->uploadFile($request, $path));
 
         //dd($dataArchivoCargado->name);
@@ -791,7 +791,7 @@ class ProyectoController extends Controller
             ]);
         }else{
             ResponseController::set_errors(true);
-            ResponseController::set_messages('Error AL SUBIR ARCHIVO');
+            ResponseController::set_messages(['Error AL SUBIR ARCHIVO'=>$dataArchivoCargado->mensaje]);
             return ResponseController::response('BAD REQUEST');
         }
         ResponseController::set_messages('Documento agregado');
