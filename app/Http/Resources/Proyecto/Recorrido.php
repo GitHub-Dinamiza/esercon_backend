@@ -20,7 +20,7 @@ class Recorrido extends JsonResource
             'recorrido_inicio'=>$this->ubicacionInicial->nombre,
             'recorrido_final_id' => $this->recorrido_final_id,
             'recorrido_final'=> $this->ubicacionFinal->nombre,
-           ' accion_id'=> $this->accion_id,
+           'accion_id'=> $this->accion_id,
            'accion'=> $this->accion->nombre
         ];
     }

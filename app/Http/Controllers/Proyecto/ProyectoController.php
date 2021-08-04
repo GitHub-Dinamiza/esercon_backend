@@ -15,6 +15,7 @@ use App\Models\Servicio;
 use App\Models\TipoCostoServicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Arr;
 
 use App\Http\Resources\Proyecto as ResourceProyecto;
 use App\Models\Proyecto\CondicionesEconomica;
@@ -25,6 +26,7 @@ use App\Models\Proyecto\RecorridoUbicacionProyecto;
 use Exception;
 use Illuminate\Contracts\Validation\Validator as ValidationValidator;
 use InvalidArgumentException;
+use PhpParser\Node\Expr\ArrayItem;
 use Validator;
 
 class ProyectoController extends Controller
@@ -40,8 +42,9 @@ class ProyectoController extends Controller
     public function validadorProyecto(Request $request){
 
         $proyecto = Proyecto::where('codigo',$request->codigo)->get();
+       // $proyecto1 = Proyecto::find($request->id);
 
-        if(count($proyecto)> 0){
+        if(count($proyecto)> 0 ){
 
             ResponseController::set_messages('existe un proyecto registrado con el codigo ingresado ');
 
@@ -276,9 +279,16 @@ class ProyectoController extends Controller
         return ResponseController::response('UNAUTHORIZED');
     }
 
+    #update validador
+    public function valiporUpdate($request){
+
+        return true;
+    }
+
  ### ACtualizar
     public function update1(Request $request, $id){
         if($request->user()->can('update_proyecto')){
+
 
 
                 $proyecto = DB::transaction(function ()use ($request, $id){
@@ -288,9 +298,9 @@ class ProyectoController extends Controller
                     $nombre = $request->nombre;
                     $fecha_inicio = $request->fecha_inicio;
                     $fecha_fin = $request->fecha_fin;
-                    $municipio_inicio = $request->municipio_inicio;
+                    $municipio_inicio = $request->municipio_inicio_id;
                     $ubicacion_inicial = $request->ubicacion_inicial;
-                    $municipio_final = $request->municipio_final;
+                    $municipio_final = $request->municipio_final_id;
                     $ubicacion_final = $request->ubicacion_final;
                     $horas_laboral = $request->horas_laboral;
                     $temperatura = $request->temperatura;
@@ -334,7 +344,7 @@ class ProyectoController extends Controller
                             }
 
                             if($municipio_inicio != null || $municipio_inicio !=''){
-                                $proyecto->municipio_inicio_id=$request->municipio_inicio;
+                                $proyecto->municipio_inicio_id=$request->municipio_inicio_id;
                                 $bandera = true;
                             }
 
@@ -345,7 +355,7 @@ class ProyectoController extends Controller
 
 
                             if($municipio_final != null || $municipio_final != ''){
-                                $proyecto->municipio_final_id=$request->municipio_final;
+                                $proyecto->municipio_final_id=$request->municipio_final_id;
                                 $bandera = true;
                             }
 
@@ -420,12 +430,14 @@ class ProyectoController extends Controller
 
                                     if($d["estado"]== "delete"){
                                         $proyecto->tipoVia()->detach($d["id"]);
+
                                     }
                                     if($d["estado"]== "new" ){
 
                                        // $proyecto->tipoVia()->attach($d["tipo_via_id"]);
                                        $proyecto->tipoVia()->attach($d["tipo_via_id"],
                                        $d["tipo_via_id"]==4?['otros'=>$d["otros"]]:[]);
+
                                     }
 
                                 }
@@ -439,10 +451,12 @@ class ProyectoController extends Controller
 
                                     if($d["estado"]== "delete"){
                                         $proyecto->tipoMaterial()->detach($d["id"]);
+
                                     }
                                     if($d["estado"]== "new" ){
                                         $proyecto->tipoMaterial()->attach($d["tipo_material_id"]
                                         , $d["tipo_material_id"]==4?['otros'=>$d["otros"]]:[]);
+
                                     }
                                 }
 
@@ -457,8 +471,10 @@ class ProyectoController extends Controller
 
                             foreach($request->costoServicio as $index => $req){
 
+
+
                                 $servicio_id=$req["servicio_id"];
-                                $otro_servicio = $req["otro_servicio"];
+                                $otro_servicio = isset($req["otro_servicio"])?$req["otro_servicio"]:"";
                                 $proveedor_id = $req["proveedor_id"];
                                 $forma_pago = $req["forma_pago"];
                                 $medio_pago =$req["medio_pago"];
@@ -521,8 +537,79 @@ class ProyectoController extends Controller
                                         $proyecCosto->save();
                                         }
 
-                                    }
 
+                                    }
+                                    $detalle = $req["detalle"] ;
+
+                                    foreach($detalle as $index => $r){
+
+                                        if($r["estado"] == "new"){
+
+
+                                            $ti = $r['tipo_costo_servicio_id'];
+
+                                            if($r["tipo_costo_servicio_id"]== 4){
+                                                $ti = TipoCostoServicio::create([
+
+                                                    'servicio_id'=>$serv,
+                                                    'nombre'=>$r["otro_costo_servicio"]
+
+                                                    ]);
+                                                $ti =$ti->id;
+                                            }
+                                            $costo = costoServicioDetalle::create([
+
+                                                'proyecto_costo_servico_id'=>$req["id"],
+                                                'tipo_costo_servicio_id'=>$ti,
+                                                'valor'=>$r["valor"]
+
+                                            ]);
+
+
+                                        }else{
+                                            if(isset($r["id"]) ||$r["id"] != ''){
+
+
+
+                                                $ti = $r['tipo_costo_servicio_id'];
+
+                                                if($r["tipo_costo_servicio_id"]== 4){
+                                                    $ti = TipoCostoServicio::create([
+
+                                                        'servicio_id'=>$serv,
+                                                        'nombre'=>$r["otro_costo_servicio"]
+
+                                                        ]);
+                                                    $ti =$ti->id;
+                                                }
+
+
+                                                if($r["estado"]=="update"){
+                                                    $detalleCosto = costoServicioDetalle::find($r["id"]);
+
+                                                     $detalleCosto->$ti;
+                                                    $detalleCosto->valor=$r["valor"];
+                                                     $detalleCosto->save();
+
+                                                }
+
+
+
+                                                if($r["estado"]=="delete" && isset($r["id"])){
+
+                                                    $detalleCosto = costoServicioDetalle::find($r["id"]);
+
+                                                    $detalleCosto->delete();
+
+                                                }
+
+
+
+
+                                           }
+                                        }
+
+                                    }
 
                                 }
 
@@ -584,56 +671,10 @@ class ProyectoController extends Controller
 
                                     $proyecCosto = ProyectoCosto::find($req["id"]);
                                     $proyecCosto->delete();
+
                                 }
 
-                                $detalle = $req["detalle"] ;
 
-                                foreach($detalle as $index => $r){
-
-                                   if ($r["id"] != null ||$r["id"] != ''){
-
-                                        $detalleCosto = costoServicioDetalle::find($r["id"]);
-
-                                        $ti = $r['tipo_costo_servicio_id'];
-
-                                        if($r["tipo_costo_servicio_id"]== 4){
-                                            $ti = TipoCostoServicio::create([
-
-                                                'servicio_id'=>$serv,
-                                                'nombre'=>$r["otro_costo_servicio"]
-
-                                                ]);
-                                            $ti =$ti->id;
-                                        }
-
-                                        if($r["estado"]=="update"){
-                                             $detalleCosto->$ti;
-                                        $detalleCosto->valor=$r["valor"];
-                                        $detalleCosto->save();
-                                        }
-
-                                        if($r["estado"]== "new"){
-
-                                            $costo = costoServicioDetalle::create([
-
-                                                'proyecto_costo_servico_id'=>$req["id"],
-                                                'tipo_costo_servicio_id'=>$ti,
-                                                'valor'=>$r["valor"]
-
-                                            ]);
-
-                                        }
-
-                                        if($r["estado"]=="delete"){
-
-                                            $detalleCosto->delete();
-                                        }
-
-
-
-
-                                   }
-                            }
 
                             }
 
@@ -647,6 +688,7 @@ class ProyectoController extends Controller
 
 
                             foreach($request->condicones_economicas as $index => $req){
+
 
                                 if($req["estado"]=='update'){
 
@@ -668,14 +710,16 @@ class ProyectoController extends Controller
                                     $pagoRealizar  = $req["pago_a_realizar"];
 
                                     $condicionesEconomica = CondicionesEconomica::find($condicionesEconomicasid);
-
+                                   // dd($condicionesEconomica);
                                     $condicionesEconomica->nombre_condicion_economica_id = $nombreCondicionEconomica;
-                                    //$condicionesEconomica->proyecto_id = $proyectoId;
+
                                     $condicionesEconomica->forma_pago = $formaPago;
                                     $condicionesEconomica->medio_pago = $medioPago;
                                     $condicionesEconomica->pago_a_realizar = $pagoRealizar;
 
                                     $condicionesEconomica->save();
+
+
 
                                 }
 
@@ -706,6 +750,7 @@ class ProyectoController extends Controller
                                 if($req["estado"]=='delete'){
                                     $condicionesEconomica = CondicionesEconomica::find($req["id"]);
                                     $condicionesEconomica->delete();
+
                                 }
 
 
@@ -725,9 +770,11 @@ class ProyectoController extends Controller
                         }
                         if($request->recorridos != null ||$request->recorridos != []){
                             foreach($request->recorridos as $index=>$req){
+
+
+                                if($req["estado"]="update"){
+
                                 $recorrido = RecorridoUbicacionProyecto::find($req["id"]);
-
-
 
                                 $recorrido_inicio_id = $req["recorrido_inicio_id"];
                                 $recorrido_final_id =$req["recorrido_final_id"];
@@ -737,6 +784,29 @@ class ProyectoController extends Controller
                                 $recorrido->accion_id = $accion_id;
 
                                 $recorrido->save();
+
+
+                                }
+                                if($req["estado"]="delete"){
+
+                                    $recorrido = RecorridoUbicacionProyecto::find($req["id"]);
+
+                                    $recorrido->delete();
+
+                                }
+
+                                if($req["estado"]="new"){
+
+                                    RecorridoUbicacionProyecto::create([
+                                        'proyecto_id'=>$proyecto->id,
+                                        'recorrido_inicio_id'=>$req["recorrido_inicio_id"],
+                                        'recorrido_final_id'=>$req["recorrido_final_id"],
+                                        'accion_id'=>$req["accion_id"],
+                                        'user_id'=>$request->user()->id
+                                    ]);
+
+                                }
+
                             }
                         }
 
