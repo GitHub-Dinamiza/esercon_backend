@@ -683,11 +683,11 @@ class ProyectoController extends Controller
 
 
                     ###Coondiciones economica
-                        if($request->condicones_economicas != null || $request->condiciones_economicas != []){
+                        if($request->condiciones_economicas != null || $request->condiciones_economicas != []){
 
 
 
-                            foreach($request->condicones_economicas as $index => $req){
+                            foreach($request->condiciones_economicas as $index => $req){
 
 
                                 if($req["estado"]=='update'){
