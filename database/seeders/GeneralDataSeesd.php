@@ -37,6 +37,26 @@ class GeneralDataSeesd extends Seeder
                 'table_iden'=>'prov_tipo_documento'
             ],
 
+            ###Marca vehiculo.
+
+            [
+                'name'=>'Mack',
+                'slug'=>'',
+                'table_iden'=>'Marca_vehiculos'
+            ],
+
+            [
+                'name'=>'Autocar',
+                'slug'=>'',
+                'table_iden'=>'Marca_vehiculos'
+            ],
+
+            [
+                'name'=>'Checrolet',
+                'slug'=>'',
+                'table_iden'=>'Marca_vehiculos'
+            ],
+
         ];
 
         foreach ($data as $index => $d){
