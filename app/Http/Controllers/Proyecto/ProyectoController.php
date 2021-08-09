@@ -268,8 +268,8 @@ class ProyectoController extends Controller
     public function get(Request $request,$id){
         if($request->user()->can('show_proyecto')){
             $proyecto =Proyecto::find($id);
-            $proyecto->archivos;
-            $proyecto->municipio;
+           // $proyecto->archivos;
+           // $proyecto->municipio;
             $proyecto =ResourceProyecto::make($proyecto);
             ResponseController::set_data(['proyecto'=>$proyecto]);
             return ResponseController::response('OK');
@@ -587,7 +587,7 @@ class ProyectoController extends Controller
                                                 if($r["estado"]=="update"){
                                                     $detalleCosto = costoServicioDetalle::find($r["id"]);
 
-                                                     $detalleCosto->$ti;
+                                                    $detalleCosto->$ti;
                                                     $detalleCosto->valor=$r["valor"];
                                                      $detalleCosto->save();
 
@@ -761,10 +761,12 @@ class ProyectoController extends Controller
 
                             foreach($request->consumo_pago_estimado as $index=>$req){
                                 //dd($req[]);
-                                $gastoEO = GastoEstimadoOperaciones::where('nombre' ,$index)->get();
-                                $gastoEstimadoProyecto = GastoEstimadoProyecto::find($req["id"]);
-                                $gastoEstimadoProyecto->valor = $req["valor"];
-                                $gastoEstimadoProyecto->save();
+                                $gastoEO = GastoEstimadoOperaciones::where('nombre' ,$req["nombre"])->first();
+                                //dd($gastoEO->id);
+                                $gastoEstimadoProyecto = GastoEstimadoProyecto::where('gasto_estimado_operaciones_id',$gastoEO->id)
+                                ->where('proyecto_id',$proyecto->id)->first();
+                                $gastoEstimadoProyecto->update(['valor' => $req["valor"]]);
+
 
                             }
                         }

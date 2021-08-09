@@ -2,6 +2,7 @@
 
 namespace App\Models\Proyecto;
 
+use App\Models\Municipio;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -21,5 +22,13 @@ class RecorridoProyecto extends Model
     ];
 
     public $timestamps =false;
+
+    public function municipio(){
+        return $this->belongsTo(Municipio::class, 'municipio_id');
+    }
+
+    public function clasificacion(){
+        return $this->belongsTo(clasificacion_ubicacion::class, 'clasificacion_id');
+    }
 
 }

@@ -13,4 +13,8 @@ class Municipio extends Model
     protected $fillable=[];
 
     public $timestamps =false;
+
+    public function departamento (){
+        return $this->belongsTo(Departamento::class, 'departamento_id');
+    }
 }

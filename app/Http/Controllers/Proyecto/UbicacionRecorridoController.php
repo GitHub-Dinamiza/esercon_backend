@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Proyecto;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
 use App\Http\Requests\Proyecto\CreateUbicacionRequest;
+use App\Http\Resources\ProyectoUbicacionResoulce;
 use App\Models\Proyecto\AccionRecorrido;
 use App\Models\Proyecto\clasificacion_ubicacion;
 use App\Models\Proyecto\RecorridoProyecto;
@@ -21,7 +22,7 @@ class UbicacionRecorridoController extends Controller
     public function getUbicacionRecorrido(){
 
         $ubicacionRecorrido= RecorridoProyecto::all();
-        ResponseController::set_data(['ubicacion_recorrido'=>$ubicacionRecorrido]);
+        ResponseController::set_data(['ubicacion_recorrido'=>ProyectoUbicacionResoulce::collection($ubicacionRecorrido)]);
         return ResponseController::response('OK');
     }
 
@@ -75,5 +76,11 @@ class UbicacionRecorridoController extends Controller
 
         ResponseController::set_data(['clasificacion'=>$clasificacionUbicacion]);
         return ResponseController::response('CREATED');
+    }
+
+    public function delete (Request $request, $id){
+
+        $ubicacion = RecorridoProyecto::find($id);
+        $ubicacion->delete();
     }
 }
