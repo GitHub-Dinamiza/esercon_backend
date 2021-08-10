@@ -164,6 +164,7 @@ Route::group(['middleware'=>'auth:api'],function (){
         Route::get('recorrido/ubicacion', 'Proyecto\UbicacionRecorridoController@getUbicacionRecorrido');
         Route::post('ubicacion', 'Proyecto\UbicacionRecorridoController@storeUbicacion');
         Route::put('ubicacion/{id}', 'Proyecto\UbicacionRecorridoController@updateUbicacion');
+        Route::delete('ubicacion/{id}', 'Proyecto\UbicacionRecorridoController@delete');
         Route::get('clacificacionUbicacion', 'Proyecto\UbicacionRecorridoController@clasificacionUbicacion');
     });
 
