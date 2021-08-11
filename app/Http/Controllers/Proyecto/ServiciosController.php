@@ -27,7 +27,7 @@ class ServiciosController extends Controller
     }
 
     public function show(){
-        $servicio = Servicio::all();
+        $servicio = Servicio::all()->sortBy('nombre');
 
         ResponseController::set_data(['servicios'=>$servicio]);
         return ResponseController::response('OK');
@@ -43,7 +43,7 @@ class ServiciosController extends Controller
         return ResponseController::response('OK');
     }
     public function showDetallecosto($servicio_id){
-        $detalleCosto = TipoCostoServicio::find($servicio_id);
+        $detalleCosto = TipoCostoServicio::find($servicio_id)->sortBy('nombre');
         ResponseController::set_data(['detalleCostos'=>$detalleCosto]);
         return ResponseController::response('OK');
     }

@@ -82,5 +82,8 @@ class UbicacionRecorridoController extends Controller
 
         $ubicacion = RecorridoProyecto::find($id);
         $ubicacion->delete();
+        ResponseController::set_messages('Ubicacion  eliminada');
+        return ResponseController::response('OK');
+
     }
 }
