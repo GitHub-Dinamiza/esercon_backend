@@ -19,14 +19,15 @@ class CreateDocumentosProveedoresTable extends Migration
             $table->unsignedBigInteger('tipodocumento_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('proveedor_id');
-            $table->unsignedBigInteger('estado');
+            $table->unsignedBigInteger('estado')->nullable();
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('estado')->references('general_data')->on('id');
+            $table->foreign('estado')->references('id')->on('general_data');
             $table->foreign('tipodocumento_id')->references('id')->on('tipos_documentos');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('proveedor_id')->references('id')->on('proveedores');
+
         });
     }
 

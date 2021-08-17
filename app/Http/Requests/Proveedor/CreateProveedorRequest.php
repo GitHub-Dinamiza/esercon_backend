@@ -35,7 +35,9 @@ class CreateProveedorRequest extends FormRequest
             'email'=>'required',
             'municipio_id'=>'required|exists:municipios,id',
             'numero'=>'required|integer|unique:documentos_proveedores,numero',
-            'tipodocumento_id'=>'required|exists:tipos_documentos,id'
+            'tipodocumento_id'=>'required|exists:tipos_documentos,id',
+            'proveedor_vehiculo'=>'boolean',
+            'ciudad_proveedor_vehiculo_id'=>'required_if:proveerdor_vehiculo,true'
 
         ];
     }

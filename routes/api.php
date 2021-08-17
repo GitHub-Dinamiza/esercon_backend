@@ -105,6 +105,8 @@ Route::group(['middleware'=>'auth:api'],function (){
         Route::group(['prefix'=>'proveedor'],function (){
             Route::get('','Proveedor\ProveedorController@show');
             Route::post('','Proveedor\ProveedorController@store');
+            Route::put('{id}','Proveedor\ProveedorController@updateProveedor');
+
 
             Route::get('/filtro','Proveedor\ProveedorController@show');
             Route::get('/filtro/{filtro}', 'Proveedor\ProveedorController@filtro');
@@ -135,6 +137,27 @@ Route::group(['middleware'=>'auth:api'],function (){
 
 
         });
+### VEHICULO
+        Route::group(['prefix'=>'vehiculo'],function(){
+
+            Route::post('','Vehiculo\VehiculoController@addVehiculo');
+            Route::get('','Vehiculo\VehiculoController@getVehiculo');
+
+            Route::group(['prefix'=>'modelo'],function(){
+
+                Route::post('','Vehiculo\VehiculoController@addTipoVehiculo');
+                Route::get('','Vehiculo\VehiculoController@getTipoVehiculo');
+
+            });
+             ### Marca
+            Route::group(['prefix'=>'marca'],function(){
+            Route::post('', 'Vehiculo\VehiculoController@addMarca');
+            Route::get('', 'Vehiculo\VehiculoController@getMarca');
+            });
+
+        });
+
+
 
  ### Servios de  para creaciode costoServicios
         Route::group(['prefix'=>'servicios'],function (){

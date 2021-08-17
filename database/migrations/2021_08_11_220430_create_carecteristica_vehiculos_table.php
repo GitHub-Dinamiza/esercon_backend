@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGeneralDataTable extends Migration
+class CreateCarecteristicaVehiculosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateGeneralDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('general_data', function (Blueprint $table) {
+        Schema::create('carecteristica_vehiculos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug')->nullable();
-            $table->string('table_iden');
+            $table->string('nombre',50);
+            $table->string('tipo_dato');
 
-            $table->unique(['name', 'table_iden']);
-
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -31,6 +30,6 @@ class CreateGeneralDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('general_data');
+        Schema::dropIfExists('carecteristica_vehiculos');
     }
 }

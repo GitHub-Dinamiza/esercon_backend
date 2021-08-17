@@ -16,12 +16,14 @@ class CreateTipoVehiculoTable extends Migration
         Schema::create('tipo_vehiculo', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('marca_id');
-            $table->string('modelo',70);
-            $table->integer('anio',4);
+
+            $table->string('modelo');
+            $table->integer('anio_fabricacion');
             $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('marca_id')->references('id')->on('general_data');
+            $table->unique(['marca_id','modelo']);
         });
     }
 

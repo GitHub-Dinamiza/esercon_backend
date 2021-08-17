@@ -24,7 +24,8 @@ class CreateProveedorDocumentsTable extends Migration
              *  softDelete
              *  estado
              */
-
+            $table->foreign('proveedor_id')->references('id')->on('proveedores');
+            $table->foreign('tipo_documento_id')->references('id')->on('general_data');
             $table->timestamps();
         });
     }

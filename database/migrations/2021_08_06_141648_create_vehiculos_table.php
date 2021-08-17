@@ -15,14 +15,21 @@ class CreateVehiculosTable extends Migration
     {
         Schema::create('vehiculos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tipo_vehiculo');
+            $table->string('placa',10)->unique();
+            $table->unsignedBigInteger('tipo_vehiculo_id');
+
             $table->integer('capacidad_volco_m3')->nullable();
             $table->boolean('tiene_zorro');
-            $table->float('capaidad_zorro')->nullable();
-            $table->unsignedBigInteger('proveedor_id_m3');
-            $table->string('Propietario');
+            $table->float('capacidad_zorro')->nullable();
+            $table->unsignedBigInteger('proveedor_id');
+            $table->string('propietario')->nullable();
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreign('tipo_vehiculo_id')->references('id')->on('tipo_vehiculo');
+            $table->foreign('proveedor_id')->references('id')->on('proveedores');
+
+
         });
     }
 
