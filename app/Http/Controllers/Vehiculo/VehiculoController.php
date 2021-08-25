@@ -4,10 +4,15 @@ namespace App\Http\Controllers\Vehiculo;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
+use App\Http\Resources\modeloVehiculoResource;
+use App\Http\Resources\VehiculoResource;
+use App\Models\CarecteristicaVehiculo;
 use App\Models\GeneralData;
 use App\Models\Vehiculo\TipoVehiculo;
 use App\Models\Vehiculos;
+
 use Illuminate\Http\Request;
+
 
 class VehiculoController extends Controller
 {
@@ -46,7 +51,7 @@ class VehiculoController extends Controller
 
     public function getTipoVehiculo(Request $request){
         $tipoVehiculo = TipoVehiculo::all();
-
+        $tipoVehiculo = modeloVehiculoResource::collection($tipoVehiculo) ;
         ResponseController::set_data(['tipo_vehiculo'=>$tipoVehiculo]);
         return ResponseController::response('OK');
     }
@@ -92,7 +97,7 @@ class VehiculoController extends Controller
         if($request->user()->can('add_proveedor')) {
 
             $vehiculo =Vehiculos::all();
-
+            $vehiculo = VehiculoResource::collection($vehiculo);
             ResponseController::set_data(['vehiculo'=>$vehiculo]);
             return ResponseController::response('OK');
         }
@@ -112,10 +117,11 @@ class VehiculoController extends Controller
             $marca = GeneralData::updateOrCreate(
                 [
                     'id'=>$request->id,
-                    'name'=>$request->nombre,
-                    'table_iden'=>'Marca_vehiculos'
+
                 ],
                 [
+                    'name'=>$request->nombre,
+                    'table_iden'=>'Marca_vehiculos',
                     'slug'=>$request->detalle
                 ]
              );
@@ -142,5 +148,59 @@ class VehiculoController extends Controller
         ResponseController::set_messages('Usuario sin permiso');
         return ResponseController::response('UNAUTHORIZED');
 
+    }
+
+
+    ### CarateristicaVehiculo
+
+    public function addCarateristicaVehiculo(Request $request ){
+
+        if($request->user()->can('add_proveedor')) {
+
+
+            $carateristicaVehiculo = CarecteristicaVehiculo::updateOrCreate(
+                ['id'=>$request->id],
+                [
+                    'nombre'=>$request->nombre,
+                    'tipo_dato'=>$request->tipo_dato
+                ]
+            );
+            ResponseController::set_messages('el dato vehiculo ha sido agregado  o actualizada correctamente');
+
+            ResponseController::set_data(['dato_vehiculo'=>$carateristicaVehiculo]);
+            return ResponseController::response('OK');
+        }
+
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
+
+    public function getCarateristicaVehiculo(Request $request ){
+
+        if($request->user()->can('add_proveedor')) {
+
+            $carateristicaVehiculo = CarecteristicaVehiculo::all();
+
+            ResponseController::set_data(['dato_vehiculo'=>$carateristicaVehiculo]);
+            return ResponseController::response('OK');
+
+        }
+
+
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
+    public function deleleteVehiculo(Request $request, $id){
+
+
+        $vehiculo = Vehiculos::find($id);
+        $vehiculo->delete;
+
+        ResponseController::set_messages('Vehicul;o eliminado');
+        return ResponseController::response('OK');
     }
 }

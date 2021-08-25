@@ -24,11 +24,8 @@ class CreateProveedorRequest extends FormRequest
     public function rules()
     {
         return [
-            'razon_social'=>'',
-            'primer_nombre'=>'required',
-            'primer_apellido'=>'required',
-            'segundo_nombre'=>'required',
-            'segundo_apellido'=>'required',
+            'razon_social'=>'required',
+
             'tipo_proveedor'=>'required',
             'direccion'=>'required',
             'telefono'=>'required',

@@ -15,7 +15,7 @@ class CreateCarecteristicaVehiculosTable extends Migration
     {
         Schema::create('carecteristica_vehiculos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre',50);
+            $table->string('nombre',50)->unique();
             $table->string('tipo_dato');
 
             $table->softDeletes();

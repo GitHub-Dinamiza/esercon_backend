@@ -9,5 +9,7 @@ class CarecteristicaVehiculo extends Model
 {
     use HasFactory;
 
-    protected $table  = 'caracteristica_vehiculo';
+    protected $table  = 'carecteristica_vehiculos';
+
+    protected $fillable = ['nombre', 'tipo_dato'];
 }

@@ -142,6 +142,10 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             Route::post('','Vehiculo\VehiculoController@addVehiculo');
             Route::get('','Vehiculo\VehiculoController@getVehiculo');
+            Route::delete('','Vehiculo\VehiculoController@deleteVehiculo');
+
+            Route::post('/caracteristica','Vehiculo\VehiculoController@addCarateristicaVehiculo');
+
 
             Route::group(['prefix'=>'modelo'],function(){
 
