@@ -21,10 +21,11 @@ class VehiculoResource extends JsonResource
             'modelo_vehiculo_id'=>$this->tipo_vehiculo_id,
             'modelo'=>$this->modelo->modelo,
             'marca'=>$this->modelo->marcaVehiculo->name,
-            'año_fabricancion'=>$this->modelo->anio_fabricacion,
+            'anio_fabricancion'=>$this->modelo->anio_fabricacion,
             'tiene_zorro'=>$this->tiene_zorro,
             'capacidad_zorro'=>$this->capacidad_zorro,
-            'capacidad_volco'=>$this->capacidad_volco,
+            'capacidad_volco'=>$this->capacidad_volco_m3,
+            'propetario'=>$this->propietario,
             'proveedor_id'=>$this->proveedor_id,
             'proveedor'=>$this->proveedor->razon_social
 
