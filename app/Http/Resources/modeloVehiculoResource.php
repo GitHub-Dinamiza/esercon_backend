@@ -18,7 +18,7 @@ class modeloVehiculoResource extends JsonResource
             'id'=>$this->id,
             'marca'=>$this->marcaVehiculo->name,
             'marca_id'=>$this->marca_id,
-            'modelo'=>$this->nodelo,
+            'modelo'=>$this->modelo,
             'anio_fabricacion'=>$this->anio_fabricacion
         ];
     }
