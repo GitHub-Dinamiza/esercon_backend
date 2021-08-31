@@ -23,4 +23,9 @@ class Vehiculos extends Model
     public function proveedor(){
         return $this->belongsTo(Proveedor::class, 'proveedor_id');
     }
+
+    public function asignacionCarateristica(){
+
+        return  $this->hasMany(CaracteristicasAsignadaVehiculo::class,'vehiculo_id');
+    }
 }

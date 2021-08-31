@@ -145,7 +145,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::delete('','Vehiculo\VehiculoController@deleteVehiculo');
 
             Route::post('/caracteristica','Vehiculo\VehiculoController@addCarateristicaVehiculo');
-
+            Route::get('/caracteristica','Vehiculo\VehiculoController@getCarateristicaVehiculo');
 
             Route::group(['prefix'=>'modelo'],function(){
 
@@ -157,6 +157,10 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::group(['prefix'=>'marca'],function(){
             Route::post('', 'Vehiculo\VehiculoController@addMarca');
             Route::get('', 'Vehiculo\VehiculoController@getMarca');
+            });
+
+            Route::group(['prefix'=>'asignacionCarasteristica'], function(){
+                Route::post('','Vehiculo\VehiculoController@asignacionCaracteristicaVehiculoe');
             });
 
         });

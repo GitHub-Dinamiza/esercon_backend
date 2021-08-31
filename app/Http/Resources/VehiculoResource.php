@@ -2,6 +2,8 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Resources\Vehiculo\asignacionCarasteristicaVehiculosResource;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class VehiculoResource extends JsonResource
@@ -14,6 +16,13 @@ class VehiculoResource extends JsonResource
      */
     public function toArray($request)
     {
+        $data = new Collection();
+        $req = asignacionCarasteristicaVehiculosResource::collection($this->asignacionCarateristica);
+        foreach($req as $index=>$d){
+
+            $data = $data->union($d);
+        }
+
         return
         [
             'id'=>$this->id,
@@ -27,7 +36,8 @@ class VehiculoResource extends JsonResource
             'capacidad_volco'=>$this->capacidad_volco_m3,
             'propetario'=>$this->propietario,
             'proveedor_id'=>$this->proveedor_id,
-            'proveedor'=>$this->proveedor->razon_social
+            'proveedor'=>$this->proveedor->razon_social,
+            'caracteristicas'=>$data
 
 
         ];

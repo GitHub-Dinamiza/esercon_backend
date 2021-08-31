@@ -4,15 +4,17 @@ namespace App\Http\Controllers\Vehiculo;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
+use App\Http\Resources\CaracteristicaVehiculosResource;
 use App\Http\Resources\modeloVehiculoResource;
 use App\Http\Resources\VehiculoResource;
+use App\Models\CaracteristicasAsignadaVehiculo;
 use App\Models\CarecteristicaVehiculo;
 use App\Models\GeneralData;
 use App\Models\Vehiculo\TipoVehiculo;
 use App\Models\Vehiculos;
-
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class VehiculoController extends Controller
 {
@@ -51,7 +53,7 @@ class VehiculoController extends Controller
 
     public function getTipoVehiculo(Request $request){
         $tipoVehiculo = TipoVehiculo::all();
-        $tipoVehiculo = modeloVehiculoResource::collection($tipoVehiculo) ;
+         $tipoVehiculo = modeloVehiculoResource::collection($tipoVehiculo) ;
         ResponseController::set_data(['tipo_vehiculo'=>$tipoVehiculo]);
         return ResponseController::response('OK');
     }
@@ -97,6 +99,7 @@ class VehiculoController extends Controller
         if($request->user()->can('add_proveedor')) {
 
             $vehiculo =Vehiculos::all();
+           // $vehiculo->asignacionCarateristica();
             $vehiculo = VehiculoResource::collection($vehiculo);
             ResponseController::set_data(['vehiculo'=>$vehiculo]);
             return ResponseController::response('OK');
@@ -176,14 +179,22 @@ class VehiculoController extends Controller
         return ResponseController::response('UNAUTHORIZED');
     }
 
-
+### Caracteristicas de vehiculos
     public function getCarateristicaVehiculo(Request $request ){
 
         if($request->user()->can('add_proveedor')) {
 
             $carateristicaVehiculo = CarecteristicaVehiculo::all();
+            //$carateristicaVehiculo = CaracteristicaVehiculosResource::collection($carateristicaVehiculo);
+            $data = CaracteristicaVehiculosResource::collection($carateristicaVehiculo);
+            $data1 =new Collection();
+            //$data1 = $data->first();
+            foreach ($data as $d){
 
-            ResponseController::set_data(['dato_vehiculo'=>$carateristicaVehiculo]);
+                $data1 = $data1->union($d);
+            }
+              $data1 =$data1->union(['vehiculoid'=>'integer']);
+            ResponseController::set_data(['dato_vehiculo'=>$data1]);
             return ResponseController::response('OK');
 
         }
@@ -194,6 +205,44 @@ class VehiculoController extends Controller
         return ResponseController::response('UNAUTHORIZED');
     }
 
+### Asignacion de caracteristicas a vehiculos
+    public function asignacionCaracteristicaVehiculoe(Request $request){
+
+        if($request->user()->can('add_proveedor')) {
+
+            $d = DB::transaction(function () use($request) {
+                foreach($request->caracteristica as $index=> $data){
+
+
+
+                        $idcaracteristica = CarecteristicaVehiculo::where('nombre',$index)->first();
+                        // dd($request->vehiculoid);
+                        $caracteristica =CaracteristicasAsignadaVehiculo::create([
+                            'vehiculo_id'=>$request->vehiculoid,
+                            'caracteristica_vehiculo_id'=> $idcaracteristica->id,
+                            'estado'=>$data,
+                            'detalle'=>"prueba"
+                        ]);
+
+                }
+                return $caracteristica;
+            });
+
+            ResponseController::set_messages('asignacion de caracteristicas correcto');
+          //  ResponseController::set_data(['caracteristicaAsignada'=> $caracteristica]);
+            return ResponseController::response('OK');
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
+    //update
+    public function updateAsignacionCaracteristicaVehiculoe(Request $request){
+
+    }
+
+
     public function deleleteVehiculo(Request $request, $id){
 
 
@@ -202,5 +251,21 @@ class VehiculoController extends Controller
 
         ResponseController::set_messages('Vehicul;o eliminado');
         return ResponseController::response('OK');
+    }
+
+
+    ### Asigncacion de vehiculo
+    public function addAsignacionVehiculo(Request $request){
+
+        foreach($request as $index=>$dato){
+             $AsignacionVehiculo = CaracteristicasAsignadaVehiculo::create([
+                'vehiculo_id'=>$request->id_Vehiculo,
+                'caracteristica_vehiculo_id'=>$request->caracteristica_vehiculo_id,
+                'estado'=>$request->dato
+            ]);
+        }
+
+
+
     }
 }
