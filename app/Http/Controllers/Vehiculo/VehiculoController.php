@@ -263,6 +263,30 @@ class VehiculoController extends Controller
 
     }
 
+    public function asignarCaracteristicaIndividual(Request $request ){
+
+        if($request->user()->can('add_proveedor')) {
+
+            $idcaracteristica =CarecteristicaVehiculo::where('nombre',$request->name_date)->first();
+            CaracteristicasAsignadaVehiculo::updateOrCreate([
+                'vehiculo_id'=>$request->vehiculo_id,
+                'caracteristica_vehiculo_id'=>$idcaracteristica->id
+            ],
+            [
+                'estado'=>$request->dato,
+                'detalle'=>'prueba'
+
+            ]);
+
+           ResponseController::set_messages('asignacion de caracteristicas correcto');
+           //ResponseController::set_data(['caracteristicaAsignada'=>$d]);
+           return ResponseController::response('OK');
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
 
     public function deleleteVehiculo(Request $request, $id){
 
