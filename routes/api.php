@@ -161,6 +161,8 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             Route::group(['prefix'=>'asignacionCarasteristica'], function(){
                 Route::post('','Vehiculo\VehiculoController@asignacionCaracteristicaVehiculoe');
+                Route::put('/{id}','Vehiculo\VehiculoController@updateAsignacionCaracteristicaVehiculo');
+
             });
 
         });

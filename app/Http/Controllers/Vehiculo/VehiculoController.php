@@ -213,8 +213,6 @@ class VehiculoController extends Controller
             $d = DB::transaction(function () use($request) {
                 foreach($request->caracteristica as $index=> $data){
 
-
-
                         $idcaracteristica = CarecteristicaVehiculo::where('nombre',$index)->first();
                         // dd($request->vehiculoid);
                         $caracteristica =CaracteristicasAsignadaVehiculo::create([
@@ -238,7 +236,30 @@ class VehiculoController extends Controller
     }
 
     //update
-    public function updateAsignacionCaracteristicaVehiculoe(Request $request){
+    public function updateAsignacionCaracteristicaVehiculo(Request $request, $id){
+
+        if($request->user()->can('add_proveedor')) {
+            foreach($request->caracteristica as $index=> $data){
+
+                $idcaracteristica =CarecteristicaVehiculo::where('nombre',$index)->first();
+                $idd =$idcaracteristica["id"];
+                $caracteristica = CaracteristicasAsignadaVehiculo::where('vehiculo_id',$id)
+                                ->where('caracteristica_vehiculo_id',$idd)
+                                ->update([
+                                        'estado'=>$data
+                                         ]);
+
+            }
+
+            $d =CaracteristicasAsignadaVehiculo::where('vehiculo_id',$id)->get();
+
+           ResponseController::set_messages('asignacion de caracteristicas correcto');
+          ResponseController::set_data(['caracteristicaAsignada'=>$d]);
+         return ResponseController::response('OK');
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
 
     }
 

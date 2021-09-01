@@ -19,6 +19,7 @@ class DocumentoProveedorResource extends JsonResource
         return [
             'numero'=>$this->numero,
             'tipo_documento'=>$this->tipoDocumento->descripcion_corta,
+            'tipo_documento_id'=>$this->tipodocumento_id,
             'siglas'=>$this->tipoDocumento->codigo
         ];
     }
