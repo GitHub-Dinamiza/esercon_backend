@@ -272,7 +272,7 @@ class ProveedorController extends Controller
        // dd($request->user()->permissions());
         if($request->user()->can('add_proveedor')){
 
-            $tipoArchivos = GeneralData::where('table_iden','tipo_archivo_pro')->get();
+            $tipoArchivos = GeneralData::where('table_iden','tipo_archivo')->get();
 
 
             ResponseController::set_data(['tiposDocumentos'=> $tipoArchivos]);

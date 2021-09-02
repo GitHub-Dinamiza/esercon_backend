@@ -58,24 +58,46 @@ class GeneralDataSeesd extends Seeder
             ],
 
             [
-                'name'=>'rut',
-                'slug'=>'',
-                'table_iden'=>'tipo_archivo_pro'
+                'name'=>'Referencia personales',
+                'slug'=>'Referencias',
+                'table_iden'=>'tipo_archivo'
+            ],
+
+            [
+                'name'=>'Referencia comercial',
+                'slug'=>'Referencias',
+                'table_iden'=>'tipo_archivo'
+            ],
+
+            [
+                'name'=>'Otra referencia',
+                'slug'=>'Referencias',
+                'table_iden'=>'tipo_archivo'
             ],
             [
                 'name'=>'Certificado bancario',
-                'slug'=>'',
-                'table_iden'=>'tipo_archivo_pro'
+                'slug'=>'Informacio Bancaria',
+                'table_iden'=>'tipo_archivo'
+            ],
+            [
+                'name'=>'Cedula',
+                'slug'=>'Soporte legales',
+                'table_iden'=>'tipo_archivo'
             ],
             [
                 'name'=>'Camara de comercio',
-                'slug'=>'',
-                'table_iden'=>'tipo_archivo_pro'
+                'slug'=>'Soporte legales',
+                'table_iden'=>'tipo_archivo'
             ],
             [
-                'name'=>'Documento de indentificacion',
-                'slug'=>'',
-                'table_iden'=>'tipo_archivo_pro'
+                'name'=>'Estado finaciero',
+                'slug'=>'Soporte legales',
+                'table_iden'=>'tipo_archivo'
+            ],
+            [
+                'name'=>'Rut(DIAN)',
+                'slug'=>'Soporte legales',
+                'table_iden'=>'tipo_archivo'
             ],
 
 
