@@ -112,7 +112,7 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             Route::get('/filtro','Proveedor\ProveedorController@show');
             Route::get('/filtro/{filtro}', 'Proveedor\ProveedorController@filtro');
-            Route::post('/tipos_archivos','Proveedor\ProveedorController@tipoArchivo');
+            Route::get('/tipos_archivos','Proveedor\ProveedorController@tipoArchivo');
         });
 
         //Proyecto
