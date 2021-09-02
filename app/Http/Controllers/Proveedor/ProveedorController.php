@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Proveedor;
 
+use App\Http\Controllers\cargarArchivoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
 use App\Http\Controllers\ResponsePermisoController;
 use App\Http\Requests\Proveedor\CreateProveedorRequest;
 use App\Http\Resources\Proveedor\ProveedorResource;
 use App\Models\DocumentoProveedor;
+use App\Models\GeneralData;
+use App\Models\Provedores\ArchivoProveedor;
 use App\Models\Proveedor;
 use App\Models\ProveedorVehiculos;
 use Exception;
@@ -265,4 +268,61 @@ class ProveedorController extends Controller
         return ResponseController::response('UNAUTHORIZED');
     }
 
+    public function  tipoArchivo(Request $request){
+       // dd($request->user()->permissions());
+        if($request->user()->can('add_proveedor')){
+
+            $tipoArchivos = GeneralData::where('table_iden','tipo_archivo_pro')->get();
+
+
+            ResponseController::set_data(['tiposDocumentos'=> $tipoArchivos]);
+            return ResponseController::response('OK');
+
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
+    public function cargarArchivo(Request $request, $id, $idTipoArchivo){
+        $proveedor= Proveedor::find($id);
+        $subirAchivo =new cargarArchivoController;
+
+        $path = 'proveedores/documentos/';
+        $dataArchivoCargado = json_decode($subirAchivo->uploadFile($request, $path));
+
+        //dd($dataArchivoCargado->name);
+        if($dataArchivoCargado->mensaje != 'Error'){
+
+           $a= ArchivoProveedor::create([
+                'nombre'=>$dataArchivoCargado->nameFull,
+                'extension'=>$dataArchivoCargado->extension,
+                'ruta'=>$path,
+                'tamanio'=>$dataArchivoCargado->tamanio,
+                'tipo_archivo_id'=>$idTipoArchivo,
+                'proveedor_id'=>$proveedor->id,
+                'user_id'=>$request->user()->id
+
+            ]);
+        }else{
+            ResponseController::set_errors(true);
+            ResponseController::set_messages(['Error AL SUBIR ARCHIVO'=>$dataArchivoCargado->mensaje]);
+            return ResponseController::response('BAD REQUEST');
+        }
+        ResponseController::set_messages('Documento agregado');
+        ResponseController::set_data(['Documento_id'=>$a]);
+        return ResponseController::response('OK');
+    }
+
+    public function getArchivo(Request $request, $id){
+        if($request->user()->can('add_proveedor')){
+            $a= ArchivoProveedor::where('proveedor_id',$id)->get();
+
+            ResponseController::set_data(['Documento_proveedor'=>$a]);
+            return ResponseController::response('OK');
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
 }

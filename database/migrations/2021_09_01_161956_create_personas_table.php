@@ -19,16 +19,16 @@ class CreatePersonasTable extends Migration
             $table->string('segundo_nombre')->nullable();
             $table->string('primer_apellido');
             $table->string('segundo_apellido')->nullable();
-            $table->unsignedBigInteger('tipo_documento_id');
+            //$table->unsignedBigInteger('tipo_documento_id');
             $table->string('numero_documento');
-            $table->unsignedBigInteger('ciudad_residencia_id');
+            //$table->unsignedBigInteger('ciudad_residencia_id');
             $table->string('direccion');
             $table->string('telefono');
             $table->string('email');
             $table->string('estado_civil');
-            $table->unsignedBigInteger('tipo_sangle_id');
-            $table->unsignedBigInteger('eps_id')->nullable();
-            $table->unsignedBigInteger('url_id')->nullable();
+            //$table->unsignedBigInteger('tipo_sangle_id');
+            //$table->unsignedBigInteger('eps_id')->nullable();
+            //$table->unsignedBigInteger('url_id')->nullable();
             $table->timestamps();
         });
     }

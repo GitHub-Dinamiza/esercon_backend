@@ -106,10 +106,13 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::get('','Proveedor\ProveedorController@show');
             Route::post('','Proveedor\ProveedorController@store');
             Route::put('{id}','Proveedor\ProveedorController@updateProveedor');
+            Route::post('/{id}/tipoArchivo/{idTipoArchivo}/Archivo','Proveedor\ProveedorController@cargarArchivo');
+            Route::get('/{id}/Archivo','Proveedor\ProveedorController@getArchivo');
 
 
             Route::get('/filtro','Proveedor\ProveedorController@show');
             Route::get('/filtro/{filtro}', 'Proveedor\ProveedorController@filtro');
+            Route::post('/tipos_archivos','Proveedor\ProveedorController@tipoArchivo');
         });
 
         //Proyecto

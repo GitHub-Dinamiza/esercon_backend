@@ -57,6 +57,29 @@ class GeneralDataSeesd extends Seeder
                 'table_iden'=>'Marca_vehiculos'
             ],
 
+            [
+                'name'=>'rut',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_pro'
+            ],
+            [
+                'name'=>'Certificado bancario',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_pro'
+            ],
+            [
+                'name'=>'Camara de comercio',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_pro'
+            ],
+            [
+                'name'=>'Documento de indentificacion',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_pro'
+            ],
+
+
+
         ];
 
         foreach ($data as $index => $d){
