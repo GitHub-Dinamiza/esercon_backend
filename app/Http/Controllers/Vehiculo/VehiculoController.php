@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Vehiculo;
 
+use App\Http\Controllers\cargarArchivoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
 use App\Http\Resources\CaracteristicaVehiculosResource;
@@ -10,6 +11,7 @@ use App\Http\Resources\VehiculoResource;
 use App\Models\CaracteristicasAsignadaVehiculo;
 use App\Models\CarecteristicaVehiculo;
 use App\Models\GeneralData;
+use App\Models\Vehiculo\ArchivoVehiculo;
 use App\Models\Vehiculo\TipoVehiculo;
 use App\Models\Vehiculos;
 use Illuminate\Database\Eloquent\Collection;
@@ -312,5 +314,50 @@ class VehiculoController extends Controller
 
 
 
+    }
+
+    public function cargarArchivo(Request $request, $id, $idTipoArchivo, $fechae){
+        $proveedor= Vehiculos::find($id);
+        $subirAchivo =new cargarArchivoController;
+
+        $path = 'veliculo/documentos/';
+        $dataArchivoCargado = json_decode($subirAchivo->uploadFile($request, $path));
+
+        //dd($dataArchivoCargado->name);
+        if($dataArchivoCargado->mensaje != 'Error'){
+
+           $a= ArchivoVehiculo::create([
+                'nombre'=>$dataArchivoCargado->nameFull,
+                'extension'=>$dataArchivoCargado->extension,
+                'ruta'=>$path,
+                'tamanio'=>$dataArchivoCargado->tamanio,
+                'tipo_archivo_id'=>$idTipoArchivo,
+                'vehiculo_id'=>$proveedor->id,
+                'fecha_espedicon'=>$fechae,
+                'user_id'=>$request->user()->id
+
+            ]);
+        }else{
+            ResponseController::set_errors(true);
+            ResponseController::set_messages(['Error AL SUBIR ARCHIVO'=>$dataArchivoCargado->mensaje]);
+            return ResponseController::response('BAD REQUEST');
+        }
+        ResponseController::set_messages('Documento agregado');
+        ResponseController::set_data(['Documento_id'=>$a]);
+        return ResponseController::response('OK');
+    }
+
+    public function getArchivo(Request $request, $id){
+
+        if($request->user()->can('add_proveedor')) {
+            $a= ArchivoVehiculo::where('vehiculo_id',$id)->get();
+
+            ResponseController::set_messages('Documento agregado');
+            ResponseController::set_data(['Documento_id'=>$a]);
+            return ResponseController::response('OK');
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
     }
 }

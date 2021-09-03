@@ -95,7 +95,7 @@ Route::group(['middleware'=>'auth:api'],function (){
 
         Route::group(['prefix'=>'permissions'],function(){
             Route::post('','RolePermission\PermissionController@store');
-            Route::get('','RolePermission\PermissionController@get_all');
+            Route::get('','RolclePermission\PermissionController@get_all');
             Route::get('{id}','RolePermission\PermissionController@get');
             Route::put('{id}','RolePermission\PermissionController@update');
             Route::delete('{id}','RolePermission\PermissionController@destroy');
@@ -169,6 +169,8 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             });
 
+            Route::post('/{id}/tipoAchivo/{idTipoArchivo}/fecha/{fechae}','Vehiculo\VehiculoController@cargarArchivo');
+            Route::get('/{id}/Archivo', 'Vehiculo\VehiculoController@getArchivo');
         });
 
 
