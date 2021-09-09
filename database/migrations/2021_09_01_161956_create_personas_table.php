@@ -19,17 +19,26 @@ class CreatePersonasTable extends Migration
             $table->string('segundo_nombre')->nullable();
             $table->string('primer_apellido');
             $table->string('segundo_apellido')->nullable();
-            //$table->unsignedBigInteger('tipo_documento_id');
-            $table->string('numero_documento');
-            //$table->unsignedBigInteger('ciudad_residencia_id');
+            $table->unsignedBigInteger('tipo_documento_id');
+            $table->string('numero_documento')->unique();
+            $table->unsignedBigInteger('ciudad_residencia_id');
             $table->string('direccion');
             $table->string('telefono');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('estado_civil');
-            //$table->unsignedBigInteger('tipo_sangle_id');
-            //$table->unsignedBigInteger('eps_id')->nullable();
-            //$table->unsignedBigInteger('url_id')->nullable();
+            $table->unsignedBigInteger('tipo_sangle_id')->nullable();
+            $table->unsignedBigInteger('eps_id')->nullable();
+            $table->unsignedBigInteger('arl_id')->nullable();
+            $table->boolean('estado')->default(false);
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->foreign('tipo_sangle_id')->on('general_data')->references('id');
+            $table->foreign('eps_id')->on('general_data')->references('id');
+            $table->foreign('arl_id')->on('general_data')->references('id');
+            $table->foreign('tipo_documento_id')->on('tipos_documentos')->references('id');
+            $table->foreign('ciudad_residencia_id')->on('municipios')->references('id');
+
         });
     }
 

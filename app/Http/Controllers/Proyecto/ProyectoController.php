@@ -867,7 +867,7 @@ class ProyectoController extends Controller
             return ResponseController::response('BAD REQUEST');
         }
         ResponseController::set_messages('Documento agregado');
-        ResponseController::set_data(['Documento_id'=>$a->id]);
+        ResponseController::set_data(['Documento_id'=>$a]);
         return ResponseController::response('OK');
     }
 

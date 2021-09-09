@@ -99,8 +99,119 @@ class GeneralDataSeesd extends Seeder
                 'slug'=>'Soporte legales',
                 'table_iden'=>'tipo_archivo'
             ],
+            [
+                'name'=>'Nueva eps',
+                'slug'=>'',
+                'table_iden'=>'eps'
+            ],
+            [
+                'name'=>'Sura',
+                'slug'=>'',
+                'table_iden'=>'eps'
+            ],
+            [
+                'name'=>'Mutualser',
+                'slug'=>'',
+                'table_iden'=>'eps'
+            ],
+            [
+                'name'=>'sura arl',
+                'slug'=>'',
+                'table_iden'=>'arl'
+            ],
+            [
+                'name'=>'O+',
+                'slug'=>'',
+                'table_iden'=>'tipo_sangle'
+            ],
+            [
+                'name'=>'O-',
+                'slug'=>'',
+                'table_iden'=>'tipo_sangle'
+            ],
+            [
+                'name'=>'A+',
+                'slug'=>'',
+                'table_iden'=>'tipo_sangle'
+            ],
+            [
+                'name'=>'A-',
+                'slug'=>'',
+                'table_iden'=>'tipo_sangle'
+            ],
+            [
+                'name'=>'AB+',
+                'slug'=>'',
+                'table_iden'=>'tipo_sangle'
+            ],
+            [
+                'name'=>'AB-',
+                'slug'=>'',
+                'table_iden'=>'tipo_sangle'
+            ],
 
+            [
+                'name'=>'Hoja de vida',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
+            [
+                'name'=>'Certificado manejo defensivo',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
+            [
+                'name'=>'Certificado primeros Aux',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
 
+            [
+                'name'=>'Examenes medicos',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
+            [
+                'name'=>'Certificado mecanica básica',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
+
+            [
+                'name'=>'Soltero(a)',
+                'slug'=>'',
+                'table_iden'=>'estado_civil'
+            ],
+            [
+                'name'=>'Casado(a)',
+                'slug'=>'',
+                'table_iden'=>'estado_civil'
+            ],
+            [
+                'name'=>'Divorciado(a)',
+                'slug'=>'',
+                'table_iden'=>'estado_civil'
+            ],
+            [
+                'name'=>'Union libre',
+                'slug'=>'',
+                'table_iden'=>'estado_civil'
+            ],
+            [
+                'name'=>'Activo',
+                'slug'=>'',
+                'table_iden'=>'estado'
+            ],
+            [
+                'name'=>'Inactivo',
+                'slug'=>'',
+                'table_iden'=>'estado'
+            ],
+            [
+                'name'=>'Inactivo_documentos',
+                'slug'=>'',
+                'table_iden'=>'estado'
+            ]
 
         ];
 

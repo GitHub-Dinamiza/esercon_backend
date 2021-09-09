@@ -113,6 +113,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::get('/filtro','Proveedor\ProveedorController@show');
             Route::get('/filtro/{filtro}', 'Proveedor\ProveedorController@filtro');
             Route::get('/tipos_archivos','Proveedor\ProveedorController@tipoArchivo');
+            Route::delete('Archivo/{id}','Proveedor\ProveedorController@deleteArchivo');
         });
 
         //Proyecto
@@ -171,6 +172,8 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             Route::post('/{id}/tipoAchivo/{idTipoArchivo}/fecha/{fechae}','Vehiculo\VehiculoController@cargarArchivo');
             Route::get('/{id}/Archivo', 'Vehiculo\VehiculoController@getArchivo');
+            Route::delete('Archivo/{id}','Vehiculo\VehiculoController@deleteArchivo');
+
         });
 
 
@@ -205,9 +208,27 @@ Route::group(['middleware'=>'auth:api'],function (){
         Route::put('ubicacion/{id}', 'Proyecto\UbicacionRecorridoController@updateUbicacion');
         Route::delete('ubicacion/{id}', 'Proyecto\UbicacionRecorridoController@delete');
         Route::get('clacificacionUbicacion', 'Proyecto\UbicacionRecorridoController@clasificacionUbicacion');
-    });
 
+        Route::group(['prefix'=>'conductor'], function(){
+            Route::post('','Persona\ConductorController@store');
+            Route::put('{id}','Persona\ConductorController@update');
+            Route::delete('{id}','Persona\ConductorController@delete');
+            Route::get('','Persona\ConductorController@get');
+
+            Route::post('{id}/tipoArchivo/{idTipoArchivo}/fecha/{fecha}/archivo','Persona\ConductorController@cargaArchivo');
+            Route::delete('archivo/{id}','Persona\ConductorController@deleteArchivo');
+        });
+
+        Route::group(['prefix'=>'experienciaLavoral'], function(){
+            Route::post('','Persona\ConductorController@experienciaLavoral');
+            Route::get('{id}','Persona\ConductorController@getExperienciaLaboral');
+        });
+
+
+    });
+    Route::get('dataGeneral/{data}','DatogeneralController@getdato');
 ###Condiciones Economicas
 
     Route::get('condicionesEconomicas','Proyecto\CondicionesEconomicaController@showNombre');
+
 });

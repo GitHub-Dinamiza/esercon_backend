@@ -325,4 +325,16 @@ class ProveedorController extends Controller
         ResponseController::set_messages('Usuario sin permiso');
         return ResponseController::response('UNAUTHORIZED');
     }
+
+    public function deleteArchivo(Request $request, $id){
+        if($request->user()->can('add_proveedor')){
+            ArchivoProveedor::find($id)->delete();
+
+            ResponseController::set_messages('Archivo eliminado correctamente');
+            return ResponseController::response('OK');
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
 }
