@@ -153,28 +153,42 @@ class GeneralDataSeesd extends Seeder
             [
                 'name'=>'Hoja de vida',
                 'slug'=>'',
-                'table_iden'=>'tipo_archivo_vehiculo'
+                'table_iden'=>'tipo_archivo_conductor'
             ],
             [
                 'name'=>'Certificado manejo defensivo',
                 'slug'=>'',
-                'table_iden'=>'tipo_archivo_vehiculo'
+                'table_iden'=>'tipo_archivo_conductor'
             ],
             [
                 'name'=>'Certificado primeros Aux',
                 'slug'=>'',
-                'table_iden'=>'tipo_archivo_vehiculo'
+                'table_iden'=>'tipo_archivo_conductor'
             ],
 
             [
                 'name'=>'Examenes medicos',
                 'slug'=>'',
-                'table_iden'=>'tipo_archivo_vehiculo'
+                'table_iden'=>'tipo_archivo_conductor'
             ],
             [
                 'name'=>'Certificado mecanica básica',
                 'slug'=>'',
-                'table_iden'=>'tipo_archivo_vehiculo'
+                'table_iden'=>'tipo_archivo_conductor'
+            ],
+            [
+                'name'=>'Registros de vacunas',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_conductor'
+            ], [
+                'name'=>'Prueba covib-19',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_conductor'
+            ],
+            [
+                'name'=>'ONAC',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_conductor'
             ],
 
             [
@@ -211,7 +225,43 @@ class GeneralDataSeesd extends Seeder
                 'name'=>'Inactivo_documentos',
                 'slug'=>'',
                 'table_iden'=>'estado'
-            ]
+            ],
+            [
+                'name'=>'Nombre del propetario',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
+
+            [
+                'name'=>'SOAT',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
+            [
+                'name'=>'Revision tecnomecanica',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
+            [
+                'name'=>'Seguro contra todo riesgo',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
+            [
+                'name'=>'GPS',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
+            [
+                'name'=>'Certificado de extintor',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
+            [
+                'name'=>'Hoja de mantenimento',
+                'slug'=>'',
+                'table_iden'=>'tipo_archivo_vehiculo'
+            ],
 
         ];
 
