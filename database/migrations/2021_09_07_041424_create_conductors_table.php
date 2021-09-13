@@ -19,6 +19,8 @@ class CreateConductorsTable extends Migration
             $table->unsignedBigInteger('proveedor_id');
             $table->timestamps();
             $table->softDeletes();
+            // esperiencia
+            //contactos
             $table->unsignedBigInteger('estado');
 
             $table->foreign('persona_id')->references('id')->on('personas')->cascadeOnDelete();

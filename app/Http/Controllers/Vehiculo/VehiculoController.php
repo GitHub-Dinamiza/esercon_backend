@@ -55,7 +55,7 @@ class VehiculoController extends Controller
 
     public function getTipoVehiculo(Request $request){
         $tipoVehiculo = TipoVehiculo::all();
-         $tipoVehiculo = modeloVehiculoResource::collection($tipoVehiculo) ;
+        $tipoVehiculo = modeloVehiculoResource::collection($tipoVehiculo) ;
         ResponseController::set_data(['tipo_vehiculo'=>$tipoVehiculo]);
         return ResponseController::response('OK');
     }
@@ -95,7 +95,7 @@ class VehiculoController extends Controller
         return ResponseController::response('UNAUTHORIZED');
 
     }
-
+###
     public function getVehiculo(Request $request){
 
         if($request->user()->can('add_proveedor')) {
@@ -112,7 +112,7 @@ class VehiculoController extends Controller
         return ResponseController::response('UNAUTHORIZED');
 
     }
-
+##
 
     ### MARCA
     public function addMarca(Request $request){

@@ -64,7 +64,7 @@ class ConductorController extends Controller
 
             $conductor = Persona::all();
 
-            ResponseController::set_data(['proveedor'=>$conductor]);
+            ResponseController::set_data(['Conductor'=>$conductor]);
             return ResponseController::response('OK');
         }
         ResponseController::set_errors(true);

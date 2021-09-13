@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Vehiculo;
+namespace App\Http\Resources\Persona;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class asignacionCarasteristicaVehiculosResource extends JsonResource
+class ArchivoConductorResolser extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,10 +14,6 @@ class asignacionCarasteristicaVehiculosResource extends JsonResource
      */
     public function toArray($request)
     {
-       //return parent::toArray($request);
-       return [
-           $this->caracteristica->nombre=>$this->estado
-       ];
-
+        return parent::toArray($request);
     }
 }

@@ -25,6 +25,7 @@ class CreatePersonasTable extends Migration
             $table->string('direccion');
             $table->string('telefono');
             $table->string('email')->unique();
+            //fecha de nacimiento
             $table->string('estado_civil');
             $table->unsignedBigInteger('tipo_sangle_id')->nullable();
             $table->unsignedBigInteger('eps_id')->nullable();

@@ -19,4 +19,6 @@ class TipoVehiculo extends Model
     }
 
 
+
+
 }

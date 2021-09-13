@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Vehiculo\ArchivoVehiculo;
 use App\Models\Vehiculo\TipoVehiculo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -27,5 +28,9 @@ class Vehiculos extends Model
     public function asignacionCarateristica(){
 
         return  $this->hasMany(CaracteristicasAsignadaVehiculo::class,'vehiculo_id');
+    }
+
+    public function  archivo(){
+        return $this->hasMany(ArchivoVehiculo::class, 'vehiculo_id');
     }
 }

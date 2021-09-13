@@ -170,7 +170,7 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             });
 
-            Route::post('/{id}/tipoAchivo/{idTipoArchivo}/fecha/{fechae}','Vehiculo\VehiculoController@cargarArchivo');
+            Route::post('/{id}/tipoAchivo/{idTipoArchivo}/fecha/{fechae}/Archivo','Vehiculo\VehiculoController@cargarArchivo');
             Route::get('/{id}/Archivo', 'Vehiculo\VehiculoController@getArchivo');
             Route::delete('Archivo/{id}','Vehiculo\VehiculoController@deleteArchivo');
 
