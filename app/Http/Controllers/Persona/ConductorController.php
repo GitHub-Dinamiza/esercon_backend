@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Persona;
 use App\Http\Controllers\cargarArchivoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
+use App\Http\Resources\Persona\conductorResource;
 use App\Models\experiensiaLaboral;
 use App\Models\Persona\ArchivosPersona;
 use App\Models\Persona\Conductor;
 use App\Models\Persona\Persona;
+use App\Models\Vehiculo\ArchivoVehiculo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -62,7 +64,7 @@ class ConductorController extends Controller
     public function get(Request $request){
         if($request->user()->can('add_proveedor')) {
 
-            $conductor = Persona::all();
+            $conductor = conductorResource::collection(Conductor::all());
 
             ResponseController::set_data(['Conductor'=>$conductor]);
             return ResponseController::response('OK');
@@ -211,7 +213,7 @@ class ConductorController extends Controller
     public function deleteArchivo(Request $request, $id){
 
         if($request->user()->can('add_proveedor')) {
-            ArchivosPersona::find($id)->delete();
+            ArchivoVehiculo::find($id)->delete();
             ResponseController::set_messages('archivo eliminado');
 
             return ResponseController::response('OK');

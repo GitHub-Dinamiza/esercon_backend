@@ -25,6 +25,7 @@ class ProveedorResource extends JsonResource
         ]);*/
         return [
             'id'=>$this->id,
+            'codigo'=>$this->codigo,
             'razon_social'=>$this->razon_social,
             'primer_nombre'=>$this->primer_nombre,
             'primer_apellido'=>$this->primer_apellido,

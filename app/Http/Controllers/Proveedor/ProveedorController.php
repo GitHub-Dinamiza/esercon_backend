@@ -17,6 +17,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ProveedorController extends Controller
 {
@@ -33,6 +34,7 @@ class ProveedorController extends Controller
 
         $provedor=    DB::transaction(function () use ($request) {
                 $provedor = Proveedor::create([
+                    'codigo'=>Str::random(8),
                     'razon_social' => $request->razon_social,
                     'primer_nombre' => $request->primer_nombre,
                     'primer_apellido' => $request->primer_apellido,

@@ -332,7 +332,7 @@ class VehiculoController extends Controller
                 'ruta'=>$path,
                 'tamanio'=>$dataArchivoCargado->tamanio,
                 'tipo_archivo_id'=>$idTipoArchivo,
-                'vehiculo_id'=>$proveedor->id,
+                'vehiculo_id'=>$id,
                 'fecha_espedicon'=>$fechae,
                 'user_id'=>$request->user()->id
 
@@ -354,6 +354,20 @@ class VehiculoController extends Controller
 
             ResponseController::set_messages('Documento agregado');
             ResponseController::set_data(['Documento_id'=>$a]);
+            return ResponseController::response('OK');
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
+
+    public function deleteArchivo(Request $request, $id){
+
+        if($request->user()->can('add_proveedor')) {
+            ArchivoVehiculo::find($id)->delete();
+            ResponseController::set_messages('archivo eliminado');
+
             return ResponseController::response('OK');
         }
         ResponseController::set_errors(true);

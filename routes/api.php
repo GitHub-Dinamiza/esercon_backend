@@ -106,7 +106,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::get('','Proveedor\ProveedorController@show');
             Route::post('','Proveedor\ProveedorController@store');
             Route::put('{id}','Proveedor\ProveedorController@updateProveedor');
-            Route::post('/{id}/tipoArchivo/{idTipoArchivo}/Archivo','Proveedor\ProveedorController@cargarArchivo');
+            Route::post('/{id}/tipoArchivo/{idTipoArchivo}/archivo','Proveedor\ProveedorController@cargarArchivo');
             Route::get('/{id}/Archivo','Proveedor\ProveedorController@getArchivo');
 
 
@@ -170,7 +170,7 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             });
 
-            Route::post('/{id}/tipoAchivo/{idTipoArchivo}/fecha/{fechae}/Archivo','Vehiculo\VehiculoController@cargarArchivo');
+            Route::post('/{id}/tipoArchivo/{idTipoArchivo}/fecha/{fechae}/Archivo','Vehiculo\VehiculoController@cargarArchivo');
             Route::get('/{id}/Archivo', 'Vehiculo\VehiculoController@getArchivo');
             Route::delete('Archivo/{id}','Vehiculo\VehiculoController@deleteArchivo');
 
