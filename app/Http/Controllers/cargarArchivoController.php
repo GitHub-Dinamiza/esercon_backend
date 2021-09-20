@@ -33,4 +33,13 @@ class cargarArchivoController extends Controller
             return json_encode(["mensaje"=>"Error"]);
         }
     }
+
+
+    public function downloadFile(Request $request){
+        $filePath  = public_path($request->ruta.$request->nombre);
+        $headers = ['Content-Type: application/pdf'];
+        $fileName = time().'.pdf';
+
+        return response()->download($filePath, $fileName, $headers);
+    }
 }

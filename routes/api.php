@@ -231,4 +231,6 @@ Route::group(['middleware'=>'auth:api'],function (){
 
     Route::get('condicionesEconomicas','Proyecto\CondicionesEconomicaController@showNombre');
 
+    Route::post('descargaArchivo','cargarArchivoController@downloadFile');
+
 });
