@@ -15,17 +15,22 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(GeneralDataSeesd::class);
+
+        $this->call(EstadosSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(RoleSeeder::class);
+        $this->call(TipoDocumentosSeeder::class);
+        $this->call(ProveedoresSeeders::class);
         $this->call(PermmissionSeeder::class);
         $this->call(UserRolePermissionSeeder::class);
         $this->call(LocalizacionSeeder::class);
-        $this->call(TipoDocumentosSeeder::class);
+
         $this->call(FnProcesosSeeder::class);
         $this->call(TiposViasSeeder::class);
         $this->call(CondecionesEconomicasSeeder::class);
         $this->call(GastosEstimadoYOperativoSeeder::class);
         $this->call(RecorridoSeeder::class);
         $this->call(VehiculoSeeder::class);
+        $this->call(ValidacionDocumentoSeed::class);
     }
 }

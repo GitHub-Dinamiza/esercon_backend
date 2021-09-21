@@ -10,7 +10,6 @@ use App\Models\experiensiaLaboral;
 use App\Models\Persona\ArchivosPersona;
 use App\Models\Persona\Conductor;
 use App\Models\Persona\Persona;
-use App\Models\Vehiculo\ArchivoVehiculo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -107,7 +106,7 @@ class ConductorController extends Controller
                 return  $persona;
             });
             ResponseController::set_messages('conductor creado');
-            ResponseController::set_data(['proveedor'=>$condector]);
+            ResponseController::set_data(['conductor'=>$condector]);
             return ResponseController::response('OK');
 
         }
@@ -213,7 +212,7 @@ class ConductorController extends Controller
     public function deleteArchivo(Request $request, $id){
 
         if($request->user()->can('add_proveedor')) {
-            ArchivoVehiculo::find($id)->delete();
+            ArchivosPersona::find($id)->delete();
             ResponseController::set_messages('archivo eliminado');
 
             return ResponseController::response('OK');

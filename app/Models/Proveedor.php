@@ -15,10 +15,14 @@ class Proveedor extends Model
     protected $fillable = [
         'razon_social','codigo','primer_nombre','primer_apellido',
         'segundo_nombre','segundo_apellido','tipo_proveedor',
-        'direccion','telefono','email','municipio_id','user_id'
+        'direccion','telefono','email','municipio_id','user_id','estado'
     ];
 
     protected $table ='proveedores';
+
+    public function scopeEstado($query){
+        return $query->where('estado','like',"%activo%")->get();
+        }
 
     public function  numeroDocumento(){
 

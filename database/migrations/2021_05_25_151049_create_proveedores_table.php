@@ -26,12 +26,14 @@ class CreateProveedoresTable extends Migration
             $table->string('direccion');
             $table->string('telefono');
             $table->string('email');
+            $table->unsignedBigInteger('estado_id')->default(3);
             $table->unsignedBigInteger('municipio_id');
             $table->unsignedBigInteger('user_id');
             $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('estado_id')->references('id')->on('estados');
         });
     }
 
