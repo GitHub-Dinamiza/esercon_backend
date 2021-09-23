@@ -13,7 +13,7 @@ class Conductor extends Model
 
     protected $table ='conductors';
 
-    protected $fillable = ['persona_id', 'proveedor_id', 'estado'];
+    protected $fillable = ['persona_id', 'proveedor_id','nombre_contacto','telefono_contacto', 'estado'];
 
     public function persona(){
         return $this->belongsTo(Persona::class, 'persona_id');

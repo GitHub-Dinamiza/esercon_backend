@@ -46,6 +46,8 @@ class ConductorController extends Controller
                 Conductor::create([
                     'persona_id'=>$persona->id,
                     'proveedor_id'=>$request->proveedor_id,
+                    'nombre_contacto'=>$request->nombre_contacto,
+                    'telefono_contacto'=>$request->telefono_contacto,
                     'estado'=>1
                 ]);
                 return  $persona;
