@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Provedores\ArchivoProveedor;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -31,6 +32,10 @@ class Proveedor extends Model
 
     public function municipio(){
         return $this->belongsTo(Municipio::class, 'municipio_id');
+    }
+
+    public function archivo(){
+        return $this->hasMany(ArchivoProveedor::class, 'proveedor_id');
     }
 
     public function scopeFiltro($query, $filtro){

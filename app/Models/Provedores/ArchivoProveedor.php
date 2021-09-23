@@ -2,6 +2,7 @@
 
 namespace App\Models\Provedores;
 
+use App\Models\GeneralData;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,4 +19,8 @@ class ArchivoProveedor extends Model
                         ];
 
     protected $table ='archivos_proveedores';
+
+    public function generalData(){
+        return $this->belongsTo(GeneralData::class,'tipo_archivo_id' );
+    }
 }

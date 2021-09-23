@@ -222,4 +222,16 @@ class ConductorController extends Controller
         return ResponseController::response('UNAUTHORIZED');
     }
 
+    public function getArchivo(Request $request, $id){
+        if($request->user()->can('add_proveedor')) {
+            $archivosPersona = ArchivosPersona::where('persona_id',$id)->get();
+
+            ResponseController::set_data(['archivos'=>$archivosPersona]);
+            return ResponseController::response('OK');
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
 }

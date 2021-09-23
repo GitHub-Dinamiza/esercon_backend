@@ -208,7 +208,7 @@ Route::group(['middleware'=>'auth:api'],function (){
         Route::put('ubicacion/{id}', 'Proyecto\UbicacionRecorridoController@updateUbicacion');
         Route::delete('ubicacion/{id}', 'Proyecto\UbicacionRecorridoController@delete');
         Route::get('clacificacionUbicacion', 'Proyecto\UbicacionRecorridoController@clasificacionUbicacion');
-
+### Conductores
         Route::group(['prefix'=>'conductor'], function(){
             Route::post('','Persona\ConductorController@store');
             Route::put('{id}','Persona\ConductorController@update');
@@ -217,6 +217,7 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             Route::post('{id}/tipoArchivo/{idTipoArchivo}/fecha/{fecha}/archivo','Persona\ConductorController@cargaArchivo');
             Route::delete('archivo/{id}','Persona\ConductorController@deleteArchivo');
+            Route::get('archivo/{id}','Persona\ConductorController@getArchivo');
         });
 
         Route::group(['prefix'=>'experienciaLavoral'], function(){
@@ -233,4 +234,8 @@ Route::group(['middleware'=>'auth:api'],function (){
 
     Route::post('descargaArchivo','cargarArchivoController@downloadFile');
 
+
+    //pruebas
+    Route::get('prueba','ValidacionEstado\ValidacionEstadoController@ActivarPorDocumentacion');
+    Route::get('prueba2','ValidacionEstado\ValidacionEstadoController@prueba');
 });
