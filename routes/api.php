@@ -101,7 +101,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::delete('{id}','RolePermission\PermissionController@destroy');
         });
 
-        ##Proveedor
+ ##Proveedor
         Route::group(['prefix'=>'proveedor'],function (){
             Route::get('','Proveedor\ProveedorController@show');
             Route::post('','Proveedor\ProveedorController@store');
@@ -114,6 +114,8 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::get('/filtro/{filtro}', 'Proveedor\ProveedorController@filtro');
             Route::get('/tipos_archivos','Proveedor\ProveedorController@tipoArchivo');
             Route::delete('Archivo/{id}','Proveedor\ProveedorController@deleteArchivo');
+
+            Route::post('estado/{id}','Proveedor\ProveedorController@cambiar_estado');
         });
 
         //Proyecto
@@ -150,6 +152,8 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             Route::post('/caracteristica','Vehiculo\VehiculoController@addCarateristicaVehiculo');
             Route::get('/caracteristica','Vehiculo\VehiculoController@getCarateristicaVehiculo');
+
+            Route::post('estado/{id}','Vehiculo\VehiculoController@cambiar_estado');
 
             Route::group(['prefix'=>'modelo'],function(){
 
@@ -218,6 +222,8 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::post('{id}/tipoArchivo/{idTipoArchivo}/fecha/{fecha}/archivo','Persona\ConductorController@cargaArchivo');
             Route::delete('archivo/{id}','Persona\ConductorController@deleteArchivo');
             Route::get('archivo/{id}','Persona\ConductorController@getArchivo');
+
+            Route::post('estado/{$id}','Persona\ConductorController@cambiar_estado');
         });
 
         Route::group(['prefix'=>'experienciaLavoral'], function(){

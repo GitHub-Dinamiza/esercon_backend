@@ -6,6 +6,7 @@ use App\Http\Controllers\cargarArchivoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
 use App\Http\Controllers\ResponsePermisoController;
+use App\Http\Controllers\ValidacionEstado\ValidacionEstadoController;
 use App\Http\Requests\Proveedor\CreateProveedorRequest;
 use App\Http\Resources\Proveedor\ProveedorResource;
 use App\Models\DocumentoProveedor;
@@ -289,6 +290,7 @@ class ProveedorController extends Controller
     public function cargarArchivo(Request $request, $id, $idTipoArchivo){
         $proveedor= Proveedor::find($id);
         $subirAchivo =new cargarArchivoController;
+        $ValidacionEstadoController = new ValidacionEstadoController;
 
         $path = 'proveedores/documentos/';
         $dataArchivoCargado = json_decode($subirAchivo->uploadFile($request, $path));
@@ -306,12 +308,17 @@ class ProveedorController extends Controller
                 'user_id'=>$request->user()->id
 
             ]);
+
+            if($a){
+                $respuesta =  $ValidacionEstadoController->ActivarPorDocumentacion($proveedor,'tipo_archivo');
+                ResponseController::set_messages(['respuesta_activacion'=>$respuesta]);
+            }
         }else{
             ResponseController::set_errors(true);
             ResponseController::set_messages(['Error AL SUBIR ARCHIVO'=>$dataArchivoCargado->mensaje]);
             return ResponseController::response('BAD REQUEST');
         }
-        ResponseController::set_messages('Documento agregado');
+        ResponseController::set_messages(['Documento agregado']);
         ResponseController::set_data(['Documento_id'=>$a]);
         return ResponseController::response('OK');
     }
@@ -339,4 +346,36 @@ class ProveedorController extends Controller
         ResponseController::set_messages('Usuario sin permiso');
         return ResponseController::response('UNAUTHORIZED');
     }
+
+    public function cambiar_estado(Request $request, $id){
+        if($request->user()->can('add_proveedor')) {
+            $data =Proveedor::find($id);
+            if($data->estado_id != 3){
+                switch($request->estado){
+                    case 'Activo':
+                        $data->estado_id = 1;
+                        ResponseController::set_messages('Se a activado el proveedor');
+                        break;
+                    case 'desactivar':
+                        $data->estado_id = 2;
+                        ResponseController::set_messages('Se a desactivado el proveedor');
+                        break;
+                }
+
+                $data->save();
+
+                ResponseController::set_data(['proveedor'=>$data]);
+
+
+            } else{
+                ResponseController::set_messages('No se puede activar proveedor');
+            }
+         return ResponseController::response('OK');
+        }
+
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
 }

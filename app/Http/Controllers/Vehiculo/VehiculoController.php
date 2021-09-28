@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Vehiculo;
 use App\Http\Controllers\cargarArchivoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
+use App\Http\Controllers\ValidacionEstado\ValidacionEstadoController;
 use App\Http\Resources\CaracteristicaVehiculosResource;
 use App\Http\Resources\modeloVehiculoResource;
 use App\Http\Resources\VehiculoResource;
@@ -317,8 +318,9 @@ class VehiculoController extends Controller
     }
 
     public function cargarArchivo(Request $request, $id, $idTipoArchivo, $fechae){
-        $proveedor= Vehiculos::find($id);
+        $vehic= Vehiculos::find($id);
         $subirAchivo =new cargarArchivoController;
+        $ValidacionEstadoController = new ValidacionEstadoController;
 
         $path = 'veliculo/documentos/';
         $dataArchivoCargado = json_decode($subirAchivo->uploadFile($request, $path));
@@ -337,6 +339,10 @@ class VehiculoController extends Controller
                 'user_id'=>$request->user()->id
 
             ]);
+            if($a){
+                $respuesta =  $ValidacionEstadoController->ActivarPorDocumentacion($vehic,'tipo_archivo_vehiculo');
+                ResponseController::set_messages(['respuesta_activacion'=>$respuesta]);
+            }
         }else{
             ResponseController::set_errors(true);
             ResponseController::set_messages(['Error AL SUBIR ARCHIVO'=>$dataArchivoCargado->mensaje]);
@@ -370,6 +376,37 @@ class VehiculoController extends Controller
 
             return ResponseController::response('OK');
         }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
+    public function cambiar_estado(Request $request, $id){
+        if($request->user()->can('add_proveedor')) {
+            $data =Vehiculos::find($id);
+            if($data->estado_id != 3){
+                switch($request->estado){
+                    case 'Activo':
+                        $data->estado_id = 1;
+                        ResponseController::set_messages('Se a activado el vehiculos');
+                        break;
+                    case 'desactivar':
+                        $data->estado_id = 2;
+                        ResponseController::set_messages('Se a desactivado el vehiculos');
+                        break;
+                }
+
+                $data->save();
+
+                ResponseController::set_data(['vehiculo'=>$data]);
+
+
+            } else{
+                ResponseController::set_messages('No se puede activar vehiculo');
+            }
+         return ResponseController::response('OK');
+        }
+
         ResponseController::set_errors(true);
         ResponseController::set_messages('Usuario sin permiso');
         return ResponseController::response('UNAUTHORIZED');

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 class ValidacionEstadoController extends Controller
 {
 
-    public function modeloComparar ($tipoArchivo){
+    private function modeloComparar ($tipoArchivo){
 
         //$requestMA = $modeloArchivo->get();
         $m1 = DB::table('validacion_documentacions')
@@ -43,7 +43,7 @@ class ValidacionEstadoController extends Controller
 /**
  * retun Collection
  */
-    public function comparaLista($model, $tipoArchivo){
+    private function comparaLista($model, $tipoArchivo){
 
 
         $m1 = $this->modeloComparar($tipoArchivo);
@@ -68,18 +68,40 @@ class ValidacionEstadoController extends Controller
 
 
 
-    public function ActivarPorDocumentacion (){
+    public  function ActivarPorDocumentacion ($model, $tipoArchivo){
 
         $modelo = Proveedor::find(1);
 
-        $lengData  =$this->comparaLista($modelo, 'tipo_archivo');
+        $lengData  =$this->comparaLista($modelo,  $tipoArchivo);
 
-        if($lengData->count()>0 && $modelo->estado == 3){
-            $modelo->update([
-                'estado'=>'1'
-            ]);
+        $data=['mensaje_estado'=>'Todos los documentos cargado'];
+        //dd($modelo->estado_id == 3);
+
+        if($lengData->count()==0 && $modelo->estado_id == 3){
+            $modelo->estado_id=1;
+            $modelo->save();
+
+            $data= [
+                'mensaje_estado'=>'Se han cargado todo los documentos correctamente ',
+                'registro'=>$modelo
+            ];
+        }elseif($lengData->count()>0){
+            $data= [
+                'mensaje_estado'=>[
+                    'Documento_faltantes'=>$lengData]
+            ];
+            if($modelo->estado_id == 1){
+                $modelo->estado_id=3;
+                $modelo->save();
+            }
+
+
         }
 
-        return response();
+        return $data;
+    }
+
+    public function cambiar_estado(){
+
     }
 }

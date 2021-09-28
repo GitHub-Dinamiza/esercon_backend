@@ -23,12 +23,13 @@ class CreateVehiculosTable extends Migration
             $table->float('capacidad_zorro')->nullable();
             $table->unsignedBigInteger('proveedor_id');
             $table->string('propietario')->nullable();
+            $table->unsignedBigInteger('estado_id');
             $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('tipo_vehiculo_id')->references('id')->on('tipo_vehiculo');
             $table->foreign('proveedor_id')->references('id')->on('proveedores');
-
+            $table->foreign('estado_id')->references('id')->on('general_data');
 
         });
     }

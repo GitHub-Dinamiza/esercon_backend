@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Persona;
 use App\Http\Controllers\cargarArchivoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
+use App\Http\Controllers\ValidacionEstado\ValidacionEstadoController;
 use App\Http\Resources\Persona\conductorResource;
 use App\Models\experiensiaLaboral;
 use App\Models\Persona\ArchivosPersona;
@@ -102,6 +103,8 @@ class ConductorController extends Controller
                 $conductor = Conductor::where('persona_id',$persona->id);
                 $conductor->update([
                     'persona_id'=>$persona->id,
+                    'nombre_contacto'=>$request->nombre_contacto,
+                    'telefono_contacto'=>$request->telefono_contacto,
                     'proveedor_id'=>$request->proveedor_id
 
                 ]);
@@ -182,6 +185,7 @@ class ConductorController extends Controller
 
         $persona = Persona::find($id);
         $subirAchivo =new cargarArchivoController;
+        $ValidacionEstadoController = new ValidacionEstadoController;
 
         $path = 'conductor/documentos/';
         $dataArchivoCargado = json_decode($subirAchivo->uploadFile($request, $path));
@@ -200,6 +204,10 @@ class ConductorController extends Controller
                 'user_id'=>$request->user()->id
 
             ]);
+            if($a){
+                $respuesta =  $ValidacionEstadoController->ActivarPorDocumentacion($persona,'tipo_archivo_conductor');
+                ResponseController::set_messages(['respuesta_activacion'=>$respuesta]);
+            }
         }else{
             ResponseController::set_errors(true);
             ResponseController::set_messages(['Error AL SUBIR ARCHIVO'=>$dataArchivoCargado->mensaje]);
@@ -231,6 +239,37 @@ class ConductorController extends Controller
             ResponseController::set_data(['archivos'=>$archivosPersona]);
             return ResponseController::response('OK');
         }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
+    public function cambiar_estado(Request $request, $id){
+        if($request->user()->can('add_proveedor')) {
+            $data =Conductor::find($id);
+            if($data->estado_id != 3){
+                switch($request->estado){
+                    case 'Activo':
+                        $data->estado_id = 1;
+                        ResponseController::set_messages('Se a activado el conductor');
+                        break;
+                    case 'desactivar':
+                        $data->estado_id = 2;
+                        ResponseController::set_messages('Se a desactivado el conductor');
+                        break;
+                }
+
+                $data->save();
+
+                ResponseController::set_data(['Conductor'=>$data]);
+
+
+            } else{
+                ResponseController::set_messages('No se puede activar conductor ');
+            }
+         return ResponseController::response('OK');
+        }
+
         ResponseController::set_errors(true);
         ResponseController::set_messages('Usuario sin permiso');
         return ResponseController::response('UNAUTHORIZED');
