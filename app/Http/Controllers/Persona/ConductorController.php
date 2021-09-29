@@ -184,6 +184,7 @@ class ConductorController extends Controller
     public function cargaArchivo(Request $request, $id, $idTipoArchivo, $fecha){
 
         $persona = Persona::find($id);
+        $conductor = Conductor::where('persona_id','$id');
         $subirAchivo =new cargarArchivoController;
         $ValidacionEstadoController = new ValidacionEstadoController;
 
@@ -246,7 +247,7 @@ class ConductorController extends Controller
 
     public function cambiar_estado(Request $request, $id){
         if($request->user()->can('add_proveedor')) {
-            $data =Conductor::find($id);
+            $data =Persona::find($id);
             if($data->estado_id != 3){
                 switch($request->estado){
                     case 'Activo':

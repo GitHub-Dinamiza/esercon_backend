@@ -22,9 +22,11 @@ class ArchivoVehiculo extends Model
                             'extension',
                             'tamanio',
                             'fecha_espedicon',
-                            'user_id'
+                            'user_id',
+                            'estado_id'
                         ];
 
+// se debe  eliminar este metodo
     public function tipoArchivo()
     {
         return $this->belongsTo(GeneralData::class, 'tipo_archivo_id');
@@ -33,5 +35,9 @@ class ArchivoVehiculo extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function generalData(){
+        return $this->belongsTo(GeneralData::class,'tipo_archivo_id' );
     }
 }

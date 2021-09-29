@@ -23,7 +23,7 @@ class CreateConductorsTable extends Migration
             //contactos
             $table->string('nombre_contacto')->nullable();
             $table->string('telefono_contacto')->nullable();
-            $table->unsignedBigInteger('estado_id');
+            $table->unsignedBigInteger('estado_id')->default(3);
 
             $table->foreign('persona_id')->references('id')->on('personas')->cascadeOnDelete();
             $table->foreign('proveedor_id')->references('id')->on('proveedores');

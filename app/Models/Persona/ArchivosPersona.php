@@ -17,4 +17,9 @@ class ArchivosPersona extends Model
                             'extension','tamanio',
                             'fecha_espedicon','user_id'
                         ];
+    public function generalData(){
+        return $this->belongsTo(GeneralData::class,'tipo_archivo_id' );
+    }
+
+
 }

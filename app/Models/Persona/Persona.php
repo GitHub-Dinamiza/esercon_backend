@@ -22,7 +22,7 @@ class Persona extends Model
         'ciudad_residencia_id','direccion',
         'telefono','email','estado_civil',
         'tipo_sangle_id','eps_id',
-        'arl_id','estado'
+        'arl_id'
     ];
 
     public  function tipoDocumento(){

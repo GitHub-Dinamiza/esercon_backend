@@ -30,13 +30,14 @@ class CreatePersonasTable extends Migration
             $table->unsignedBigInteger('tipo_sangle_id')->nullable();
             $table->unsignedBigInteger('eps_id')->nullable();
             $table->unsignedBigInteger('arl_id')->nullable();
-            $table->boolean('estado')->default(false);
+            $table->unsignedBigInteger('estado_id')->default(3);
             $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('tipo_sangle_id')->on('general_data')->references('id');
             $table->foreign('eps_id')->on('general_data')->references('id');
             $table->foreign('arl_id')->on('general_data')->references('id');
+            $table->foreign('estado_id')->on('general_data')->references('id');
             $table->foreign('tipo_documento_id')->on('tipos_documentos')->references('id');
             $table->foreign('ciudad_residencia_id')->on('municipios')->references('id');
 

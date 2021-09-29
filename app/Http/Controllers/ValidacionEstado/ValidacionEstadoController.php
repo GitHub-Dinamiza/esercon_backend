@@ -7,6 +7,7 @@ use App\Http\Controllers\ResponseController;
 use App\Http\Resources\ValidacionDocumentoResource;
 use App\Models\Proveedor;
 use App\Models\ValidacionEstado\ValidacionDocumentacion;
+use App\Models\Vehiculos;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -68,9 +69,9 @@ class ValidacionEstadoController extends Controller
 
 
 
-    public  function ActivarPorDocumentacion ($model, $tipoArchivo){
+    public  function ActivarPorDocumentacion ($modelo, $tipoArchivo){
 
-        $modelo = Proveedor::find(1);
+        //$modelo = Proveedor::find(1);
 
         $lengData  =$this->comparaLista($modelo,  $tipoArchivo);
 
@@ -103,5 +104,12 @@ class ValidacionEstadoController extends Controller
 
     public function cambiar_estado(){
 
+    }
+
+    public function prueba(){
+        $model =Vehiculos::find(1);
+        $r = $this->comparaLista($model, 'tipo_archivo_vehiculo');
+        //$a =  $this->modeloArchivos($model);
+        return response($r);
     }
 }
