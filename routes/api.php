@@ -129,7 +129,9 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::patch('{id}','Proyecto\ProyectoController@update1');
             Route::post('validador', 'Proyecto\ProyectoController@validadorProyecto');
 
+            # Descarga eliminacion y carga de Archivo
             Route::post('{id}/documento','Proyecto\ProyectoController@cargarArchivo');
+            Route::get('documento/{id}/descarga','Proyecto\ProyectoController@descargarArchivo');
             Route::delete('{id}/documento','Proyecto\ProyectoController@borrarAchivo');
 
             Route::post('{id}/tipovias','Proyecto\ProyectoController@tipoVia');
@@ -149,6 +151,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::post('','Vehiculo\VehiculoController@addVehiculo');
             Route::get('','Vehiculo\VehiculoController@getVehiculo');
             Route::delete('','Vehiculo\VehiculoController@deleteVehiculo');
+            
 
             Route::post('/caracteristica','Vehiculo\VehiculoController@addCarateristicaVehiculo');
             Route::get('/caracteristica','Vehiculo\VehiculoController@getCarateristicaVehiculo');

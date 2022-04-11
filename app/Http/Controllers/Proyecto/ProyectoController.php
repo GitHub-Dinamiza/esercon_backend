@@ -771,21 +771,25 @@ class ProyectoController extends Controller
                             }
                         }
                         if($request->recorridos != null ||$request->recorridos != []){
+                            
                             foreach($request->recorridos as $index=>$req){
-
-
+//dd($req["recorrido_inicio_id"]);
+                                
                                 if($req["estado"]="update"){
 
-                                $recorrido = RecorridoUbicacionProyecto::find($req["id"]);
+                                    $recorrido = RecorridoUbicacionProyecto::find($req["id"]);
+                                    //dd($recorrido);
+                                    $recorrido_inicio_id = $req["recorrido_inicio_id"];
+                                
+                                    $recorrido_final_id =$req["recorrido_final_id"];
+                                    $accion_id =$req["accion_id"];
 
-                                $recorrido_inicio_id = $req["recorrido_inicio_id"];
-                                $recorrido_final_id =$req["recorrido_final_id"];
-                                $accion_id =$req["accion_id"];
-                                $recorrido->recorrido_inicio_id = $recorrido_inicio_id;
-                                $recorrido->recorrido_final_id = $recorrido_final_id;
-                                $recorrido->accion_id = $accion_id;
-
-                                $recorrido->save();
+                                
+                                    $recorrido->recorrido_inicio_id= $recorrido_inicio_id; //dd($recorrido->recorrido_inicio_id);
+                                    $recorrido->recorrido_final_id = $recorrido_final_id;
+                                    $recorrido->accion_id = $accion_id;
+                                    //dd($recorrido);
+                                    $recorrido->save();
 
 
                                 }
@@ -832,7 +836,7 @@ class ProyectoController extends Controller
 
 
 
-
+    # Archivos 
     public function destroy(Request $request,$id){
         if($request->user()->can('delete_proyecto')){
             Proyecto::find($id)->delete();
@@ -885,6 +889,16 @@ class ProyectoController extends Controller
         return ResponseController::response('BAD REQUEST');
 
     }
+
+    # Descarga de archivo 
+    public function descargarArchivo($id){
+        $docuemento =ArchivoProyecto::find($id);
+        $archivo= $docuemento->nombre;
+        $ruta =$docuemento->ruta;
+        $rutaArchivo = public_path().'/'.$ruta.$archivo;
+        return response()->download($rutaArchivo);
+    }
+    
 ### Tipo de vias
     public function tipoVia(Request $request, $id){
         $proyecto = Proyecto::find($id);

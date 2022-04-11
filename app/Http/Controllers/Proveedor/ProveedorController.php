@@ -322,7 +322,16 @@ class ProveedorController extends Controller
         ResponseController::set_data(['Documento_id'=>$a]);
         return ResponseController::response('OK');
     }
+    
+    public function descargarArchivo($id){
+        $docuemento =ArchivoProveedor::find($id);
+        $archivo= $docuemento->nombre;
+        $ruta =$docuemento->ruta;
+        $rutaArchivo = public_path().'/'.$ruta.$archivo;
+        return response()->download($rutaArchivo);
+    }
 
+    
     public function getArchivo(Request $request, $id){
         if($request->user()->can('add_proveedor')){
             $a= ArchivoProveedor::where('proveedor_id',$id)->get();
