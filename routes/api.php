@@ -221,6 +221,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::put('{id}','Persona\ConductorController@update');
             Route::delete('{id}','Persona\ConductorController@delete');
             Route::get('','Persona\ConductorController@get');
+            Route::get('/{id}','Persona\ConductorController@getId');
 
             Route::post('{id}/tipoArchivo/{idTipoArchivo}/fecha/{fecha}/archivo','Persona\ConductorController@cargaArchivo');
             Route::delete('archivo/{id}','Persona\ConductorController@deleteArchivo');

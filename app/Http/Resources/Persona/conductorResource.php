@@ -3,6 +3,8 @@
 namespace App\Http\Resources\Persona;
 
 use App\Models\Municipio;
+use App\Models\Departamento;
+Use App\Models\Proveedor;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class conductorResource extends JsonResource
@@ -16,7 +18,9 @@ class conductorResource extends JsonResource
     public function toArray($request)
     {
         //return parent::toArray($request);
-        $departamento = Municipio::find($this->persona->ciudad_residencia_id);
+        $municipio = Municipio::find($this->persona->ciudad_residencia_id);
+        $departamento = Departamento::find($municipio->departamento_id);
+        $proveedor = Proveedor::find($this->proveedor_id);
         return [
 
             'id'=>$this->persona->id,
@@ -30,8 +34,10 @@ class conductorResource extends JsonResource
             'tipo_documento_descripcion'=>$this->persona->tipoDocumento->descripcion_corta,
 
             'numero_documento'=>$this->persona->numero_documento,
-            'departamento_residencia_id'=>$departamento->departamento_id,
+            'departamento_residencia_id'=>$municipio->departamento_id,
+            'departamento_residencia'=>$departamento->nombre,
             'ciudad_residencia_id'=>$this->persona->ciudad_residencia_id,
+            'ciudad_residencia'=>$municipio->nombre,
             'direccion'=>$this->persona->direccion,
             'telefono'=>$this->persona->telefono,
             'email'=>$this->persona->email,
@@ -43,7 +49,7 @@ class conductorResource extends JsonResource
             'arl_id'=>$this->persona->arl_id,
             'arl'=>$this->persona->arl->name,
             'proveedor_id'=>$this->proveedor_id,
-
+            'proveedor'=>$proveedor->razon_social,
             'nombre_contacto'=>$this->nombre_contacto,
             'telefono_contacto'=>$this->telefono_contacto,
             'experiencia_laboral'=>ExperienciaLaboraResource::collection($this->persona->experienciaLaboral),

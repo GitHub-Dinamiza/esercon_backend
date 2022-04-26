@@ -4,6 +4,7 @@ namespace App\Models\Persona;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\GeneralData;
 
 class ArchivosPersona extends Model
 {

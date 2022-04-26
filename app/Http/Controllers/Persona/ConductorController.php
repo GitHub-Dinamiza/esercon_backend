@@ -75,6 +75,22 @@ class ConductorController extends Controller
         ResponseController::set_messages('Usuario sin permiso');
         return ResponseController::response('UNAUTHORIZED');
     }
+#Consulta de id
+    public function getId (Request $request, $id){
+        if($request->user()->can('add_proveedor')) {
+
+            $conductor = conductorResource::make(Conductor::find($id));
+
+            ResponseController::set_data(['Conductor'=>$conductor]);
+            return ResponseController::response('OK');
+        }
+
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
+
     public function update(Request $request, $id)
     {
         if($request->user()->can('add_proveedor')) {
@@ -105,7 +121,9 @@ class ConductorController extends Controller
                     'persona_id'=>$persona->id,
                     'nombre_contacto'=>$request->nombre_contacto,
                     'telefono_contacto'=>$request->telefono_contacto,
-                    'proveedor_id'=>$request->proveedor_id
+                    'proveedor_id'=>$request->proveedor_id,
+                    'nombre_contacto'=>$request->nombre_contacto,
+                    'telefono_contacto'=>$request->telefono_contacto,
 
                 ]);
                 return  $persona;
