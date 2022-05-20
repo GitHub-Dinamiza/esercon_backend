@@ -80,6 +80,16 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::delete('{user_id}/permissions', 'RolePermission\UserRolesPermissions@remove_permission');
         });
 
+        ### Persona
+        Route::group(['prefix'=>'persona'],function(){
+                Route::get('','Persona\PersonaController@get');
+                Route::get('{id}','Persona\PersonaController@getId');
+                Route::post('','Persona\PersonaController@store');
+                Route::patch('{id}','Persona\PersonaController@update');
+                Route::delete( '{id}','Persona\PersonaController@delete');
+             }
+        );
+
         Route::group(['prefix'=>'roles'],function (){
             Route::post('','RolePermission\RoleController@store');
             Route::get('','RolePermission\RoleController@get_all');
@@ -95,7 +105,7 @@ Route::group(['middleware'=>'auth:api'],function (){
 
         Route::group(['prefix'=>'permissions'],function(){
             Route::post('','RolePermission\PermissionController@store');
-            Route::get('','RolclePermission\PermissionController@get_all');
+            Route::get('','RolePermission\PermissionController@get_all');
             Route::get('{id}','RolePermission\PermissionController@get');
             Route::put('{id}','RolePermission\PermissionController@update');
             Route::delete('{id}','RolePermission\PermissionController@destroy');
@@ -151,7 +161,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::post('','Vehiculo\VehiculoController@addVehiculo');
             Route::get('','Vehiculo\VehiculoController@getVehiculo');
             Route::delete('','Vehiculo\VehiculoController@deleteVehiculo');
-            
+
 
             Route::post('/caracteristica','Vehiculo\VehiculoController@addCarateristicaVehiculo');
             Route::get('/caracteristica','Vehiculo\VehiculoController@getCarateristicaVehiculo');
@@ -248,4 +258,5 @@ Route::group(['middleware'=>'auth:api'],function (){
     //pruebas
     Route::get('prueba','ValidacionEstado\ValidacionEstadoController@ActivarPorDocumentacion');
     Route::get('prueba2','ValidacionEstado\ValidacionEstadoController@prueba');
+    Route::get('prueba3','ValidarEstadoEntidadController@prueba');
 });

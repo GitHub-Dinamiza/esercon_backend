@@ -35,6 +35,7 @@ class cargarArchivoController extends Controller
     }
 
 
+
     public function downloadFile(Request $request){
         $filePath  = public_path($request->ruta.$request->nombre);
         $headers = ['Content-Type: application/pdf'];

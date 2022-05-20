@@ -53,8 +53,8 @@ class ConductorController extends Controller
                 ]);
                 return  $persona;
             });
-            ResponseController::set_messages('Proveedor creado');
-            ResponseController::set_data(['proveedor'=>$condector]);
+            ResponseController::set_messages('conductor creado');
+            ResponseController::set_data(['conductor'=>$condector]);
             return ResponseController::response('OK');
 
         }

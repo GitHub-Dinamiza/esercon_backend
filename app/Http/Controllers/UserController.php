@@ -53,6 +53,11 @@ class UserController extends Controller
 
     }
 
+
+    public function getDocumento(){
+
+    }
+
     public function  update(Request $request){
 
     }

@@ -32,5 +32,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RecorridoSeeder::class);
         $this->call(VehiculoSeeder::class);
         $this->call(ValidacionDocumentoSeed::class);
+        $this->call(listValidacionSeed::class);
     }
 }

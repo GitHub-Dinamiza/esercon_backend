@@ -23,24 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbd7d978-e510-4423-aee9-c72a66db07aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2021-07-02T085049.401.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2021-07-02T085059.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2021-07-02T085203.401.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2021-07-02T085226.401.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2021-07-02T085238.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T092550.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T092840.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T100405.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T124448.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T124546.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-06-28T124600.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2f4e69fb-2542-4dc4-a14d-139f902d2660.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2f4e69fb-2542-4dc4-a14d-139f902d2660.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" beforeDir="false" afterPath="$PROJECT_DIR$/ClientHttp/ProyectoHttpRequest.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientHttp/http-client.env.json" beforeDir="false" afterPath="$PROJECT_DIR$/ClientHttp/http-client.env.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Proyecto/ProyectoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Proyecto/ProyectoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_16_073504_create_proyecto_costo_servicio_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_16_073504_create_proyecto_costo_servicio_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PermmissionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PermmissionSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Persona/ConductorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Persona/ConductorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Persona/PersonaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Persona/PersonaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RolePermission/UserRolesPermissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RolePermission/UserRolesPermissions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/cargarArchivoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/cargarArchivoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Persona/Persona.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Persona/Persona.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +62,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -214,7 +210,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="rest.client.default.execution.environment" value="dev" />
-    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -307,6 +303,26 @@
       <workItem from="1625058117517" duration="599000" />
       <workItem from="1625066693156" duration="13432000" />
       <workItem from="1625146129399" duration="5795000" />
+      <workItem from="1651178993557" duration="3360000" />
+      <workItem from="1651259230392" duration="4763000" />
+      <workItem from="1651494585365" duration="3600000" />
+      <workItem from="1651522231456" duration="1199000" />
+      <workItem from="1651581763154" duration="9551000" />
+      <workItem from="1651606720074" duration="616000" />
+      <workItem from="1651697354515" duration="598000" />
+      <workItem from="1651753894606" duration="11140000" />
+      <workItem from="1651842108979" duration="609000" />
+      <workItem from="1652191997519" duration="602000" />
+      <workItem from="1652275012212" duration="4537000" />
+      <workItem from="1652298478970" duration="2167000" />
+      <workItem from="1652360970412" duration="4946000" />
+      <workItem from="1652386601973" duration="4896000" />
+      <workItem from="1652444876532" duration="11490000" />
+      <workItem from="1652705884861" duration="8116000" />
+      <workItem from="1652789020247" duration="1884000" />
+      <workItem from="1652810438747" duration="2590000" />
+      <workItem from="1652877783272" duration="4694000" />
+      <workItem from="1652965459000" duration="28428000" />
     </task>
     <servers />
   </component>
@@ -323,7 +339,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
