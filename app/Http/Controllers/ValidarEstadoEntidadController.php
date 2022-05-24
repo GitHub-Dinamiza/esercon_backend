@@ -8,6 +8,7 @@ use App\Http\Resources\Validacion\ListaDocumentoCargadoResource;
 use App\Http\Resources\Validacion\ListaDocumentoCargadoValidacionFechaResource;
 use App\Models\ValidacionEstado\ValidacionArchivoEntidad;
 use App\Models\Vehiculo\ArchivoVehiculo;
+use App\Models\Vehiculos;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class ValidarEstadoEntidadController extends Controller
      *  false = la comparacion devuelve un arraay  con datos
     */
     public function validacionLista($array1 , $array2){
-        $resultArray = $array1->diff($array2);
+        $resultArray = array_diff($array1,$array2);
 
         if(empty($resultArray)){
             $result = true;
@@ -81,24 +82,93 @@ class ValidarEstadoEntidadController extends Controller
     private function  listArchivoValidacionFecha($entidad){
         $result =  ValidacionArchivoEntidad::where('entidad',$entidad)
                    ->where('valida_fecha',true)->get();
-
+        $result = $result->map(function ($data){
+            return $data->general_data_id;
+        });
         $result1 = ListaArchivoValidacionFechaResource::collection($result);
         return $result1;
     }
 
-    public function listaDocumentoCargadoValidacionFecha($model, $name,$id){
-        $result = $model->where($name, $id)->get();
+    /***
+     * @param $model
+     * @param $name
+     * @param $arrayList
+     * @return mixed
+     */
+    private function listaDocumentoCargadoValidacionFecha($model, $name,$arrayList){
+        $result = $model->whereIn($name, $arrayList)->get();
         $result1 = ListaDocumentoCargadoValidacionFechaResource::collection($result);
+        $result = $result->map(function ($data){
+            $fecha_actual = strtotime(date("d-m-Y H:i:00",time()));
+            $fecha_entrada = strtotime($data->fecha_espedicon);
+            if($fecha_actual >= $fecha_entrada){
+                $result =false;
+            }else{
+                $result = true;
+            }
 
-        return $result1;
+            return $result;
+
+        });
+        return $result;
     }
 
-    public  function  validarListaFechaExpiracion($array1, $array2){
+    public  function  validarListaFechaExpiracion($model, $name, $arraylist){
+        $countListDocuement = count($arraylist);
+        $listArchivo = $this->listaDocumentoCargadoValidacionFecha($model,'tipo_archivo_id',$arraylist);
+        $countListArchivo = 0;
+        foreach ($listArchivo as  $data){
+            if ($data){
+                $countListArchivo = $countListArchivo +1;
+            }
+        }
 
+        if($countListDocuement <= $countListArchivo)
+        {
+            $result = true;
+        }else{$result= false;}
+
+        return $result;
     }
 
+    /***
+     * @param $modelEntidad
+     * @param $modelArchivo
+     * @param $nameColumnaId
+     * @param $entidadId
+     * @param $nameEntidad
+     * @return string
+     */
+    public  function  activacionEstado($modelEntidad, $modelArchivo,$nameColumnaId,$entidadId,$nameEntidad,$nameColumnaArchivoId){
+        $listDocument = $this->listadoDocumentoCargado($modelArchivo,$nameColumnaId,$entidadId);
+        $listArchivo = $this->listarchivo($nameEntidad);
 
-    public  function  actvacionEstado($model){
+        $listArchivoValidacionFecha = $this->listArchivoValidacionFecha($nameEntidad);
+
+        $validacionLista = $this->validacionLista($listArchivo,$listDocument);
+
+        $validacionFecha = $this->validarListaFechaExpiracion($modelArchivo,$nameColumnaArchivoId,$listArchivoValidacionFecha);
+
+        if($validacionLista == true && $validacionFecha == true){
+
+            if ($modelEntidad->estado_id == 39 || $modelEntidad->estado_id ==40){
+                $modelEntidad->update([
+                    'modelEntidad'=>38
+                ]);
+                $modelEntidad->save();
+            }
+            return 'Actualizado estado';
+
+        }else{
+            if ($modelEntidad->estado_id == 38){
+                $modelEntidad->update([
+                    'modelEntidad'=>40
+                ]);
+                $modelEntidad->save();
+            }
+            return  'Desaticado estado';
+        }
+
 
     }
 
@@ -111,11 +181,16 @@ class ValidarEstadoEntidadController extends Controller
         $result= $this->listarchivo('vehiculo');
 
         $archvVehiculo = new ArchivoVehiculo();
+        $vehiculo = new Vehiculos();
         $result1 = $this->listadoDocumentoCargado($archvVehiculo,'vehiculo_id',3);
-        //$result = $this->listArchivoValidacionFecha('vehiculo');
-        //$result = $this->listaDocumentoCargadoValidacionFecha($archvVehiculo,'vehiculo_id',3);
-        return array_diff($result, $result);
+        $listArch = $this->listArchivoValidacionFecha('vehiculo');
+        $result = $this->validarListaFechaExpiracion($archvVehiculo,'tipo_archivo_id',$listArch);
+        //return $result;
+       // return $result;
+        //return $this->validacionLista($result, $result1);
 
+        return $this->actvacionEstado($vehiculo,$archvVehiculo,'vehiculo_id',3,'vehiculo','tipo_archivo_id');
+        //return $this->listArchivoValidacionFecha();
     }
 
 }

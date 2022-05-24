@@ -6,6 +6,7 @@ use App\Http\Controllers\cargarArchivoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
 use App\Http\Controllers\ValidacionEstado\ValidacionEstadoController;
+use App\Http\Controllers\ValidarEstadoEntidadController;
 use App\Http\Resources\CaracteristicaVehiculosResource;
 use App\Http\Resources\modeloVehiculoResource;
 use App\Http\Resources\VehiculoResource;
@@ -340,6 +341,9 @@ class VehiculoController extends Controller
 
             ]);
             if($a){
+                $vehiculo = Vehiculos::find($id);
+                ValidarEstadoEntidadController
+                    ->activacionEstado($vehiculo,$a,'vehiculo_id',$id,'vehiculo','tipo_archivo_id');
                 $respuesta =  $ValidacionEstadoController->ActivarPorDocumentacion($vehic,'tipo_archivo_vehiculo');
                 ResponseController::set_messages(['respuesta_activacion'=>$respuesta]);
             }

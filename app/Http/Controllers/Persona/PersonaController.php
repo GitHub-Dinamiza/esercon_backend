@@ -34,8 +34,8 @@ class PersonaController extends Controller
                 'arl_id'=>$request->arl_id
             ]);
 
-            ResponseController::set_messages('Proveedor creado');
-            ResponseController::set_data(['proveedor'=>$persona]);
+            ResponseController::set_messages('persona creado');
+            ResponseController::set_data(['persona'=>$persona]);
             return ResponseController::response('OK');
         }
 
