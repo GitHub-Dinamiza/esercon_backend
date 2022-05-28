@@ -342,8 +342,7 @@ class VehiculoController extends Controller
             ]);
             if($a){
                 $vehiculo = Vehiculos::find($id);
-                ValidarEstadoEntidadController
-                    ->activacionEstado($vehiculo,$a,'vehiculo_id',$id,'vehiculo','tipo_archivo_id');
+                ValidarEstadoEntidadController->activacionEstado($vehiculo,$a,'vehiculo_id',$id,'vehiculo','tipo_archivo_id');
                 $respuesta =  $ValidacionEstadoController->ActivarPorDocumentacion($vehic,'tipo_archivo_vehiculo');
                 ResponseController::set_messages(['respuesta_activacion'=>$respuesta]);
             }
