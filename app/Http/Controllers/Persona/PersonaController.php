@@ -45,7 +45,7 @@ class PersonaController extends Controller
 
     }
 
-    public  function get(Request $request){
+    public  function getAll(Request $request){
 
         if($request->user()->can('add_proveedor')){
 

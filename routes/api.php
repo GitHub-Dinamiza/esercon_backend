@@ -82,7 +82,7 @@ Route::group(['middleware'=>'auth:api'],function (){
 
         ### Persona
         Route::group(['prefix'=>'persona'],function(){
-                Route::get('','Persona\PersonaController@get');
+                Route::get('','Persona\PersonaController@getAll');
                 Route::get('{id}','Persona\PersonaController@getId');
                 Route::post('','Persona\PersonaController@store');
                 Route::patch('{id}','Persona\PersonaController@update');
@@ -245,7 +245,18 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::get('{id}','Persona\ConductorController@getExperienciaLaboral');
         });
 
+        Route::group(['prefix'=>'asignarconductores'], function(){
+            Route::post('','AsignacionRecurso\AsignacionConductorController@asignacion');
+            Route::get('','AsignacionRecurso\AsignacionConductorController@getAsignacionAll');
+            Route::delete('/{id}','AsignacionRecurso\AsignacionConductorController@delete');
+        });
 
+        Route::group(['prefix'=>'asignarRecurso'], function(){
+            Route::post('','AsignacionRecurso\AsignacionRecursoController@asignacion');
+            Route::get('/{proyecto_id}','AsignacionRecurso\AsignacionRecursoController@getAsignacionAll');
+            Route::delete('/{id}','AsignacionRecurso\AsignacionRecursoController@delete');
+
+        });
     });
     Route::get('dataGeneral/{data}','DatogeneralController@getdato');
 ###Condiciones Economicas

@@ -29,6 +29,7 @@ class ResponseController extends Controller
          */
         'BAD REQUEST' => '400',
         'UNAUTHORIZED' => '401',
+
         'FORBIDEN' => '403',
         'NOT FOUD' => '404',
         'METHOD NOT ALLOWED' => '405',
