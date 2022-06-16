@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Persona\Persona;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -60,6 +61,6 @@ class User extends Authenticatable
     }
 
     public  function persona(){
-        return $this->belongsTo(Person::class, 'persona_id');
+        return $this->belongsTo(Persona::class, 'persona_id');
     }
 }

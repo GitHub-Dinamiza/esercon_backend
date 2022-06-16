@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\User\userResources;
 use App\Models\User;
 
 use Illuminate\Http\Request;
@@ -31,6 +32,7 @@ class UserController extends Controller
         $validator = Validator::make(['id_user'=>$id],[
             'id_user'=>'required|integer|min:1|exists:users,id',
         ]);
+
         if ($validator->fails()) {
             ResponseController::set_errors(true);
             ResponseController::set_messages($validator->errors()->toArray());
@@ -45,8 +47,11 @@ class UserController extends Controller
 
 
     public function get_all(){
-
-            ResponseController::set_data(['users'=>User::all()]);
+        $user =User::all();
+       // dd($user);
+        //$user->persona->get();
+        $user = userResources::collection($user);
+            ResponseController::set_data(['users'=>$user]);
             return ResponseController::response('OK');
 
 
