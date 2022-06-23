@@ -257,6 +257,14 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::delete('/{id}','AsignacionRecurso\AsignacionRecursoController@delete');
 
         });
+
+        Route::group(['prefix'=>'operaciones'],function(){
+            Route::post('revision', 'Operaciones\RevisionController@revisionDiaria');
+            Route::get('revision', 'Operaciones\RevisionController@gett2');
+            Route::get('revision/{id}/{fecha}', 'Operaciones\RevisionController@gettid');
+            Route::delete('revision/{id}/{fecha}', 'Operaciones\RevisionController@delete');
+            Route::post('revision/{id}/evidencia', 'Operaciones\RevisionController@cargaArchivo');
+        });
     });
     Route::get('dataGeneral/{data}','DatogeneralController@getdato');
 ###Condiciones Economicas

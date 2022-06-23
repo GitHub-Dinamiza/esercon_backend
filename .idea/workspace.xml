@@ -22,8 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbd7d978-e510-4423-aee9-c72a66db07aa" name="Default Changelist" comment="">
+    <list default="true" id="bbd7d978-e510-4423-aee9-c72a66db07aa" name="Default Changelist" comment="modificacion del endpion de usuario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <branch-grouping />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -320,8 +323,34 @@
       <workItem from="1653569683147" duration="3316000" />
       <workItem from="1653622819411" duration="27580000" />
       <workItem from="1653726554657" duration="14353000" />
-      <workItem from="1653912802916" duration="1644000" />
+      <workItem from="1653912802916" duration="2535000" />
+      <workItem from="1654000677834" duration="3006000" />
+      <workItem from="1654086390161" duration="1211000" />
+      <workItem from="1654177236473" duration="689000" />
+      <workItem from="1654636451426" duration="416000" />
+      <workItem from="1654777192789" duration="11251000" />
+      <workItem from="1654918427657" duration="1199000" />
+      <workItem from="1655130193632" duration="66002000" />
+      <workItem from="1655434377478" duration="12027000" />
+      <workItem from="1655567743611" duration="344000" />
+      <workItem from="1655808020391" duration="22457000" />
+      <workItem from="1655862760121" duration="37791000" />
     </task>
+    <task id="LOCAL-00001" summary="modificacion del endpion de usuario">
+      <created>1655407470232</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1655407470232</updated>
+    </task>
+    <task id="LOCAL-00002" summary="modificacion del endpion de usuario">
+      <created>1655407506565</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1655407506565</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,11 +361,27 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="modificacion del endpion de usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="modificacion del endpion de usuario" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
