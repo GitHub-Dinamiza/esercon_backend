@@ -14,8 +14,9 @@ class UserController extends Controller
     public  function  store(Request $request){
         if(!$user = User::create([
             'name' => $request->name,
-            'email' => $request->email,
+            'email' => $request->nickname,
             'password' => bcrypt($request->password)
+            ,'persona_id'=>$request->persona_id
 
         ])){
             ResponseController::set_errors(true);
