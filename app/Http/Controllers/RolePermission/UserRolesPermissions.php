@@ -12,6 +12,7 @@ use App\Models\User;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use phpDocumentor\Reflection\Types\Collection;
 use PhpParser\Node\Stmt\Return_;
 
 class UserRolesPermissions extends Controller
@@ -79,14 +80,19 @@ class UserRolesPermissions extends Controller
             ResponseController::set_messages("usuario no valido");
             return ResponseController::response('BAD REQUEST');
         }
+        if( !$user->roles->isEmpty()){
+            foreach ($user->roles as $index=>$rol){
 
-        foreach ($user->roles as $index=>$rol){
+                $permissionRol= $rol->permissions;
 
-            $permissionRol= $rol->permissions;
+            }
 
+        }else{
+            $permissionRol= Collect([]);
         }
+
         $permissionUser = $user->permissions;
-        $union =$rol->permissions->merge( $user->permissions);
+        $union =$permissionRol->merge( $user->permissions);
 
         $permissions=PermissionsCollection::make($union);
         ResponseController::set_data(['permission'=>$permissions]);
@@ -101,12 +107,16 @@ class UserRolesPermissions extends Controller
             ResponseController::set_messages("usuario no valido");
             return ResponseController::response('BAD REQUEST');
         }
-
-        foreach ($user->roles as $index=>$rol){
-            $permissionRol= $rol->permissions;
+        if(!$user->roles->isEmpty()){
+            foreach ($user->roles as $index=>$rol){
+                $permissionRol= $rol->permissions;
+            }
+        }else{
+            $permissionRol= Collect([]);
         }
+
         $permissionUser = $user->permissions;
-        $union =$rol->permissions->merge( $user->permissions);
+        $union =$permissionRol->merge( $user->permissions);
 
         $GeneralP =Permission::all();
 
@@ -121,16 +131,24 @@ class UserRolesPermissions extends Controller
 
     public function add_permission($user_id, Request $request){
         $user = User::find($user_id);
-        try{
-            $user->permissions()->attach($request->permission_id);
-        }catch (\Exception $e){
+        if($request->permission_id != "" || $request->permission_id != null){
+            try{
+                $user->permissions()->attach($request->permission_id);
+            }catch (\Exception $e){
+                ResponseController::set_errors(true);
+                ResponseController::set_messages($e->getMessage());
+                return ResponseController::response('BAD REQUEST');
+            }
+            ResponseController::set_messages("Permiso agignado");
+            return ResponseController::response('CREATED');
+        }else{
             ResponseController::set_errors(true);
-            ResponseController::set_messages($e->getMessage());
+            ResponseController::set_messages("No ha permiso que asignar");
             return ResponseController::response('BAD REQUEST');
         }
 
-        ResponseController::set_messages("Permiso agignado");
-        return ResponseController::response('CREATED');
+
+
     }
 
     public function  remove_permission($user_id, Request $request){
