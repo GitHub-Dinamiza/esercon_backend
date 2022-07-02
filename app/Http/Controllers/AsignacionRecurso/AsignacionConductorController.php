@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
 use App\Http\Resources\AsignacioRecurso\AsignacionConductoresResource;
 use App\Models\AsignacionRecurso\AsignacionConductor;
+use App\Models\Persona\Conductor;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Collection;
 
@@ -22,20 +23,29 @@ class AsignacionConductorController extends Controller
             return ResponseController::response('BAD REQUEST');
         }
         if($request->user()->can('add_proveedor')) {
-            $validar =AsignacionConductor::where('vehiculo_id',$request->vehiculo_id)
-                ->where('conductor_id',$request->conductor_id)
-                ->where('state',true)->get();
-            if(!$validar){
-                $asignacion = AsignacionConductor::create([
-                    'conductor_id'=>$request->conductor_id,
-                    'vehiculo_id'=>$request->vehiculo_id,
-                    'comentario'=>$request->comentario
-                ]);
-            }else{
-                ResponseController::set_errors(true);
-                ResponseController::set_messages('Ya se encuentra registrado el conductor');
-                return ResponseController::response('BAD REQUEST');
+            $conductor = Conductor::where('persona_id',$request->conductor_id )->first();
+
+            //dd($conductor);
+
+            if(!$conductor ==  []){
+                $validar =AsignacionConductor::where('vehiculo_id',$request->vehiculo_id)
+                    ->where('conductor_id',$conductor->id)
+                    ->where('state',true)->get();
+                //dd($validar->isEmpty());
+                if($validar->isEmpty()){
+                    $asignacion = AsignacionConductor::create([
+                        'conductor_id'=>$conductor->id,
+                        'vehiculo_id'=>$request->vehiculo_id,
+                        'comentario'=>$request->comentario
+                    ]);
+                }else{
+                    ResponseController::set_errors(true);
+                    ResponseController::set_messages('Ya se encuentra registrado el conductor');
+                    return ResponseController::response('BAD REQUEST');
+                }
             }
+
+
 
             ResponseController::set_messages('se asigno conductor');
             ResponseController::set_data([''=>$asignacion]);
