@@ -253,6 +253,7 @@ Route::group(['middleware'=>'auth:api'],function (){
 
         Route::group(['prefix'=>'asignarRecurso'], function(){
             Route::post('','AsignacionRecurso\AsignacionRecursoController@asignacion');
+            Route::get('','AsignacionRecurso\AsignacionRecursoController@getAsignacionProyecto');
             Route::get('/{proyecto_id}','AsignacionRecurso\AsignacionRecursoController@getAsignacionAll');
             Route::delete('/{id}','AsignacionRecurso\AsignacionRecursoController@delete');
 

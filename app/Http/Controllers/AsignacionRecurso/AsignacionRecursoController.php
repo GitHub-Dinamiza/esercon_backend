@@ -39,7 +39,12 @@ class AsignacionRecursoController extends Controller
 
     public function  getAsignacionProyecto(Request $request){
         if($request->user()->can('add_proveedor')) {
-            $asignacion = AsignacionConductorController::all();
+            $asignacion = AsignacionRecurso::all();
+
+            $asignacion =  AsignacionRecursoResource::collection($asignacion);
+
+            ResponseController::set_data(['Recursos'=>$asignacion]);
+            return ResponseController::response('OK');
         }
         ResponseController::set_errors(true);
         ResponseController::set_messages('Usuario sin permiso');
@@ -55,11 +60,18 @@ class AsignacionRecursoController extends Controller
             return ResponseController::response('BAD REQUEST');
         }
         if($request->user()->can('add_proveedor')) {
-            $asignacion = AsignacionRecurso::where('proyecto_id',$proyecto_id)->get();
-            $asignacion =  AsignacionRecursoResource::collection($asignacion);
+            $asignacion = AsignacionRecurso::where('id',$proyecto_id)->get();
+            if($asignacion == []){
+                ResponseController::set_errors(true);
+                ResponseController::set_messages('nose encontro el id');
+                return ResponseController::response('BAD REQUEST');
+            }else{
+                $asignacion =  AsignacionRecursoResource::collection($asignacion);
 
-            ResponseController::set_data(['Recursos'=>$asignacion]);
-            return ResponseController::response('OK');
+                ResponseController::set_data(['Recursos'=>$asignacion]);
+                return ResponseController::response('OK');
+            }
+
         }
         ResponseController::set_errors(true);
         ResponseController::set_messages('Usuario sin permiso');
