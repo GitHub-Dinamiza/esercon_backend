@@ -66,8 +66,8 @@ class ConductorController extends Controller
     public function get(Request $request){
         if($request->user()->can('add_proveedor')) {
 
-            $conductor = conductorResource::collection(Conductor::all());
-
+           // $conductor = conductorResource::collection(Conductor::all());
+            $conductor = Conductor::all();
             ResponseController::set_data(['Conductor'=>$conductor]);
             return ResponseController::response('OK');
         }
