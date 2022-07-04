@@ -4,6 +4,7 @@ namespace App\Http\Resources\Persona;
 
 use App\Models\Municipio;
 use App\Models\Departamento;
+use App\Models\Persona\Persona;
 Use App\Models\Proveedor;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -19,7 +20,8 @@ class conductorResource extends JsonResource
     {
         //return parent::toArray($request);
         //
-        $municipio = Municipio::find($this->persona->ciudad_residencia_id);
+        $persona = Persona::find($this->persona_id);
+        $municipio = Municipio::find($persona->ciudad_residencia_id);
         $departamento = Departamento::find($municipio->departamento_id);
         $proveedor = Proveedor::find($this->proveedor_id);
         return [

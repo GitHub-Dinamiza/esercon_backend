@@ -230,7 +230,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::post('','Persona\ConductorController@store');
             Route::put('{id}','Persona\ConductorController@update');
             Route::delete('{id}','Persona\ConductorController@delete');
-            Route::get('','Persona\ConductorController@get');
+            Route::get('','Persona\ConductorController@getall');
             Route::get('/{id}','Persona\ConductorController@getId');
 
             Route::post('{id}/tipoArchivo/{idTipoArchivo}/fecha/{fecha}/archivo','Persona\ConductorController@cargaArchivo');

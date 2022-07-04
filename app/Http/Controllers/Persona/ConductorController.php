@@ -63,11 +63,11 @@ class ConductorController extends Controller
         return ResponseController::response('UNAUTHORIZED');
     }
 
-    public function get(Request $request){
+    public function getall(Request $request){
         if($request->user()->can('add_proveedor')) {
 
-           // $conductor = conductorResource::collection(Conductor::all());
-            $conductor = Conductor::all();
+            $conductor = conductorResource::collection(Conductor::all());
+
             ResponseController::set_data(['Conductor'=>$conductor]);
             return ResponseController::response('OK');
         }
