@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Resources\Opreciones;
+namespace App\Http\Resources\Operaciones;
 
 
-use App\Models\AsignacionRecurso\AsignacionRecurso;
 use App\Models\Persona\Persona;
 use App\Models\Proyecto;
 use App\Models\Vehiculos;

@@ -260,6 +260,11 @@ Route::group(['middleware'=>'auth:api'],function (){
         });
 
         Route::group(['prefix'=>'operaciones'],function(){
+            Route::post('', 'Operaciones\OperacionDiariaController@store');
+            Route::get('', 'Operaciones\OperacionDiariaController@getAll');
+            Route::put('{id}', 'Operaciones\OperacionDiariaController@update');
+            Route::delete('{id}', 'Operaciones\OperacionDiariaController@delete');
+
             Route::post('revision', 'Operaciones\RevisionController@revisionDiaria');
             Route::get('revision', 'Operaciones\RevisionController@gett2');
             Route::get('revision/{id}/{fecha}', 'Operaciones\RevisionController@gettid');

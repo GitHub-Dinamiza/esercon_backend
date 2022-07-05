@@ -21,7 +21,7 @@ class conductorResource extends JsonResource
         //return parent::toArray($request);
         //
         $persona = Persona::find($this->persona_id);
-        $municipio = Municipio::find($persona["ciudad_residencia_id"]);
+        $municipio = Municipio::find($persona->ciudad_residencia_id);
         $departamento = Departamento::find($municipio->departamento_id);
         $proveedor = Proveedor::find($this->proveedor_id);
         return [
