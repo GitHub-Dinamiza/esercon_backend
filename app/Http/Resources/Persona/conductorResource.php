@@ -21,8 +21,8 @@ class conductorResource extends JsonResource
         //return parent::toArray($request);
         //
         $persona = Persona::find($this->persona_id);
-        $municipio = Municipio::find($persona->ciudad_residencia_id);
-        $departamento = Departamento::find($municipio->departamento_id);
+        //$municipio = Municipio::find($persona->ciudad_residencia_id);
+       // $departamento = Departamento::find($municipio->departamento_id);
         $proveedor = Proveedor::find($this->proveedor_id);
         return [
 
@@ -37,10 +37,10 @@ class conductorResource extends JsonResource
             'tipo_documento_descripcion'=>$this->persona->tipoDocumento->descripcion_corta,
 
             'numero_documento'=>$this->persona->numero_documento,
-            'departamento_residencia_id'=>$municipio->departamento_id,
-            'departamento_residencia'=>$departamento->nombre,
+            'departamento_residencia_id'=>$this->persona->municipoRes->departamento->id,//$municipio->departamento_id,
+            'departamento_residencia'=>$this->persona->municipoRes->departamento->nombre,//$departamento->nombre,
             'ciudad_residencia_id'=>$this->persona->ciudad_residencia_id,
-            'ciudad_residencia'=>$municipio->nombre,
+            'ciudad_residencia'=>$this->persona->municipoRes->nombre,
             'direccion'=>$this->persona->direccion,
             'telefono'=>$this->persona->telefono,
             'email'=>$this->persona->email,

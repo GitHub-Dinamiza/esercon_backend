@@ -4,6 +4,7 @@ namespace App\Models\Persona;
 
 use App\Models\experiensiaLaboral;
 use App\Models\GeneralData;
+use App\Models\Municipio;
 use App\Models\TipoDocumento;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -57,6 +58,10 @@ class  Persona extends Model
 
     public function archivo(){
         return $this->hasMany(ArchivosPersona::class, 'persona_id');
+    }
+
+    public  function municipoRes (){
+        return $this->belongsTo(Municipio::class, 'ciudad_residencia_id');
     }
 
 
