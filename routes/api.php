@@ -120,6 +120,8 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::get('/{id}/Archivo','Proveedor\ProveedorController@getArchivo');
 
 
+
+
             Route::get('/filtro','Proveedor\ProveedorController@show');
             Route::get('/filtro/{filtro}', 'Proveedor\ProveedorController@filtro');
             Route::get('/tipos_archivos','Proveedor\ProveedorController@tipoArchivo');
@@ -232,6 +234,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::delete('{id}','Persona\ConductorController@delete');
             Route::get('','Persona\ConductorController@getall');
             Route::get('/{id}','Persona\ConductorController@getId');
+            Route::get('proveedor/{id}','Persona\ConductorController@getProveedor');
 
             Route::post('{id}/tipoArchivo/{idTipoArchivo}/fecha/{fecha}/archivo','Persona\ConductorController@cargaArchivo');
             Route::delete('archivo/{id}','Persona\ConductorController@deleteArchivo');
@@ -254,7 +257,8 @@ Route::group(['middleware'=>'auth:api'],function (){
         Route::group(['prefix'=>'asignarRecurso'], function(){
             Route::post('','AsignacionRecurso\AsignacionRecursoController@asignacion');
             Route::get('','AsignacionRecurso\AsignacionRecursoController@getAsignacionProyecto');
-            Route::get('/{proyecto_id}','AsignacionRecurso\AsignacionRecursoController@getAsignacionAll');
+            Route::get('/{id}','AsignacionRecurso\AsignacionRecursoController@getAsignacionAll');
+            Route::get('proyecto/{id}','AsignacionRecurso\AsignacionRecursoController@getProyecto');
             Route::delete('/{id}','AsignacionRecurso\AsignacionRecursoController@delete');
 
         });

@@ -27,7 +27,7 @@ class AsignacionRecursoResource extends JsonResource
 
         }else{
             $conductorid =[
-                "primer_nombre" => "",
+                "primer_nombre" => "Sin asignar",
                 "primer_apellido" =>"",
                 "segundo_apellido"=>""
             ];
@@ -39,7 +39,11 @@ class AsignacionRecursoResource extends JsonResource
             "proyecto"=>$this->proyecto->nombre,
             "vehiculo_id"=>$this->vehiculo_id,
             "vehiculo"=>$this->vehiculo->placa,
-            "conductor"=>$conductorid["primer_nombre"]
+            "modelo"=>$this->vehiculo->modelo->modelo
+            ,"modelo_id"=>$this->vehiculo->modelo->id
+            ,"marca"=>$this->vehiculo->modelo->marcaVehiculo->name
+            ,"proveedor"=>$this->vehiculo->proveedor->razon_social
+            ,"conductor"=>$conductorid["primer_nombre"]
                 .' '.$conductorid["primer_apellido"]
                 .' '.$conductorid["segundo_apellido"],
             "created_at"=>$this->created_at,

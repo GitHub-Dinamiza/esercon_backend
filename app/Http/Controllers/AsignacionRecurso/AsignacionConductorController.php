@@ -70,7 +70,7 @@ class AsignacionConductorController extends Controller
 
     public function getAsignacion(Request $request){
         if($request->user()->can('add_proveedor')) {
-            $asignacion = AsignacionConductorController::create([
+            $asignacion = AsignacionConductor::create([
 
             ]);
 
@@ -84,6 +84,8 @@ class AsignacionConductorController extends Controller
     public function delete(Request $request,$id){
         if($request->user()->can('add_proveedor')) {
             $asignacion = AsignacionConductor::find($id);
+
+            dd($asignacion);
             $asignacion->delete();
 
             ResponseController::set_messages('asignacion eliminado');

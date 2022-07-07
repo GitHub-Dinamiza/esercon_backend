@@ -11,6 +11,7 @@ use App\Models\experiensiaLaboral;
 use App\Models\Persona\ArchivosPersona;
 use App\Models\Persona\Conductor;
 use App\Models\Persona\Persona;
+use App\Models\Proveedor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -65,8 +66,17 @@ class ConductorController extends Controller
 
     public function getall(Request $request){
         if($request->user()->can('add_proveedor')) {
-            $conduc =Conductor::all();
-            $conductor = conductorResource::collection($conduc);
+
+
+            $conductor  =Conductor::all();
+            $conductor = $conductor->filter(function ($item){
+                //dd($item->persona->first());
+
+                    return !empty($item->persona);
+
+
+            });
+            $conductor = conductorResource::collection($conductor );
 
             ResponseController::set_data(['Conductor'=>$conductor]);
             return ResponseController::response('OK');
@@ -78,8 +88,15 @@ class ConductorController extends Controller
 #Consulta de id
     public function getId (Request $request, $id){
         if($request->user()->can('add_proveedor')) {
+            $conductor =Conductor::find($id);
+            $conductor = $conductor->filter(function ($item){
+                //dd($item->persona->first());
 
-            $conductor = conductorResource::make(Conductor::find($id));
+                return !empty($item->persona);
+
+
+            });
+            $conductor = conductorResource::make($conductor);
 
             ResponseController::set_data(['Conductor'=>$conductor]);
             return ResponseController::response('OK');
@@ -293,5 +310,33 @@ class ConductorController extends Controller
         ResponseController::set_messages('Usuario sin permiso');
         return ResponseController::response('UNAUTHORIZED');
     }
+
+    public function getProveedor(Request $request, $id){
+        if($request->user()->can('add_proveedor')) {
+            if(!Proveedor::find($id)){
+                ResponseController::set_errors(true);
+                ResponseController::set_messages('Id provedor no existe');
+                return ResponseController::response('UNAUTHORIZED');
+            }
+
+            $conductor = Conductor::where('proveedor_id',$id)->get();
+            $conductor = $conductor->filter(function ($item){
+                //dd($item->persona->first());
+
+                return !empty($item->persona);
+
+
+            });
+            $conductor = conductorResource::collection($conductor);
+
+            ResponseController::set_data(['Conductor'=>$conductor]);
+            return ResponseController::response('OK');
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+
+    }
+
 
 }

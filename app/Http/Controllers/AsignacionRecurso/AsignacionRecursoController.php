@@ -53,14 +53,14 @@ class AsignacionRecursoController extends Controller
 
 
 
-    public  function getAsignacionAll(Request $request, $proyecto_id){
+    public  function getAsignacionAll(Request $request, $id){
         if (!$request) {
             ResponseController::set_errors(true);
             ResponseController::set_messages('Error en la asignacion');
             return ResponseController::response('BAD REQUEST');
         }
         if($request->user()->can('add_proveedor')) {
-            $asignacion = AsignacionRecurso::where('id',$proyecto_id)->get();
+            $asignacion = AsignacionRecurso::where('id',$id)->get();
             if($asignacion == []){
                 ResponseController::set_errors(true);
                 ResponseController::set_messages('nose encontro el id');
@@ -78,13 +78,34 @@ class AsignacionRecursoController extends Controller
         return ResponseController::response('UNAUTHORIZED');
     }
 
+    public  function getProyecto(Request $request, $id){
+        if($request->user()->can('add_proveedor')){
+            $asignacion = AsignacionRecurso::where('proyecto_id',$id)->get();
+
+            if($asignacion == []){
+                ResponseController::set_errors(true);
+                ResponseController::set_messages('nose encontro el id');
+                return ResponseController::response('BAD REQUEST');
+            }else{
+                $asignacion =  AsignacionRecursoResource::collection($asignacion);
+
+                ResponseController::set_data(['Recursos'=>$asignacion]);
+                return ResponseController::response('OK');
+            }
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
 
 
     public function delete(Request $request, $id){
         if($request->user()->can('add_proveedor')) {
-            $asignacion = AsignacionConductorController::find($id);
+            $asignacion = AsignacionRecurso::find($id);
+
+           // dd($asignacion);
             $asignacion->delete();
-            esponseController::set_messages('asignacion eliminada');
+            ResponseController::set_messages('asignacion eliminada');
             return ResponseController::response('OK');
         }
         ResponseController::set_errors(true);
