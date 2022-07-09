@@ -5,6 +5,8 @@ namespace App\Http\Resources;
 use App\Http\Resources\Vehiculo\ArchivosVehiculosResource;
 use App\Http\Resources\Vehiculo\asignacionCarasteristicaVehiculosResource;
 
+use App\Models\AsignacionRecurso\AsignacionConductor;
+use App\Models\AsignacionRecurso\AsignacionRecurso;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -25,6 +27,26 @@ class VehiculoResource extends JsonResource
             $data = $data->union($d);
         }
 
+      $Asigconductor =  AsignacionConductor::where('vehiculo_id',$this->id)->first();
+        if(empty($Asigconductor )){
+            $conductor = "no asinado";
+            $conductorId ="no asinado";
+        }else{
+
+            $conductor = $Asigconductor->conductor->nombreCompleto();
+            $conductorId = $Asigconductor->conductor_id;
+        }
+        $proyecto = AsignacionRecurso::where('vehiculo_id',$this->id)->first();
+        if(empty($proyecto)){
+            $proyecto= "no asinado";
+        }else{
+            $proyecto = $proyecto->proyecto->nombre;
+        }
+        if($this->estado_id != 38){
+            $estado = false;
+        }else{
+            $estado = true;
+        }
         return
         [
             'id'=>$this->id,
@@ -41,6 +63,10 @@ class VehiculoResource extends JsonResource
             'proveedor_id'=>$this->proveedor_id,
             'proveedor'=>$this->proveedor->razon_social,
             'caracteristicas'=>$data,
+            'estado'=>$estado,
+            'conductor'=>$conductor,
+            'conductor_id'=>$conductorId,
+            'proyecto'=>$proyecto,
             'archivos'=>ArchivosVehiculosResource::collection($this->archivo)
 
 

@@ -15,7 +15,7 @@ class CreateConductorAsignadoVehiculoTable extends Migration
     {
         Schema::create('conductor_asignado_vehiculo', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('vehiculo_id');
+            $table->unsignedBigInteger('vehiculo_id')->unique();
             $table->unsignedBigInteger('conductor_id');
             $table->text('comentario')->nullable();
             $table->boolean('state')->default(true);

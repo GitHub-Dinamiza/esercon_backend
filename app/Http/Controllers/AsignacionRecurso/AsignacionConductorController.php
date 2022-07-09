@@ -9,6 +9,7 @@ use App\Models\AsignacionRecurso\AsignacionConductor;
 use App\Models\Persona\Conductor;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Collection;
+use function PHPUnit\Framework\isEmpty;
 
 class AsignacionConductorController extends Controller
 {
@@ -94,5 +95,27 @@ class AsignacionConductorController extends Controller
         ResponseController::set_errors(true);
         ResponseController::set_messages('Usuario sin permiso');
         return ResponseController::response('UNAUTHORIZED');
+    }
+
+    public function update(Request $request,$id){
+        if($request->user()->can('add_proveedor')) {
+            $conductorAsig = AsignacionConductor::where ('conductor_id',$request->conductor_id)->first();
+            if(isEmpty( $conductorAsig)){
+                ResponseController::set_errors(true);
+                ResponseController::set_messages('Conductor ya asignado');
+                return ResponseController::response('UNAUTHORIZED');
+            }
+
+            $asignacion = AsignacionConductor::where('vehiculo_id',$id)->first();
+            $asignacion->conductor_id = $request->conductor_id;
+            $asignacion->save();
+
+            $asignacion =AsignacionConductoresResource::make($asignacion);
+            ResponseController::set_data(['asignacion'=>$asignacion]);
+
+            ResponseController::set_messages('Registor actializado');
+            return ResponseController::response('OK');
+
+        }
     }
 }

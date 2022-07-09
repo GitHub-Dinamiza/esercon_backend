@@ -64,6 +64,13 @@ class  Persona extends Model
         return $this->belongsTo(Municipio::class, 'ciudad_residencia_id');
     }
 
+    public function nombreCompleto(){
+        return $this->primer_nombre." ".
+              $this->segundo_nombre." ".
+              $this->primer_apellido." ".
+              $this->segundo_apeliido;
+    }
+
 
 
 }

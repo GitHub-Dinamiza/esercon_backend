@@ -251,6 +251,7 @@ Route::group(['middleware'=>'auth:api'],function (){
 
         Route::group(['prefix'=>'asignarconductores'], function(){
             Route::post('','AsignacionRecurso\AsignacionConductorController@asignacion');
+            Route::put('vehiculo/{id}','AsignacionRecurso\AsignacionConductorController@update');
             Route::get('','AsignacionRecurso\AsignacionConductorController@getAsignacionAll');
             Route::delete('/{id}','AsignacionRecurso\AsignacionConductorController@delete');
         });

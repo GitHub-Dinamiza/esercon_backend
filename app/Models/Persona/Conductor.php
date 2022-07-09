@@ -22,4 +22,10 @@ class Conductor extends Model
     public function proveedor(){
         return $this->belongsTo(Proveedor::class, 'proveedor_id');
     }
+
+    public function nombreCompleto(){
+        return $this->persona->nombreCompleto();
+
+    }
+
 }
