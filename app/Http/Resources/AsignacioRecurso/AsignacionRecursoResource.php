@@ -16,21 +16,14 @@ class AsignacionRecursoResource extends JsonResource
     public function toArray($request)
     {
         //return parent::toArray($request);
-        $conductor =AsignacionConductor::where(
+        $asigConductor =AsignacionConductor::where(
             'vehiculo_id',$this->vehiculo_id)->first();
-        if($conductor !=[]){
-            $conductorid =[
-                "primer_nombre" => $conductor->conductor->persona->primer_nombre,
-                "primer_apellido" =>$conductor->conductor->persona->primer_apellido,
-                "segundo_apellido"=>$conductor->conductor->persona->segundo_apellid
-            ];
-
+        if($asigConductor !=[]){
+            $conductor = $asigConductor->conductor->nombreCompleto();
+            $conductorId = $asigConductor->conductor->id;
         }else{
-            $conductorid =[
-                "primer_nombre" => "Sin asignar",
-                "primer_apellido" =>"",
-                "segundo_apellido"=>""
-            ];
+            $conductor ="No asignado";
+
         }
 
         return [
@@ -43,11 +36,11 @@ class AsignacionRecursoResource extends JsonResource
             ,"modelo_id"=>$this->vehiculo->modelo->id
             ,"marca"=>$this->vehiculo->modelo->marcaVehiculo->name
             ,"proveedor"=>$this->vehiculo->proveedor->razon_social
-            ,"conductor"=>$conductorid["primer_nombre"]
-                .' '.$conductorid["primer_apellido"]
-                .' '.$conductorid["segundo_apellido"],
-            "created_at"=>$this->created_at,
-            "updated_at"=>$this->updated_at
+            ,"conductor"=>$conductor
+            ,"conductor_id"=>$conductorId
+            ,"estado"=>""
+            ,"created_at"=>$this->created_at
+            ,"updated_at"=>$this->updated_at
         ];
     }
 }
