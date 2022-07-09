@@ -162,6 +162,7 @@ Route::group(['middleware'=>'auth:api'],function (){
 
             Route::post('','Vehiculo\VehiculoController@addVehiculo');
             Route::get('','Vehiculo\VehiculoController@getVehiculo');
+            Route::get('proveedor/{id}','Vehiculo\VehiculoController@getProveedor');
             Route::delete('','Vehiculo\VehiculoController@deleteVehiculo');
 
 

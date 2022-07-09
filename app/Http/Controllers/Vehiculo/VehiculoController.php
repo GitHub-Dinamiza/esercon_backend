@@ -13,6 +13,7 @@ use App\Http\Resources\VehiculoResource;
 use App\Models\CaracteristicasAsignadaVehiculo;
 use App\Models\CarecteristicaVehiculo;
 use App\Models\GeneralData;
+use App\Models\Proveedor;
 use App\Models\Vehiculo\ArchivoVehiculo;
 use App\Models\Vehiculo\TipoVehiculo;
 use App\Models\Vehiculos;
@@ -414,4 +415,25 @@ class VehiculoController extends Controller
         ResponseController::set_messages('Usuario sin permiso');
         return ResponseController::response('UNAUTHORIZED');
     }
-}
+
+    public function getProveedor(Request $request, $id){
+        if($request->user()->can('add_proveedor')) {
+            if ($request->user()->can('add_proveedor')) {
+                if (!Proveedor::find($id)) {
+                    ResponseController::set_errors(true);
+                    ResponseController::set_messages('Id provedor no existe');
+                    return ResponseController::response('UNAUTHORIZED');
+                }
+                $vehiculo = Vehiculos::where('proveedor_id', $id)->get();
+
+                $vehiculo = VehiculoResource::collection($vehiculo);
+                ResponseController::set_data(['vehiculo' => $vehiculo]);
+                return ResponseController::response('OK');
+            }
+        }
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
+}                                                                                                                                                                                                                                                                                                    
