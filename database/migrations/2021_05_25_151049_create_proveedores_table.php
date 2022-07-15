@@ -22,7 +22,7 @@ class CreateProveedoresTable extends Migration
             $table->string('primer_apellido')->nullable();
             $table->string('segundo_nombre')->nullable();
             $table->string('segundo_apellido')->nullable();
-            $table->boolean('tipo_proveedor');
+            $table->boolean('tipo_proveedor');// Juridico true   o natural false
             $table->string('direccion');
             $table->string('telefono');
             $table->string('email');

@@ -2,7 +2,7 @@
 
 namespace App\Models\Persona;
 
-use App\Models\Proveedor;
+use App\Models\Provedores\Proveedor;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

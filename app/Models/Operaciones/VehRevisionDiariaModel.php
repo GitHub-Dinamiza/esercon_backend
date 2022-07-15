@@ -3,7 +3,7 @@
 namespace App\Models\Operaciones;
 
 use App\Models\User;
-use App\Models\Vehiculos;
+use App\Models\Vehiculo\Vehiculos;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

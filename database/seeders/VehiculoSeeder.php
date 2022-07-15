@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\CarecteristicaVehiculo;
-use App\Models\Vehiculo\TipoVehiculo;
+use App\Models\Vehiculo\Vehiculos;
+use Database\Factories\Vehiculo\VehiculoModeloFactory;
 use Illuminate\Database\Seeder;
 
 class VehiculoSeeder extends Seeder
@@ -58,5 +59,9 @@ class VehiculoSeeder extends Seeder
                 'tipo_dato'=>$d['tipo_documento']
             ]);
         }
+        $modelo = new VehiculoModeloFactory;
+
+        $modelo->count(20)->create();
+        Vehiculos::factory()->count(100)->create();
     }
 }

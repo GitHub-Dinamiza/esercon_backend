@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\DocumentoProveedor;
-use App\Models\Proveedor;
+use App\Models\Provedores\DocumentoProveedor;
+use App\Models\Provedores\Proveedor;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 

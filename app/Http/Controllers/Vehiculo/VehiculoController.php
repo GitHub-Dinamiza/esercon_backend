@@ -6,17 +6,16 @@ use App\Http\Controllers\cargarArchivoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
 use App\Http\Controllers\ValidacionEstado\ValidacionEstadoController;
-use App\Http\Controllers\ValidarEstadoEntidadController;
 use App\Http\Resources\CaracteristicaVehiculosResource;
 use App\Http\Resources\modeloVehiculoResource;
 use App\Http\Resources\VehiculoResource;
 use App\Models\CaracteristicasAsignadaVehiculo;
 use App\Models\CarecteristicaVehiculo;
 use App\Models\GeneralData;
-use App\Models\Proveedor;
+use App\Models\Provedores\Proveedor;
 use App\Models\Vehiculo\ArchivoVehiculo;
 use App\Models\Vehiculo\TipoVehiculo;
-use App\Models\Vehiculos;
+use App\Models\Vehiculo\Vehiculos;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -436,4 +435,4 @@ class VehiculoController extends Controller
         return ResponseController::response('UNAUTHORIZED');
     }
 
-}                                                                                                                                                                                                                                                                                                    
+}

@@ -3,7 +3,7 @@
 namespace App\Models\AsignacionRecurso;
 
 use App\Models\Proyecto;
-use App\Models\Vehiculos;
+use App\Models\Vehiculo\Vehiculos;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

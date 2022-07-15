@@ -4,7 +4,6 @@ namespace App\Models\Vehiculo;
 
 use App\Models\GeneralData;
 use App\Models\User;
-use App\Models\Vehiculos;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

@@ -2,11 +2,9 @@
 
 namespace App\Http\Resources\User;
 
-use App\Http\Resources\Persona\ArchivoPersonanResource;
-use App\Http\Resources\Persona\ExperienciaLaboraResource;
 use App\Models\Departamento;
 use App\Models\Municipio;
-use App\Models\Proveedor;
+use App\Models\Provedores\Proveedor;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class userResources extends JsonResource

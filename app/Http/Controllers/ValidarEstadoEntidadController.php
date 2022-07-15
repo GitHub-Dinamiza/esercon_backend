@@ -8,9 +8,7 @@ use App\Http\Resources\Validacion\ListaDocumentoCargadoResource;
 use App\Http\Resources\Validacion\ListaDocumentoCargadoValidacionFechaResource;
 use App\Models\ValidacionEstado\ValidacionArchivoEntidad;
 use App\Models\Vehiculo\ArchivoVehiculo;
-use App\Models\Vehiculos;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
+use App\Models\Vehiculo\Vehiculos;
 
 class ValidarEstadoEntidadController extends Controller
 {

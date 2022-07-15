@@ -29,9 +29,9 @@ class  CreateProyectoCostoServicioTable extends Migration
             ]);
             $table->timestamps();
 
-            $table->foreign('servicio_id')->references('id')->on('servicios');
-            $table->foreign('proveedor_id')->references('id')->on('proveedores');
-            $table->foreign('proyecto_id')->references('id')->on('proyectos');
+            $table->foreign('servicio_id')->on('servicios')->references('id');
+            $table->foreign('proveedor_id')->on('proveedores')->references('id');
+            $table->foreign('proyecto_id')->on('proyectos')->references('id');
 
         });
     }

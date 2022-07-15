@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Provedores;
 
+use App\Models\TipoDocumento;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

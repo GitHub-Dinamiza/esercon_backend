@@ -119,7 +119,7 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::post('/{id}/tipoArchivo/{idTipoArchivo}/archivo','Proveedor\ProveedorController@cargarArchivo');
             Route::get('/{id}/Archivo','Proveedor\ProveedorController@getArchivo');
 
-
+            Route::get('servicio/{servicio_id}/vehiculo/{id}','Proveedor\ProveedorController@estacionServicio');
 
 
             Route::get('/filtro','Proveedor\ProveedorController@show');
@@ -140,6 +140,8 @@ Route::group(['middleware'=>'auth:api'],function (){
             Route::delete('{id}','Proyecto\ProyectoController@destroy');
             Route::patch('{id}','Proyecto\ProyectoController@update1');
             Route::post('validador', 'Proyecto\ProyectoController@validadorProyecto');
+
+            Route::post('costoservicio', 'Proyecto\CostoPagoEstimadoController@store');
 
             # Descarga eliminacion y carga de Archivo
             Route::post('{id}/documento','Proyecto\ProyectoController@cargarArchivo');

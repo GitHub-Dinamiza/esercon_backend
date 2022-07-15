@@ -18,7 +18,7 @@ class CreateTipoVehiculoTable extends Migration
             $table->unsignedBigInteger('marca_id');
 
             $table->string('modelo');
-            $table->integer('anio_fabricacion');
+            $table->year('anio_fabricacion');
             $table->timestamps();
             $table->softDeletes();
 

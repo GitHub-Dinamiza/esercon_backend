@@ -5,7 +5,7 @@ namespace App\Http\Resources\Operaciones;
 
 use App\Models\Persona\Persona;
 use App\Models\Proyecto;
-use App\Models\Vehiculos;
+use App\Models\Vehiculo\Vehiculos;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class RevisonConsolidadoResource extends JsonResource

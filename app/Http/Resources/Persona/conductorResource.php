@@ -2,10 +2,8 @@
 
 namespace App\Http\Resources\Persona;
 
-use App\Models\Municipio;
-use App\Models\Departamento;
 use App\Models\Persona\Persona;
-Use App\Models\Proveedor;
+use App\Models\Provedores\Proveedor;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class conductorResource extends JsonResource

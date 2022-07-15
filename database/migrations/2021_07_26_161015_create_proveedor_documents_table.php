@@ -17,7 +17,7 @@ class CreateProveedorDocumentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('proveedor_id');
             $table->unsignedBigInteger('tipo_documento_id');
-
+            $table->string('numero');
             /**
              *  falta paht
              *  nombre

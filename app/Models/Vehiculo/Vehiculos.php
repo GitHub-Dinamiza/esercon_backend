@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Vehiculo;
 
-use App\Models\Vehiculo\ArchivoVehiculo;
-use App\Models\Vehiculo\TipoVehiculo;
+use App\Models\CaracteristicasAsignadaVehiculo;
+use App\Models\Provedores\Proveedor;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

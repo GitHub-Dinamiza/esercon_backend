@@ -11,7 +11,7 @@ use App\Models\experiensiaLaboral;
 use App\Models\Persona\ArchivosPersona;
 use App\Models\Persona\Conductor;
 use App\Models\Persona\Persona;
-use App\Models\Proveedor;
+use App\Models\Provedores\Proveedor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

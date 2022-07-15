@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Vehiculo\Vehiculos;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

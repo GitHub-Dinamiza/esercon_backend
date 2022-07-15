@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Provedores;
 
-use App\Models\Provedores\ArchivoProveedor;
+use App\Models\Municipio;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use PhpParser\Comment\Doc;
 
 class Proveedor extends Model
 {

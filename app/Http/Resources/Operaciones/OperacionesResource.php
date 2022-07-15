@@ -5,7 +5,7 @@ namespace App\Http\Resources\Operaciones;
 use App\Models\AsignacionRecurso\AsignacionConductor;
 use App\Models\Proyecto;
 use App\Models\TipoMaterial;
-use App\Models\Vehiculos;
+use App\Models\Vehiculo\Vehiculos;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class OperacionesResource extends JsonResource
@@ -25,20 +25,23 @@ class OperacionesResource extends JsonResource
         $lugar = Proyecto\RecorridoProyecto::find($this->carga_lugar_id);
         $desLugar = Proyecto\RecorridoProyecto::find($this->desc_lugar_id);
         $estado = 'En proseso';
-        $conductor = AsignacionConductor::where('vehiculo_id',$this->vehiculo_id );
-        if(empty(!$conductor->first())){
-            $conductor =  $conductor->conductor->persona->primer_nombre.' '
-                          .$conductor->conductor->persona->segundo_nombre.' '
-                          .$conductor->conductor->persona->primer_apellido.' '
-                          .$conductor->conductor->persona->segundo_apellido;
-        }else{
+        $conductor = AsignacionConductor::where('vehiculo_id',$this->vehiculo_id )->first();
+        if(Empty($conductor)){
             $conductor = '';
+        }else{
+             $conductor =  $conductor->conductor->nombreCompleto();
         }
         if($this->estdo_id == 1){
             $estado = 'Terminado';
         }
+
+        if(empty($desLugar)){
+            $desLugar = '';
+        }else{
+            $desLugar = $desLugar->nombre;
+        }
         return [
-            'vehiculo_id'=>$vehiculo->placa
+            'paca_vehiculo'=>$vehiculo->placa
             ,'conductor'=>$conductor
             ,'proyecto_id'=>$proyecto->nombre
 
@@ -50,11 +53,11 @@ class OperacionesResource extends JsonResource
             ,'carga_kilometraje'=>$this->carga_kilometraje
             ,'desc_fecha' =>$this->desc_fecha
             ,'desc_hora'=>$this->desc_hora
-            ,'desc_lugar_id' => $desLugar->nombre
+            ,'desc_lugar_id' => $desLugar
             ,'desc_metrocubicos'=>$this->desc_metrocubicos
             ,'desc_kilometraje'=>$this->desc_kilometraje
-            ,'estdo_id'=>$this->estdo_id
-            ,'id'=>$estado
+            ,'estdo_id'=>$estado
+            ,'id'=>$this->id
         ];
 
     }

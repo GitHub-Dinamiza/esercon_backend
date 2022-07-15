@@ -5,20 +5,23 @@ namespace App\Http\Controllers\Proveedor;
 use App\Http\Controllers\cargarArchivoController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ResponseController;
-use App\Http\Controllers\ResponsePermisoController;
 use App\Http\Controllers\ValidacionEstado\ValidacionEstadoController;
 use App\Http\Requests\Proveedor\CreateProveedorRequest;
 use App\Http\Resources\Proveedor\ProveedorResource;
-use App\Models\DocumentoProveedor;
+use App\Http\Resources\ProveedorServicioResource;
+use App\Models\AsignacionRecurso\AsignacionRecurso;
 use App\Models\GeneralData;
 use App\Models\Provedores\ArchivoProveedor;
-use App\Models\Proveedor;
+use App\Models\Provedores\DocumentoProveedor;
+use App\Models\Provedores\Proveedor;
 use App\Models\ProveedorVehiculos;
+use App\Models\ProyectoCosto;
+use App\Models\Vehiculo\Vehiculos;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use function PHPUnit\Framework\isEmpty;
 
 class ProveedorController extends Controller
 {
@@ -41,7 +44,7 @@ class ProveedorController extends Controller
                     'primer_apellido' => $request->primer_apellido,
                     'segundo_nombre' => $request->segundo_nombre,
                     'segundo_apellido' => $request->segundo_apellido,
-                    'tipo_proveedor' => $request->tipo_proveedor,// Juridico o natural
+                    'tipo_proveedor' => $request->tipo_proveedor,// Juridico true   o natural false
                     'direccion' => $request->direccion,
                     'telefono' => $request->telefono,
                     'email' => $request->     email,
@@ -322,7 +325,7 @@ class ProveedorController extends Controller
         ResponseController::set_data(['Documento_id'=>$a]);
         return ResponseController::response('OK');
     }
-    
+
     public function descargarArchivo($id){
         $docuemento =ArchivoProveedor::find($id);
         $archivo= $docuemento->nombre;
@@ -331,7 +334,7 @@ class ProveedorController extends Controller
         return response()->download($rutaArchivo);
     }
 
-    
+
     public function getArchivo(Request $request, $id){
         if($request->user()->can('add_proveedor')){
             $a= ArchivoProveedor::where('proveedor_id',$id)->get();
@@ -382,6 +385,32 @@ class ProveedorController extends Controller
          return ResponseController::response('OK');
         }
 
+        ResponseController::set_errors(true);
+        ResponseController::set_messages('Usuario sin permiso');
+        return ResponseController::response('UNAUTHORIZED');
+    }
+
+    /***
+     * Proveedores que estan asosiado al proyecto como estacion de servicio gazalineria
+     */
+    public function estacionServicio(Request  $request, $id,$servicio_id){
+        if($request->user()->can('add_proveedor')) {
+
+
+            $vehiculoAsigdo = AsignacionRecurso::where('vehiculo_id', $id)->first();
+
+            if(!Empty($vehiculoAsigdo)){
+                $estacionServicio = ProyectoCosto::where('proyecto_id', $vehiculoAsigdo->proyecto_id)->where('servicio_id',$servicio_id)->get();
+                $estacionServicio = ProveedorServicioResource::collection($estacionServicio);
+
+
+                ResponseController::set_data(['ProveedoresSercio'=>$estacionServicio]);
+                return ResponseController::response('OK');
+            }
+            ResponseController::set_errors(true);
+            ResponseController::set_messages('El vehiculo no se encuentra asignado a ningun proyecto');
+            return ResponseController::response('UNAUTHORIZED');
+        }
         ResponseController::set_errors(true);
         ResponseController::set_messages('Usuario sin permiso');
         return ResponseController::response('UNAUTHORIZED');
