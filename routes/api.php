@@ -267,17 +267,26 @@ Route::group(['middleware'=>'auth:api'],function (){
 
         });
 
+        // Operaciones
         Route::group(['prefix'=>'operaciones'],function(){
             Route::post('', 'Operaciones\OperacionDiariaController@store');
             Route::get('', 'Operaciones\OperacionDiariaController@getAll');
             Route::put('{id}', 'Operaciones\OperacionDiariaController@update');
             Route::delete('{id}', 'Operaciones\OperacionDiariaController@delete');
 
+            // Revision
             Route::post('revision', 'Operaciones\RevisionController@revisionDiaria');
             Route::get('revision', 'Operaciones\RevisionController@gett2');
             Route::get('revision/{id}/{fecha}', 'Operaciones\RevisionController@gettid');
             Route::delete('revision/{id}/{fecha}', 'Operaciones\RevisionController@delete');
             Route::post('revision/{id}/evidencia', 'Operaciones\RevisionController@cargaArchivo');
+
+            // carga de combustibre
+            Route::post('carga_combustibre', 'Operaciones\CargaCombustibreDiarioController@store');
+            Route::get('carga_combustibre', 'Operaciones\CargaCombustibreDiarioController@getAll');
+            Route::put('carga_combustibre/{id}', 'Operaciones\CargaCombustibreDiarioController@update');
+            Route::delete('carga_combustibre/{id}', 'Operaciones\CargaCombustibreDiarioController@deleteId');
+
         });
     });
     Route::get('dataGeneral/{data}','DatogeneralController@getdato');
