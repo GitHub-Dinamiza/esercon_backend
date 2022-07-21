@@ -13,4 +13,6 @@ class VehItemRevisionModel extends Model
     protected $fillable =['nombre','tipo_dato'];
 
 
+
+
 }

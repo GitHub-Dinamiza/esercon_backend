@@ -32,4 +32,26 @@ class VehRevisionDiariaModel extends Model
     public function evidencia(){
         return $this->hasMany(DocumentoRevisionDiaria::class, 'veh_revision_daria_id');
     }
+
+
+    public static function revisionDia($veiculo_id, $fecha){
+        try {
+            $data = self::where('vehiculo_id', $veiculo_id)
+                ->where('fecha_revision',$fecha)->get();
+            self::$dataReturn['data']= $data;
+            self::$dataReturn['state']= 'OK';
+        }catch (\Exception $e){
+            self::$dataReturn['errors']= true;
+            self::$dataReturn['mensaje']=  $e;
+            self::$dataReturn['state']= 'INTERNAL SERVER ERROR';
+        }
+
+        return self::$dataReturn;
+    }
+
+    public function ValidadorRegistro ($id, $fecha){
+
+
+    }
+
 }

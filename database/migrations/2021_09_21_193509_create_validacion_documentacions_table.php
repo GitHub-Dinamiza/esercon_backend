@@ -17,7 +17,7 @@ class CreateValidacionDocumentacionsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('documento_id')->unique();
 
-            $table->foreign('documento_id')->references('id')->on('general_data');
+            $table->foreign('documento_id')->on('general_data')->references('id');
 
 
         });

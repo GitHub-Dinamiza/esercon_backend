@@ -40,14 +40,24 @@ class CargaCombustibleDiario extends Model
      }
      public static function  allData(){
          try {
-             $dataReturn['date'] =CargaCombustibleDiario::all();
+             $data =self::all();
+             if(empty($data)){
+                 self::$dataReturn['data'] =$data;
+                 self::$dataReturn['state']= 'OK';
+             }else{
+                 self::$dataReturn['errors']= true;
+                 self::$dataReturn['mensaje']=  "No se encontro registro";
+                 self::$dataReturn['state']= 'BAD REQUEST';
+             }
+
+
          }catch (\Exception $e){
              self::$dataReturn['errors']= true;
-             self::$dataReturn['mensaje']=  "Vehiculo no asociado a conductor";
+             self::$dataReturn['mensaje']=  $e;
              self::$dataReturn['state']= 'INTERNAL SERVER ERROR';
          }
 
-         return  $dataReturn;
+         return  self::$dataReturn;
      }
 
      public static function createData($request){
@@ -139,6 +149,7 @@ class CargaCombustibleDiario extends Model
     public static function deleteData($id){
         try{
            $data = self::find($id);
+
             $data->delete();
             self::$dataReturn['mensaje']=  "Registro eliminado";
             self::$dataReturn['state']= 'OK';

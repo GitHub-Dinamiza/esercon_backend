@@ -31,7 +31,10 @@ class CargaCombustibreDiarioController extends Controller
 
         $cargaCombustibre = CargaCombustibleDiario::allData();
         //$cargaCombustibre =CargaCombustibleDiario::all();
-        return $cargaCombustibre;
+        ResponseController::set_errors($cargaCombustibre['errors']);
+        ResponseController::set_messages($cargaCombustibre['mensaje']);
+        ResponseController::set_data(['carga_cumbustibre'=>$cargaCombustibre['data']]);
+        return ResponseController::response($cargaCombustibre['state']);
     }
 
     public function update(Request $request, $id){
