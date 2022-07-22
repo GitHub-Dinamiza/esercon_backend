@@ -35,7 +35,7 @@
     },
     "scripts": {
         "post-autoload-dump": [
-            "composer update",
+
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
