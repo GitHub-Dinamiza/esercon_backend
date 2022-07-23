@@ -23,7 +23,7 @@ class AsignacionRecursoResource extends JsonResource
             $conductorId = $asigConductor->conductor->id;
         }else{
             $conductor ="No asignado";
-
+            $conductorId ="No asignado";
         }
 
         return [
