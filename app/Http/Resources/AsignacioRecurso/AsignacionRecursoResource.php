@@ -39,7 +39,7 @@ class AsignacionRecursoResource extends JsonResource
             ,"conductor"=>$conductor
             ,"conductor_id"=>$conductorId
             ,"estado"=>""
-            ,"acta_revision"=>""
+
             ,"created_at"=>$this->created_at
             ,"updated_at"=>$this->updated_at
         ];

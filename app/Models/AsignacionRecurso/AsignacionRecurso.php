@@ -6,6 +6,7 @@ use App\Models\Proyecto;
 use App\Models\Vehiculo\Vehiculos;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class AsignacionRecurso extends Model
 {
@@ -19,4 +20,6 @@ class AsignacionRecurso extends Model
     public function vehiculo(){
         return $this->belongsTo(Vehiculos::class, 'vehiculo_id');
     }
+
+
 }

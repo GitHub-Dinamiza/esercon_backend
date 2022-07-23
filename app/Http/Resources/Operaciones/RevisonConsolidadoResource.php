@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Operaciones;
 
 
+use App\Models\Operaciones\VehRevisionDiariaModel;
 use App\Models\Persona\Persona;
 use App\Models\Proyecto;
 use App\Models\Vehiculo\Vehiculos;
@@ -23,6 +24,8 @@ class RevisonConsolidadoResource extends JsonResource
         $persona  = Persona::find($this->responsable_id);
         //$asignacion = AsignacionRecurso::where('vehiculo_id',$this->vehiculo_id);
         $proyecto = Proyecto::find($this->proyecto_id);
+        $revicion = VehRevisionDiariaModel::actaRevision($this->vehiculo_id,$this->fecha_revision);
+        $estado = VehRevisionDiariaModel::estadoRevision($this->vehiculo_id,$this->fecha_revision);
 
         return [
             'fecha'=>$this->fecha_revision,
@@ -30,7 +33,8 @@ class RevisonConsolidadoResource extends JsonResource
             'placa_vehiculo'=>$vehiculo->placa,
             'proyecto'=>$proyecto->nombre,
             'responsable'=>$persona->primer_nombre.' '.$persona->primer_apllido.' '.$persona->segundo_apellido
-
+            ,'acta_revision'=>$revicion
+            ,"estado_revision"=>$estado
         ];
     }
 }

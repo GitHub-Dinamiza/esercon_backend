@@ -19,7 +19,7 @@ class cargarArchivoController extends Controller
             $picture = date('His').'-'.$name_file.'.'.$extension;
 
             $file->move(public_path($path),$picture);
-           $tamanio=filesize($file);
+          // $tamanio=filesize($file);
 
             return json_encode([
                     'mensaje'=>'ok',
@@ -27,7 +27,7 @@ class cargarArchivoController extends Controller
                     'extension'=>$extension,
                     'nameFull'=>$picture,
                     'paht'=>'prueba',
-                    'tamanio'=>$tamanio
+                    'tamanio'=>0//$tamanio
             ]);
         }else{
             return json_encode(["mensaje"=>"Error"]);

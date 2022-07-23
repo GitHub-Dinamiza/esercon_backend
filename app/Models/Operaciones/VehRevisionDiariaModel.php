@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\Vehiculo\Vehiculos;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Boolean;
+use function PHPUnit\Framework\isEmpty;
 
 class VehRevisionDiariaModel extends Model
 {
@@ -50,6 +52,39 @@ class VehRevisionDiariaModel extends Model
     }
 
     public function ValidadorRegistro ($id, $fecha){
+
+
+    }
+    public static function actaRevision($idVehiculo, $fecha)
+    {
+        $data = self::where('vehiculo_id',$idVehiculo)
+                ->where('fecha_revision', $fecha)->get();
+        $data = $data->filter(function ($value, $key){
+            return $value['veh_item_revision_id'] == 8;
+        })->
+        mapWithKeys(function ($item,$key){
+            return $item->evidencia;
+        });
+       return count($data)>0 ? true:false ;
+
+    }
+
+    public static function estadoRevision($idVehiculo, $fecha){
+
+        $data = self::where('vehiculo_id',$idVehiculo)
+            ->where('fecha_revision', $fecha)->get();
+
+        $data = $data->filter(function ($value, $key){
+            return $value['valor']=="true";
+        });
+        $estadoData = count($data) ==12 ? true : false ;
+        $acta =  $revicion = VehRevisionDiariaModel::actaRevision($idVehiculo,$fecha);
+
+        if ($estadoData && $acta){
+            return true ;
+        }else{
+            return false;
+        }
 
 
     }
