@@ -26,6 +26,12 @@ class CargaCombustibleDiario extends Model
          ,'total_galon'
          ,'user_id'
      ];
+    protected  static  $dataReturn= [
+        'data'=>[]
+        ,'state'=>'OK'
+        ,'state'=>false
+        ,'mensaje'=>[]
+    ];
 
      public function vehiculo(){
          return $this->belongsTo(Vehiculos::class,'vehiculo_id');

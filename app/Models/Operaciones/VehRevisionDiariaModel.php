@@ -14,6 +14,12 @@ class VehRevisionDiariaModel extends Model
     use HasFactory;
 
     protected $table = 'veh_revision_daria';
+    protected  static  $dataReturn= [
+        'data'=>[]
+        ,'state'=>'OK'
+        ,'state'=>false
+        ,'mensaje'=>[]
+    ];
 
     protected $fillable = [
         'veh_item_revision_id','vehiculo_id',
