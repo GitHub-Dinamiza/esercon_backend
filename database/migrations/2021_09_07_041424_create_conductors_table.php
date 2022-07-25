@@ -25,9 +25,9 @@ class CreateConductorsTable extends Migration
             $table->string('telefono_contacto')->nullable();
             $table->unsignedBigInteger('estado_id')->default(3);
 
-            $table->foreign('persona_id')->references('id')->on('personas')->cascadeOnDelete();
-            $table->foreign('proveedor_id')->references('id')->on('proveedores');
-            $table->foreign('estado_id')->references('id')->on('general_data');
+            $table->foreign('persona_id')->on('personas')->references('id')->cascadeOnDelete();
+            $table->foreign('proveedor_id')->on('proveedores')->references('id');
+            $table->foreign('estado_id')->on('general_data')->references('id');
         });
     }
 

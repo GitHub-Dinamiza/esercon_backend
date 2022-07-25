@@ -22,11 +22,9 @@ class CreateConductorAsignadoVehiculoTable extends Migration
             $table->timestamps();
 
             $table->foreign('vehiculo_id')
-                ->references('id')
-                ->on('vehiculos');
+                ->on('vehiculos')->references('id');
             $table->foreign('conductor_id')
-                ->references('id')
-                ->on('conductors');
+                ->on('conductors')   ->references('id');
         });
     }
 

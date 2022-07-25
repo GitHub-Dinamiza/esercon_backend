@@ -24,7 +24,7 @@ class conductorResource extends JsonResource
         $proveedor = Proveedor::find($this->proveedor_id);
         return [
 
-            'id'=>$this->persona->id,
+            'id'=>$this->id,
 
             'primer_nombre'=>$this->persona->primer_nombre,
             'segundo_nombre'=>$this->persona->segundo_nombre,
@@ -55,7 +55,7 @@ class conductorResource extends JsonResource
             'telefono_contacto'=>$this->telefono_contacto,
             'experiencia_laboral'=>ExperienciaLaboraResource::collection($this->persona->experienciaLaboral),
             'archivos'=>ArchivoPersonanResource::collection($this->persona->Archivo),
-            'conductor_persona_id'=>$this->id
+            'persona_id'=>$this->persona->id
 
         ];
     }

@@ -24,9 +24,9 @@ class AsignacionConductorController extends Controller
             return ResponseController::response('BAD REQUEST');
         }
         if($request->user()->can('add_proveedor')) {
-            $conductor = Conductor::where('persona_id',$request->conductor_id )->first();
+            $conductor = Conductor::where('id',$request->conductor_id )->first();
 
-            //dd($conductor);
+
 
             if(!$conductor ==  []){
                 $validar =AsignacionConductor::where('vehiculo_id',$request->vehiculo_id)
@@ -39,15 +39,18 @@ class AsignacionConductorController extends Controller
                         'vehiculo_id'=>$request->vehiculo_id,
                         'comentario'=>$request->comentario
                     ]);
+
+
                 }else{
                     ResponseController::set_errors(true);
                     ResponseController::set_messages('Ya se encuentra registrado el conductor');
                     return ResponseController::response('BAD REQUEST');
                 }
+            }else{
+                ResponseController::set_errors(true);
+                ResponseController::set_messages('El id no se encuentra registrado');
+                return ResponseController::response('BAD REQUEST');
             }
-
-
-
             ResponseController::set_messages('se asigno conductor');
             ResponseController::set_data([''=>$asignacion]);
             return ResponseController::response('OK');
